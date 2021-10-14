@@ -26,4 +26,4 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Publish package
-      run: dotnet nuget push ${{ github.workspace }}/Britt2020.A.E.O/bin/Release/*.nupkg
+      run: dotnet nuget push ${{ github.workspace }}/${{ github.repository }}/bin/Release/*.nupkg
