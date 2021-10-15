@@ -20,6 +20,11 @@
                     fileStream);
             }
         }
+        
+        public static IAbstractFactory Create()
+        {
+            return new AbstractFactory();
+        }
 
         public IConfigurationsAbstractFactory CreateConfigurationsAbstractFactory()
         {
