@@ -20,7 +20,7 @@
         public Id1PlusResultElement Create(
             IiIndexElement iIndexElement,
             IωIndexElement ωIndexElement,
-            decimal value)
+            int value)
         {
             Id1PlusResultElement resultElement = null;
 

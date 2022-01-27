@@ -12,7 +12,7 @@
     {
         ImmutableList<Id1MinusResultElement> Value { get; }
 
-        ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<decimal>>> GetValueForOutputContext(
+        ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>>> GetValueForOutputContext(
             INullableValueFactory nullableValueFactory);
     }
 }

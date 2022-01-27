@@ -12,7 +12,7 @@
         public d1MinusResultElement(
             IiIndexElement iIndexElement,
             IωIndexElement ωIndexElement,
-            decimal value)
+            int value)
         {
             this.iIndexElement = iIndexElement;
 
@@ -25,6 +25,6 @@
 
         public IωIndexElement ωIndexElement { get; }
 
-        public decimal Value { get; }
+        public int Value { get; }
     }
 }

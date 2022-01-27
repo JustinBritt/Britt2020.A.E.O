@@ -8,6 +8,6 @@
         Id1MinusResultElement Create(
             IiIndexElement iIndexElement,
             IωIndexElement ωIndexElement,
-            decimal value);
+            int value);
     }
 }

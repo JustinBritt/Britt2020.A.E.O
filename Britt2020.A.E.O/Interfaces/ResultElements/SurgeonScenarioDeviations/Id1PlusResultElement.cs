@@ -8,6 +8,6 @@
 
         IωIndexElement ωIndexElement { get; }
 
-        decimal Value { get; }
+        int Value { get; }
     }
 }

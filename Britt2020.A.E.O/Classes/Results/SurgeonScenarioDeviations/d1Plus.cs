@@ -24,7 +24,7 @@
 
         public ImmutableList<Id1PlusResultElement> Value { get; }
 
-        public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<decimal>>> GetValueForOutputContext(
+        public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>>> GetValueForOutputContext(
             INullableValueFactory nullableValueFactory)
         {
             return this.Value
@@ -32,7 +32,7 @@
                 w => Tuple.Create(
                     w.iIndexElement.Value,
                     (INullableValue<int>)w.ωIndexElement.Value,
-                    nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<int>(
                         w.Value)))
                 .ToImmutableList();
         }
