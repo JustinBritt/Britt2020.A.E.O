@@ -1,0 +1,41 @@
+﻿namespace Britt2022.A.E.O.Factories.Parameters.ScenarioProbabilities
+{
+    using System;
+    using System.Collections.Immutable;
+
+    using log4net;
+
+    using Britt2022.A.E.O.Classes.Parameters.ScenarioProbabilities;
+    using Britt2022.A.E.O.Interfaces.ParameterElements.ScenarioProbabilities;
+    using Britt2022.A.E.O.Interfaces.Parameters.ScenarioProbabilities;
+    using Britt2022.A.E.O.InterfacesFactories.Parameters.ScenarioProbabilities;
+
+    internal sealed class ΡFactory : IΡFactory
+    {
+        private ILog Log => LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+        public ΡFactory()
+        {
+        }
+
+        public IΡ Create(
+            ImmutableList<IΡParameterElement> value)
+        {
+            IΡ parameter = null;
+
+            try
+            {
+                parameter = new Ρ(
+                    value);
+            }
+            catch (Exception exception)
+            {
+                this.Log.Error(
+                    exception.Message,
+                    exception);
+            }
+
+            return parameter;
+        }
+    }
+}
