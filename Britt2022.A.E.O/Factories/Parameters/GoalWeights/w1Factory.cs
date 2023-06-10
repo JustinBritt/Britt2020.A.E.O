@@ -19,7 +19,7 @@
         }
 
         public Iw1 Create(
-            FhirDecimal value)
+            INullableValue<decimal> value)
         {
             Iw1 parameter = null;
 
