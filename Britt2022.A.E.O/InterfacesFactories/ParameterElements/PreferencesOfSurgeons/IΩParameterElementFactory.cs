@@ -10,6 +10,6 @@
         IΩParameterElement Create(
             IiIndexElement iIndexElement,
             IkIndexElement kIndexElement,
-            FhirBoolean value);
+            INullableValue<bool> value);
     }
 }

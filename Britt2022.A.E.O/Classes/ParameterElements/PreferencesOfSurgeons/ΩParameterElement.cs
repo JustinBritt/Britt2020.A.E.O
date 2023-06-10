@@ -14,7 +14,7 @@
         public ΩParameterElement(
             IiIndexElement iIndexElement,
             IkIndexElement kIndexElement,
-            FhirBoolean value)
+            INullableValue<bool> value)
         {
             this.iIndexElement = iIndexElement;
 
@@ -27,6 +27,6 @@
 
         public IkIndexElement kIndexElement { get; }
 
-        public FhirBoolean Value { get; }
+        public INullableValue<bool> Value { get; }
     }
 }
