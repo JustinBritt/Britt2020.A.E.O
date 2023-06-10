@@ -22,7 +22,7 @@
             Ix x)
         {
             Expression LHS = Expression.Sum(
-                i.Value
+                i.Value.Values
                 .Select(
                     w => x.Value[w, jIndexElement, kIndexElement]));
 
