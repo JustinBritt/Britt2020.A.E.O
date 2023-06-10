@@ -11,6 +11,6 @@
         ImmutableList<IeIndexElement> Value { get; }
 
         IeIndexElement GetElementAt(
-            PositiveInt value);
+            INullableValue<int> value);
     }
 }
