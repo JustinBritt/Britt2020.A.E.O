@@ -14,7 +14,7 @@
         public nParameterElement(
             IiIndexElement iIndexElement,
             IωIndexElement ωIndexElement,
-            PositiveInt value)
+            INullableValue<int> value)
         {
             this.iIndexElement = iIndexElement;
 
@@ -27,6 +27,6 @@
 
         public IωIndexElement ωIndexElement { get; }
 
-        public PositiveInt Value { get; }
+        public INullableValue<int> Value { get; }
     }
 }

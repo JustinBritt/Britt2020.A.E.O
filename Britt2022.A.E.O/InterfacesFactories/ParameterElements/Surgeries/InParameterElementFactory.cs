@@ -10,6 +10,6 @@
         InParameterElement Create(
             IiIndexElement iIndexElement,
             IωIndexElement ωIndexElement,
-            PositiveInt value);
+            INullableValue<int> value);
     }
 }
