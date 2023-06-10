@@ -25,7 +25,7 @@
             Bundle surgeons,
             Bundle operatingRooms,
             ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> planningHorizon,
-            ImmutableList<PositiveInt> lengthOfStayDays,
+            ImmutableSortedSet<INullableValue<int>> lengthOfStayDays,
             ImmutableList<Tuple<Organization, ImmutableList<Organization>>> surgicalSpecialties,
             ImmutableList<PositiveInt> scenarios,
             ImmutableList<Tuple<Organization, PositiveInt, Duration>> surgeonScenarioWeightedAverageSurgicalDurations,

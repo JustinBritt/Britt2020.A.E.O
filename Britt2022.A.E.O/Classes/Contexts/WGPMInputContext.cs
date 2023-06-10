@@ -19,7 +19,7 @@
             Bundle surgeons,
             Bundle operatingRooms,
             ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> planningHorizon,
-            ImmutableList<PositiveInt> lengthOfStayDays,
+            ImmutableSortedSet<INullableValue<int>> lengthOfStayDays,
             ImmutableList<Tuple<Organization, ImmutableList<Organization>>> surgicalSpecialties,
             ImmutableList<PositiveInt> scenarios,
             ImmutableList<Tuple<Organization, PositiveInt, Duration>> surgeonScenarioWeightedAverageSurgicalDurations,
@@ -139,7 +139,7 @@
         /// Gets the length of stay days.
         /// Parameter: l
         /// </summary>
-        public ImmutableList<PositiveInt> LengthOfStayDays { get; }
+        public ImmutableSortedSet<INullableValue<int>> LengthOfStayDays { get; }
 
         /// <summary>
         /// Gets the surgical specialties
