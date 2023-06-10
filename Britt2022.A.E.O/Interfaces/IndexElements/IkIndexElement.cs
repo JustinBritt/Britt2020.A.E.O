@@ -1,8 +1,10 @@
 ﻿namespace Britt2022.A.E.O.Interfaces.IndexElements
 {
+    using System;
+
     using Hl7.Fhir.Model;
 
-    public interface IkIndexElement
+    public interface IkIndexElement : IComparable<IkIndexElement>
     {
         /// <summary>
         /// Gets the key of the day.
