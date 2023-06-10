@@ -13,7 +13,7 @@
 
         public ΡParameterElement(
             IωIndexElement ωIndexElement,
-            FhirDecimal value)
+            INullableValue<decimal> value)
         {
             this.ωIndexElement = ωIndexElement;
 
@@ -22,6 +22,6 @@
 
         public IωIndexElement ωIndexElement { get; }
 
-        public FhirDecimal Value { get; }
+        public INullableValue<decimal> Value { get; }
     }
 }
