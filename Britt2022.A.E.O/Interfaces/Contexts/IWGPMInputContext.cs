@@ -6,6 +6,8 @@
 
     using Hl7.Fhir.Model;
 
+    using NGenerics.DataStructures.Trees;
+
     public interface IWGPMInputContext
     {
         ImmutableSortedSet<INullableValue<int>> Clusters { get; }
@@ -14,7 +16,7 @@
 
         Bundle OperatingRooms { get; }
 
-        ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> PlanningHorizon { get; }
+        RedBlackTree<INullableValue<int>, FhirDateTime> PlanningHorizon { get; }
 
         ImmutableSortedSet<INullableValue<int>> LengthOfStayDays { get; }
 
