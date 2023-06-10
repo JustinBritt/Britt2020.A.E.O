@@ -4,6 +4,6 @@
 
     public interface Iw4
     {
-        FhirDecimal Value { get; }
+        INullableValue<decimal> Value { get; }
     }
 }
