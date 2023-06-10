@@ -22,7 +22,7 @@
         public IΠParameterElement Create(
             IiIndexElement iIndexElement,
             IjIndexElement jIndexElement,
-            FhirBoolean value)
+            INullableValue<bool> value)
         {
             IΠParameterElement parameterElement = null;
 

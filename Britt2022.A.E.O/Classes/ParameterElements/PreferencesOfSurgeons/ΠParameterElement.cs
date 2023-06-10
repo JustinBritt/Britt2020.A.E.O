@@ -14,7 +14,7 @@
         public ΠParameterElement(
             IiIndexElement iIndexElement,
             IjIndexElement jIndexElement,
-            FhirBoolean value)
+            INullableValue<bool> value)
         {
             this.iIndexElement = iIndexElement;
 
@@ -27,6 +27,6 @@
 
         public IjIndexElement jIndexElement { get; }
 
-        public FhirBoolean Value { get; }
+        public INullableValue<bool> Value { get; }
     }
 }

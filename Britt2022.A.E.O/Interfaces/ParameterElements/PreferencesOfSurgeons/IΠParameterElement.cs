@@ -10,6 +10,6 @@
 
         IjIndexElement jIndexElement { get; }
 
-        FhirBoolean Value { get; }
+        INullableValue<bool> Value { get; }
     }
 }
