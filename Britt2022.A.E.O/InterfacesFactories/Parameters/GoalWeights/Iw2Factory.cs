@@ -7,6 +7,6 @@
     public interface Iw2Factory
     {
         Iw2 Create(
-            FhirDecimal value);
+            INullableValue<decimal> value);
     }
 }
