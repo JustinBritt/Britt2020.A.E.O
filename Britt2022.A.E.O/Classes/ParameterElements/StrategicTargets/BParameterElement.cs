@@ -13,7 +13,7 @@
 
         public BParameterElement(
             IrIndexElement rIndexElement,
-            PositiveInt value)
+            INullableValue<int> value)
         {
             this.rIndexElement = rIndexElement;
 
@@ -22,6 +22,6 @@
 
         public IrIndexElement rIndexElement { get; }
 
-        public PositiveInt Value { get; }
+        public INullableValue<int> Value { get; }
     }
 }

@@ -9,6 +9,6 @@
     {
         IBParameterElement Create(
             IrIndexElement rIndexElement,
-            PositiveInt value);
+            INullableValue<int> value);
     }
 }

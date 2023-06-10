@@ -8,6 +8,6 @@
     {
         IrIndexElement rIndexElement { get; }
 
-        PositiveInt Value { get; }
+        INullableValue<int> Value { get; }
     }
 }
