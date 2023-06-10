@@ -23,7 +23,7 @@
             IiIndexElement iIndexElement,
             IlIndexElement lIndexElement,
             IωIndexElement ωIndexElement,
-            FhirDecimal value)
+            INullableValue<decimal> value)
         {
             IΦParameterElement parameterElement = null;
 

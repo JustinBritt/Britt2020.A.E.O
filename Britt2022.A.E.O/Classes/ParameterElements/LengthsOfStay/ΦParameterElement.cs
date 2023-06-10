@@ -15,7 +15,7 @@
             IiIndexElement iIndexElement,
             IlIndexElement lIndexElement,
             IωIndexElement ωIndexElement,
-            FhirDecimal value)
+            INullableValue<decimal> value)
         {
             this.iIndexElement = iIndexElement;
 
@@ -32,6 +32,6 @@
 
         public IωIndexElement ωIndexElement { get; }
 
-        public FhirDecimal Value { get; }
+        public INullableValue<decimal> Value { get; }
     }
 }
