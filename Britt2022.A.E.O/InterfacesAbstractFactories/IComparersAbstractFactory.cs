@@ -4,6 +4,8 @@
 
     public interface IComparersAbstractFactory
     {
+        ILocationComparerFactory CreateLocationComparerFactory();
+
         INullableValueintComparerFactory CreateNullableValueintComparerFactory();
 
         IOrganizationComparerFactory CreateOrganizationComparerFactory();
