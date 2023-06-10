@@ -16,9 +16,10 @@
             this.Value = value;
         }
 
-        /// </inheritdoc>
+        /// <inheritdoc/>
         public INullableValue<int> Value { get; }
 
+        /// <inheritdoc/>
         public int CompareTo(
             IeIndexElement other)
         {
