@@ -11,6 +11,6 @@
         ImmutableList<IωIndexElement> Value { get; }
 
         IωIndexElement GetElementAt(
-            PositiveInt value);
+            INullableValue<int> value);
     }
 }
