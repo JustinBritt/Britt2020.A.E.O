@@ -20,7 +20,7 @@
 
         ImmutableList<Tuple<Organization, ImmutableList<Organization>>> SurgicalSpecialties { get; }
 
-        ImmutableList<PositiveInt> Scenarios { get; }
+        ImmutableSortedSet<INullableValue<int>> Scenarios { get; }
 
         ImmutableList<Tuple<Organization, PositiveInt, Duration>> SurgeonScenarioWeightedAverageSurgicalDurations { get; }
 

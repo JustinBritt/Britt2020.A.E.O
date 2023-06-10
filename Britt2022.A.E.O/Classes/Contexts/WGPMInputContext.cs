@@ -21,7 +21,7 @@
             ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> planningHorizon,
             ImmutableSortedSet<INullableValue<int>> lengthOfStayDays,
             ImmutableList<Tuple<Organization, ImmutableList<Organization>>> surgicalSpecialties,
-            ImmutableList<PositiveInt> scenarios,
+            ImmutableSortedSet<INullableValue<int>> scenarios,
             ImmutableList<Tuple<Organization, PositiveInt, Duration>> surgeonScenarioWeightedAverageSurgicalDurations,
             ImmutableList<KeyValuePair<Organization, PositiveInt>> surgicalSpecialtyStrategicTargetNumberTimeBlocks,
             ImmutableList<KeyValuePair<Organization, PositiveInt>> surgeonMaximumNumberTimeBlocks,
@@ -151,7 +151,7 @@
         /// Gets the scenarios
         /// Parameter: ω
         /// </summary>
-        public ImmutableList<PositiveInt> Scenarios { get; }
+        public ImmutableSortedSet<INullableValue<int>> Scenarios { get; }
 
         /// <summary>
         /// 
