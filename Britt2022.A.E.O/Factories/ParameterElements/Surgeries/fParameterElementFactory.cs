@@ -22,7 +22,7 @@
         public IfParameterElement Create(
             IiIndexElement iIndexElement,
             IeIndexElement eIndexElement,
-            FhirDecimal value)
+            INullableValue<decimal> value)
         {
             IfParameterElement parameterElement = null;
 
