@@ -5,7 +5,12 @@
 
     using log4net;
 
+    using Hl7.Fhir.Model;
+
+    using NGenerics.DataStructures.Trees;
+
     using Britt2022.A.E.O.Classes.Indices;
+    using Britt2022.A.E.O.Interfaces.Comparers;
     using Britt2022.A.E.O.Interfaces.IndexElements;
     using Britt2022.A.E.O.Interfaces.Indices;
     using Britt2022.A.E.O.InterfacesFactories.Indices;
@@ -19,6 +24,7 @@
         }
 
         public Ie Create(
+            INullableValueintComparer nullableValueintComparer,
             ImmutableList<IeIndexElement> value)
         {
             Ie index = null;
@@ -26,7 +32,9 @@
             try
             {
                 index = new e(
-                    value);
+                    this.CreateRedBlackTree(
+                        nullableValueintComparer,
+                        value));
             }
             catch (Exception exception)
             {
@@ -36,6 +44,23 @@
             }
 
             return index;
+        }
+
+        private RedBlackTree<INullableValue<int>, IeIndexElement> CreateRedBlackTree(
+            INullableValueintComparer nullableValueintComparer,
+            ImmutableList<IeIndexElement> value)
+        {
+            RedBlackTree<INullableValue<int>, IeIndexElement> redBlackTree = new RedBlackTree<INullableValue<int>, IeIndexElement>(
+                nullableValueintComparer);
+
+            foreach (IeIndexElement eIndexElement in value)
+            {
+                redBlackTree.Add(
+                    eIndexElement.Value,
+                    eIndexElement);
+            }
+
+            return redBlackTree;
         }
     }
 }

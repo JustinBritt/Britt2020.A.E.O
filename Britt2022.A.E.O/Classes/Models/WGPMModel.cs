@@ -53,6 +53,7 @@
 
             // e
             this.e = indicesAbstractFactory.CreateeFactory().Create(
+                comparersAbstractFactory.CreateNullableValueintComparerFactory().Create(),
                 this.Context.Clusters
                 .Select(x => indexElementsAbstractFactory.CreateeIndexElementFactory().Create(x))
                 .ToImmutableList());
@@ -105,7 +106,7 @@
             // ieω
             this.ieω = crossJoinsAbstractFactory.CreateieωFactory().Create(
                 this.i.Value
-                .SelectMany(b => this.e.Value, (a, b) => crossJoinElementsAbstractFactory.CreateieCrossJoinElementFactory().Create(a, b))
+                .SelectMany(b => this.e.Value.Values, (a, b) => crossJoinElementsAbstractFactory.CreateieCrossJoinElementFactory().Create(a, b))
                 .SelectMany(b => this.ω.Value, (a, b) => crossJoinElementsAbstractFactory.CreateieωCrossJoinElementFactory().Create(a.iIndexElement, a.eIndexElement, b))
                 .ToImmutableList());
 
