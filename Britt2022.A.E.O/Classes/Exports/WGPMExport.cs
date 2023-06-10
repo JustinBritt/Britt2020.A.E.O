@@ -25,6 +25,7 @@
             ISolverConfiguration solverConfiguration)
         {
             return abstractFactory.CreateSolutionsAbstractFactory().CreateWGPMSolutionFactory().Create().Solve(
+                abstractFactory.CreateComparersAbstractFactory(),
                 abstractFactory.CreateConstraintElementsAbstractFactory(),
                 abstractFactory.CreateConstraintsAbstractFactory(),
                 abstractFactory.CreateContextsAbstractFactory(),

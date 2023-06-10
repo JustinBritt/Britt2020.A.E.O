@@ -10,6 +10,7 @@
     public interface IWGPMSolution
     {
         Task<IWGPMOutputContext> Solve(
+            IComparersAbstractFactory comparersAbstractFactory,
             IConstraintElementsAbstractFactory constraintElementsAbstractFactory,
             IConstraintsAbstractFactory constraintsAbstractFactory,
             IContextsAbstractFactory contextsAbstractFactory,

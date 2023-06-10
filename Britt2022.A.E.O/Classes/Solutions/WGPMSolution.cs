@@ -24,6 +24,7 @@
         }
 
         public Task<IWGPMOutputContext> Solve(
+            IComparersAbstractFactory comparersAbstractFactory,
             IConstraintElementsAbstractFactory constraintElementsAbstractFactory,
             IConstraintsAbstractFactory constraintsAbstractFactory,
             IContextsAbstractFactory contextsAbstractFactory,
@@ -50,6 +51,7 @@
                 using (ModelScope modelScope = dependenciesAbstractFactory.CreateModelScopeFactory().Create(WGPMConfiguration.Value))
                 {
                     IWGPMModel model = modelsAbstractFactory.CreateWGPMModelFactory().Create(
+                        comparersAbstractFactory,
                         constraintElementsAbstractFactory,
                         constraintsAbstractFactory,
                         crossJoinElementsAbstractFactory,
