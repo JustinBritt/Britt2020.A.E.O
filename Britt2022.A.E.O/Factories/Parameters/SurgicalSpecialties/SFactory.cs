@@ -5,7 +5,10 @@
 
     using log4net;
 
+    using NGenerics.DataStructures.Trees;
+
     using Britt2022.A.E.O.Classes.Parameters.SurgicalSpecialties;
+    using Britt2022.A.E.O.Interfaces.IndexElements;
     using Britt2022.A.E.O.Interfaces.Parameters.SurgicalSpecialties;
     using Britt2022.A.E.O.Interfaces.ParameterElements.SurgicalSpecialties;
     using Britt2022.A.E.O.InterfacesFactories.Parameters.SurgicalSpecialties;
@@ -19,6 +22,7 @@
         }
 
         public IS Create(
+            RedBlackTree<IrIndexElement, ImmutableList<IiIndexElement>> redBlackTree,
             ImmutableList<ISParameterElement> value)
         {
             IS parameter = null;
@@ -26,6 +30,7 @@
             try
             {
                 parameter = new S(
+                    redBlackTree,
                     value);
             }
             catch (Exception exception)

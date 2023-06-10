@@ -7,6 +7,8 @@
 
     using Hl7.Fhir.Model;
 
+    using NGenerics.Patterns.Visitor;
+
     using OPTANO.Modeling.Optimization;
     using OPTANO.Modeling.Optimization.Enums;
 
@@ -15,7 +17,6 @@
     using Britt2022.A.E.O.Interfaces.CrossJoins;
     using Britt2022.A.E.O.Interfaces.IndexElements;
     using Britt2022.A.E.O.Interfaces.Indices;
-
     using Britt2022.A.E.O.Interfaces.Parameters.GoalWeights;
     using Britt2022.A.E.O.Interfaces.Parameters.LengthsOfStay;
     using Britt2022.A.E.O.Interfaces.Parameters.PreferencesOfSurgeons;
@@ -25,6 +26,7 @@
     using Britt2022.A.E.O.Interfaces.Parameters.SurgicalSpecialties;
     using Britt2022.A.E.O.Interfaces.Models;
     using Britt2022.A.E.O.Interfaces.Variables;
+    using Britt2022.A.E.O.InterfacesVisitors.Contexts;
 
     internal sealed class WGPMModel : IWGPMModel
     {
@@ -94,7 +96,7 @@
             this.r = indicesAbstractFactory.CreaterFactory().Create(
                 comparersAbstractFactory.CreateOrganizationComparerFactory().Create(),
                 this.Context.SurgicalSpecialties
-                .Select(x => x.Item1)
+                .Select(x => x.Key)
                 .Select(x => indexElementsAbstractFactory.CreaterIndexElementFactory().Create(x))
                 .ToImmutableList());
 
@@ -250,12 +252,17 @@
                 .ToImmutableList());
 
             // S(r)
+            ISurgicalSpecialtiesVisitor<Organization, ImmutableSortedSet<Organization>> surgicalSpecialtiesVisitor = new Britt2022.A.E.O.Visitors.Contexts.SurgicalSpecialtiesVisitor<Organization, ImmutableSortedSet<Organization>>(
+                parameterElementsAbstractFactory.CreateSParameterElementFactory(),
+                this.i,
+                this.r);
+
+            this.Context.SurgicalSpecialties.AcceptVisitor(
+                surgicalSpecialtiesVisitor);
+
             this.S = parametersAbstractFactory.CreateSFactory().Create(
-                this.Context.SurgicalSpecialties
-                .Select(x => parameterElementsAbstractFactory.CreateSParameterElementFactory().Create(
-                    this.r.GetElementAt(x.Item1),
-                    x.Item2.Select(w => this.i.GetElementAt(w)).ToImmutableList()))
-                .ToImmutableList());
+                surgicalSpecialtiesVisitor.RedBlackTree,
+                surgicalSpecialtiesVisitor.Value.ToImmutableList());
 
             // v
             this.v = parametersAbstractFactory.CreatevFactory().Create(
