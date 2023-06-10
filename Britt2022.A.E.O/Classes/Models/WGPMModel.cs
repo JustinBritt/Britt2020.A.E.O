@@ -92,6 +92,7 @@
 
             // r
             this.r = indicesAbstractFactory.CreaterFactory().Create(
+                comparersAbstractFactory.CreateOrganizationComparerFactory().Create(),
                 this.Context.SurgicalSpecialties
                 .Select(x => x.Item1)
                 .Select(x => indexElementsAbstractFactory.CreaterIndexElementFactory().Create(x))
@@ -497,7 +498,7 @@
 
             // Constraints 9
             this.Model.AddConstraints(
-                this.r.Value
+                this.r.Value.Values
                 .Select(
                     w => constraintElementsAbstractFactory.CreateConstraints9ConstraintElementFactory().Create(
                         w,
