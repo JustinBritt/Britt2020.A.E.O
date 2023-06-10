@@ -7,6 +7,6 @@
     public interface IeIndexElementFactory
     {
         IeIndexElement Create(
-            PositiveInt value);
+            INullableValue<int> value);
     }
 }

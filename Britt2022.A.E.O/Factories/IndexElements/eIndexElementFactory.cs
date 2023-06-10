@@ -19,7 +19,7 @@
         }
 
         public IeIndexElement Create(
-            PositiveInt value)
+            INullableValue<int> value)
         {
             IeIndexElement indexElement = null;
 
