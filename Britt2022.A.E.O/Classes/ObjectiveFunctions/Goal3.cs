@@ -27,7 +27,7 @@
             IIMax IMax)
         {
             OPTANO.Modeling.Optimization.Expression expression = OPTANO.Modeling.Optimization.Expression.Sum(
-                ω.Value
+                ω.Value.Values
                 .Select(
                     x =>
                     (double)w3.Value.Value.Value

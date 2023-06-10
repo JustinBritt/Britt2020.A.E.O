@@ -1,11 +1,10 @@
 ﻿namespace Britt2022.A.E.O.Classes.Indices
 {
-    using System.Collections.Immutable;
-    using System.Linq;
-
     using log4net;
 
     using Hl7.Fhir.Model;
+
+    using NGenerics.DataStructures.Trees;
 
     using Britt2022.A.E.O.Interfaces.IndexElements;
     using Britt2022.A.E.O.Interfaces.Indices;
@@ -15,19 +14,17 @@
         private ILog Log => LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         public ω(
-            ImmutableList<IωIndexElement> value)
+            RedBlackTree<INullableValue<int>, IωIndexElement> value)
         {
             this.Value = value;
         }
 
-        public ImmutableList<IωIndexElement> Value { get; }
+        public RedBlackTree<INullableValue<int>, IωIndexElement> Value { get; }
 
         public IωIndexElement GetElementAt(
             INullableValue<int> value)
         {
-            return this.Value
-                .Where(x => x.Value == value)
-                .SingleOrDefault();
+            return this.Value[value];
         }
     }
 }

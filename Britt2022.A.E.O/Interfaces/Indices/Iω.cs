@@ -1,14 +1,14 @@
 ﻿namespace Britt2022.A.E.O.Interfaces.Indices
 {
-    using System.Collections.Immutable;
-
     using Hl7.Fhir.Model;
 
-    using Britt2022.A.E.O.Interfaces.IndexElements;
+    using NGenerics.DataStructures.Trees;
 
+    using Britt2022.A.E.O.Interfaces.IndexElements;
+    
     public interface Iω
     {
-        ImmutableList<IωIndexElement> Value { get; }
+        RedBlackTree<INullableValue<int>, IωIndexElement> Value { get; }
 
         IωIndexElement GetElementAt(
             INullableValue<int> value);

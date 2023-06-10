@@ -37,7 +37,7 @@
             Iω ω)
         {
             return IMaxFactory.Create(
-                ω.Value
+                ω.Value.Values
                 .Select(
                     w => IMaxResultElementFactory.Create(
                         w,

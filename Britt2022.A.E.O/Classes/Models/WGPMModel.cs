@@ -100,6 +100,7 @@
 
             // ω
             this.ω = indicesAbstractFactory.CreateωFactory().Create(
+                comparersAbstractFactory.CreateNullableValueintComparerFactory().Create(),
                 this.Context.Scenarios
                 .Select(x => indexElementsAbstractFactory.CreateωIndexElementFactory().Create(x))
                 .ToImmutableList());
@@ -110,7 +111,7 @@
             this.ieω = crossJoinsAbstractFactory.CreateieωFactory().Create(
                 this.i.Value.Values
                 .SelectMany(b => this.e.Value.Values, (a, b) => crossJoinElementsAbstractFactory.CreateieCrossJoinElementFactory().Create(a, b))
-                .SelectMany(b => this.ω.Value, (a, b) => crossJoinElementsAbstractFactory.CreateieωCrossJoinElementFactory().Create(a.iIndexElement, a.eIndexElement, b))
+                .SelectMany(b => this.ω.Value.Values, (a, b) => crossJoinElementsAbstractFactory.CreateieωCrossJoinElementFactory().Create(a.iIndexElement, a.eIndexElement, b))
                 .ToImmutableList());
 
             // ij
@@ -131,7 +132,7 @@
                 this.i.Value.Values
                 .SelectMany(b => this.j.Value.Values, (a, b) => crossJoinElementsAbstractFactory.CreateijCrossJoinElementFactory().Create(a, b))
                 .SelectMany(b => this.k.Value, (a, b) => crossJoinElementsAbstractFactory.CreateijkCrossJoinElementFactory().Create(a.iIndexElement, a.jIndexElement, b))
-                .SelectMany(b => this.ω.Value, (a, b) => crossJoinElementsAbstractFactory.CreateijkωCrossJoinElementFactory().Create(a.iIndexElement, a.jIndexElement, a.kIndexElement, b))
+                .SelectMany(b => this.ω.Value.Values, (a, b) => crossJoinElementsAbstractFactory.CreateijkωCrossJoinElementFactory().Create(a.iIndexElement, a.jIndexElement, a.kIndexElement, b))
                 .ToImmutableList());
 
             // ik
@@ -151,13 +152,13 @@
             this.ilω = crossJoinsAbstractFactory.CreateilωFactory().Create(
                 this.i.Value.Values
                 .SelectMany(b => this.l.Value, (a, b) => crossJoinElementsAbstractFactory.CreateilCrossJoinElementFactory().Create(a, b))
-                .SelectMany(b => this.ω.Value, (a, b) => crossJoinElementsAbstractFactory.CreateilωCrossJoinElementFactory().Create(a.iIndexElement, a.lIndexElement, b))
+                .SelectMany(b => this.ω.Value.Values, (a, b) => crossJoinElementsAbstractFactory.CreateilωCrossJoinElementFactory().Create(a.iIndexElement, a.lIndexElement, b))
                 .ToImmutableList());
 
             // iω
             this.iω = crossJoinsAbstractFactory.CreateiωFactory().Create(
                 this.i.Value.Values
-                .SelectMany(b => this.ω.Value, (a, b) => crossJoinElementsAbstractFactory.CreateiωCrossJoinElementFactory().Create(a, b))
+                .SelectMany(b => this.ω.Value.Values, (a, b) => crossJoinElementsAbstractFactory.CreateiωCrossJoinElementFactory().Create(a, b))
                 .ToImmutableList());
 
             // jk
@@ -169,7 +170,7 @@
             // kω
             this.kω = crossJoinsAbstractFactory.CreatekωFactory().Create(
                 this.k.Value
-                .SelectMany(b => this.ω.Value, (a, b) => crossJoinElementsAbstractFactory.CreatekωCrossJoinElementFactory().Create(a, b))
+                .SelectMany(b => this.ω.Value.Values, (a, b) => crossJoinElementsAbstractFactory.CreatekωCrossJoinElementFactory().Create(a, b))
                 .ToImmutableList());
 
             // Parameters
@@ -319,7 +320,7 @@
                 dependenciesAbstractFactory.CreateVariableCollectionFactory().Create(
                     model: this.Model, 
                     indexSet1: this.i.Value.Values, 
-                    indexSet2: this.ω.Value, 
+                    indexSet2: this.ω.Value.Values, 
                     lowerBoundGenerator: (a, b) => 0, 
                     upperBoundGenerator: (a, b) => int.MaxValue, 
                     variableTypeGenerator: (a, b) => VariableType.Integer));
@@ -329,7 +330,7 @@
                 dependenciesAbstractFactory.CreateVariableCollectionFactory().Create(
                     model: this.Model, 
                     indexSet1: this.i.Value.Values, 
-                    indexSet2: this.ω.Value, 
+                    indexSet2: this.ω.Value.Values, 
                     lowerBoundGenerator: (a, b) => 0, 
                     upperBoundGenerator: (a, b) => int.MaxValue, 
                     variableTypeGenerator: (a, b) => VariableType.Integer)); 
@@ -341,7 +342,7 @@
                     indexSet1: this.i.Value.Values, 
                     indexSet2: this.j.Value.Values, 
                     indexSet3: this.k.Value, 
-                    indexSet4: this.ω.Value,
+                    indexSet4: this.ω.Value.Values,
                     lowerBoundGenerator: (a, b, c, d) => 0, 
                     upperBoundGenerator: (a, b, c, d) => double.MaxValue, 
                     variableTypeGenerator: (a, b, c, d) => VariableType.Continuous)); 
@@ -351,7 +352,7 @@
                 dependenciesAbstractFactory.CreateVariableCollectionFactory().Create(
                     model: this.Model, 
                     indexSet1: this.k.Value, 
-                    indexSet2: this.ω.Value, 
+                    indexSet2: this.ω.Value.Values, 
                     lowerBoundGenerator: (a, b) => 0, 
                     upperBoundGenerator: (a, b) => double.MaxValue, 
                     variableTypeGenerator: (a, b) => VariableType.Continuous)); 
@@ -360,7 +361,7 @@
             this.IMax = variablesAbstractFactory.CreateIMaxFactory().Create(
                 dependenciesAbstractFactory.CreateVariableCollectionFactory().Create(
                     model: this.Model, 
-                    indexSet1: this.ω.Value, 
+                    indexSet1: this.ω.Value.Values, 
                     lowerBoundGenerator: (a) => 0,
                     upperBoundGenerator: (a) => double.MaxValue, 
                     variableTypeGenerator: (a) => VariableType.Continuous)); 
@@ -369,7 +370,7 @@
             this.IMin = variablesAbstractFactory.CreateIMinFactory().Create(
                 dependenciesAbstractFactory.CreateVariableCollectionFactory().Create(
                     model: this.Model,
-                    indexSet1: this.ω.Value, 
+                    indexSet1: this.ω.Value.Values, 
                     lowerBoundGenerator: (a) => 0, 
                     upperBoundGenerator: (a) => double.MaxValue, 
                     variableTypeGenerator: (a) => VariableType.Continuous)); 
@@ -510,7 +511,7 @@
 
             foreach (IkIndexElement kIndexElement in this.k.Value)
             {
-                foreach (IωIndexElement ωIndexElement in this.ω.Value)
+                foreach (IωIndexElement ωIndexElement in this.ω.Value.Values)
                 {
                     this.Model.AddConstraint(this.IMax.Value[ωIndexElement] >= this.I.Value[kIndexElement, ωIndexElement]);
 

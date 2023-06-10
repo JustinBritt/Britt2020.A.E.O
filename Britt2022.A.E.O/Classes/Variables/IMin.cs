@@ -37,7 +37,7 @@
             Iω ω)
         {
             return IMinFactory.Create(
-                ω.Value
+                ω.Value.Values
                 .Select(
                     w => IMinResultElementFactory.Create(
                         w,
