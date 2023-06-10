@@ -14,7 +14,7 @@
         public OParameterElement(
             IiIndexElement iIndexElement,
             IeIndexElement eIndexElement,
-            FhirDecimal value)
+            INullableValue<decimal> value)
         {
             this.iIndexElement = iIndexElement;
 
@@ -27,6 +27,6 @@
 
         public IeIndexElement eIndexElement { get; }
 
-        public FhirDecimal Value { get; }
+        public INullableValue<decimal> Value { get; }
     }
 }
