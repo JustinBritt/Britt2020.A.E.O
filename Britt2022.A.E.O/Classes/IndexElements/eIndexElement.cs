@@ -20,5 +20,12 @@
         /// Gets the cluster.
         /// </summary>
         public INullableValue<int> Value { get; }
+
+        public int CompareTo(
+            IeIndexElement other)
+        {
+            return this.Value.Value.Value.CompareTo(
+                other.Value.Value.Value);
+        }
     }
 }
