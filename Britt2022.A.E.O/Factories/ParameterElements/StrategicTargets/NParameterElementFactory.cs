@@ -21,7 +21,7 @@
 
         public INParameterElement Create(
             IiIndexElement iIndexElement,
-            PositiveInt value)
+            INullableValue<int> value)
         {
             INParameterElement parameterElement = null;
 

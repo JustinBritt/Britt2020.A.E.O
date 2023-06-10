@@ -9,6 +9,6 @@
     {
         INParameterElement Create(
             IiIndexElement iIndexElement,
-            PositiveInt value);
+            INullableValue<int> value);
     }
 }
