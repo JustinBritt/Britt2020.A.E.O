@@ -294,12 +294,15 @@
                 .ToImmutableList());
 
             // Ρ(ω)
+            IScenarioProbabilitiesVisitor<INullableValue<int>, INullableValue<decimal>> scenarioProbabilitiesVisitor = new Britt2022.A.E.O.Visitors.Contexts.ScenarioProbabilitiesVisitor<INullableValue<int>, INullableValue<decimal>>(
+                parameterElementsAbstractFactory.CreateΡParameterElementFactory(),
+                this.ω);
+
+            this.Context.ScenarioProbabilities.AcceptVisitor(
+                scenarioProbabilitiesVisitor);
+
             this.Ρ = parametersAbstractFactory.CreateΡFactory().Create(
-                this.Context.ScenarioProbabilities
-                .Select(x => parameterElementsAbstractFactory.CreateΡParameterElementFactory().Create(
-                    this.ω.GetElementAt(x.Key),
-                    x.Value))
-                .ToImmutableList());
+                scenarioProbabilitiesVisitor.RedBlackTree);
 
             // Φ(i, l, ω)
             this.Φ = parametersAbstractFactory.CreateΦFactory().Create(

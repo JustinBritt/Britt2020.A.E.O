@@ -1,11 +1,13 @@
 ﻿namespace Britt2022.A.E.O.Factories.Parameters.ScenarioProbabilities
 {
     using System;
-    using System.Collections.Immutable;
 
     using log4net;
 
+    using NGenerics.DataStructures.Trees;
+
     using Britt2022.A.E.O.Classes.Parameters.ScenarioProbabilities;
+    using Britt2022.A.E.O.Interfaces.IndexElements;
     using Britt2022.A.E.O.Interfaces.ParameterElements.ScenarioProbabilities;
     using Britt2022.A.E.O.Interfaces.Parameters.ScenarioProbabilities;
     using Britt2022.A.E.O.InterfacesFactories.Parameters.ScenarioProbabilities;
@@ -19,7 +21,7 @@
         }
 
         public IΡ Create(
-            ImmutableList<IΡParameterElement> value)
+            RedBlackTree<IωIndexElement, IΡParameterElement> value)
         {
             IΡ parameter = null;
 
