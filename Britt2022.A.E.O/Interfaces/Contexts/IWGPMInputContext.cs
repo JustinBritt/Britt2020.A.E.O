@@ -52,7 +52,7 @@
 
         ImmutableList<Tuple<Organization, Location, FhirBoolean>> SurgeonOperatingRoomAvailabilities { get; }
 
-        ImmutableList<KeyValuePair<PositiveInt, FhirDecimal>> ScenarioProbabilities { get; }
+        RedBlackTree<INullableValue<int>, INullableValue<decimal>> ScenarioProbabilities { get; }
 
         ImmutableList<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>> SurgeonDayScenarioCumulativeNumberPatients { get; }
 
