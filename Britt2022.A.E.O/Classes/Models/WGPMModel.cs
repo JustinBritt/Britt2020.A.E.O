@@ -27,6 +27,7 @@
     using Britt2022.A.E.O.Interfaces.Models;
     using Britt2022.A.E.O.Interfaces.Variables;
     using Britt2022.A.E.O.InterfacesVisitors.Contexts;
+    using NGenerics.DataStructures.Trees;
 
     internal sealed class WGPMModel : IWGPMModel
     {
@@ -315,13 +316,16 @@
                 .ToImmutableList());
 
             // Ω(i, k)
+            ISurgeonDayAvailabilitiesOuterVisitor<Organization, RedBlackTree<FhirDateTime, INullableValue<bool>>> surgeonDayAvailabilitiesOuterVisitor = new Britt2022.A.E.O.Visitors.Contexts.SurgeonDayAvailabilitiesOuterVisitor<Organization, RedBlackTree<FhirDateTime, INullableValue<bool>>>(
+                parameterElementsAbstractFactory.CreateΩParameterElementFactory(),
+                this.i,
+                this.k);
+
+            this.Context.SurgeonDayAvailabilities.AcceptVisitor(
+                surgeonDayAvailabilitiesOuterVisitor);
+
             this.Ω = parametersAbstractFactory.CreateΩFactory().Create(
-                this.Context.SurgeonDayAvailabilities
-                .Select(x => parameterElementsAbstractFactory.CreateΩParameterElementFactory().Create(
-                    this.i.GetElementAt(x.Item1),
-                    this.k.GetElementAt(x.Item2),
-                    x.Item3))
-                .ToImmutableList());
+                surgeonDayAvailabilitiesOuterVisitor.RedBlackTree);
 
             // Variables
 

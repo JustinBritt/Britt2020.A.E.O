@@ -1,11 +1,13 @@
 ﻿namespace Britt2022.A.E.O.Factories.Parameters.PreferencesOfSurgeons
 {
     using System;
-    using System.Collections.Immutable;
 
     using log4net;
 
+    using NGenerics.DataStructures.Trees;
+
     using Britt2022.A.E.O.Classes.Parameters.PreferencesOfSurgeons;
+    using Britt2022.A.E.O.Interfaces.IndexElements;
     using Britt2022.A.E.O.Interfaces.ParameterElements.PreferencesOfSurgeons;
     using Britt2022.A.E.O.Interfaces.Parameters.PreferencesOfSurgeons;
     using Britt2022.A.E.O.InterfacesFactories.Parameters.PreferencesOfSurgeons;
@@ -19,7 +21,7 @@
         }
 
         public IΩ Create(
-            ImmutableList<IΩParameterElement> value)
+            RedBlackTree<IiIndexElement, RedBlackTree<IkIndexElement, IΩParameterElement>> value)
         {
             IΩ parameter = null;
 
