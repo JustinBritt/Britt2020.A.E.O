@@ -286,13 +286,16 @@
                 this.Context.GoalWeight4);
 
             // Π(i, j)
+            ISurgeonOperatingRoomAvailabilitiesOuterVisitor<Organization, RedBlackTree<Location, INullableValue<bool>>> surgeonOperatingRoomAvailabilitiesOuterVisitor = new Britt2022.A.E.O.Visitors.Contexts.SurgeonOperatingRoomAvailabilitiesOuterVisitor<Organization, RedBlackTree<Location, INullableValue<bool>>>(
+                parameterElementsAbstractFactory.CreateΠParameterElementFactory(),
+                this.i,
+                this.j);
+
+            this.Context.SurgeonOperatingRoomAvailabilities.AcceptVisitor(
+                surgeonOperatingRoomAvailabilitiesOuterVisitor);
+
             this.Π = parametersAbstractFactory.CreateΠFactory().Create(
-                this.Context.SurgeonOperatingRoomAvailabilities
-                .Select(x => parameterElementsAbstractFactory.CreateΠParameterElementFactory().Create(
-                    this.i.GetElementAt(x.Item1),
-                    this.j.GetElementAt(x.Item2),
-                    x.Item3))
-                .ToImmutableList());
+                surgeonOperatingRoomAvailabilitiesOuterVisitor.RedBlackTree);
 
             // Ρ(ω)
             IScenarioProbabilitiesVisitor<INullableValue<int>, INullableValue<decimal>> scenarioProbabilitiesVisitor = new Britt2022.A.E.O.Visitors.Contexts.ScenarioProbabilitiesVisitor<INullableValue<int>, INullableValue<decimal>>(
