@@ -114,6 +114,7 @@
 
             this.SurgeonDayScenarioCumulativeNumberPatients = surgeonDayScenarioCumulativeNumberPatients;
 
+            // Ω(i, k)
             this.SurgeonDayAvailabilities = surgeonDayAvailabilities;
         }
 
