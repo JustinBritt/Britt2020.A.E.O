@@ -181,13 +181,16 @@
             // A(i, ω) calculated externally
             if (this.Context != null && this.Context.SurgeonScenarioWeightedAverageSurgicalDurations != null)
             {
+                ISurgeonScenarioWeightedAverageSurgicalDurationsOuterVisitor<Organization, RedBlackTree<INullableValue<int>, Duration>> surgeonScenarioWeightedAverageSurgicalDurationsOuterVisitor = new Britt2022.A.E.O.Visitors.Contexts.SurgeonScenarioWeightedAverageSurgicalDurationsOuterVisitor<Organization, RedBlackTree<INullableValue<int>, Duration>>(
+                    parameterElementsAbstractFactory.CreateAParameterElementFactory(),
+                    this.i,
+                    this.ω);
+
+                this.Context.SurgeonScenarioWeightedAverageSurgicalDurations.AcceptVisitor(
+                    surgeonScenarioWeightedAverageSurgicalDurationsOuterVisitor);
+
                 this.A = parametersAbstractFactory.CreateAFactory().Create(
-                    this.Context.SurgeonScenarioWeightedAverageSurgicalDurations
-                    .Select(x => parameterElementsAbstractFactory.CreateAParameterElementFactory().Create(
-                        this.i.GetElementAt(x.Item1),
-                        this.ω.GetElementAt(x.Item2),
-                        x.Item3))
-                    .ToImmutableList());
+                    surgeonScenarioWeightedAverageSurgicalDurationsOuterVisitor.RedBlackTree);
             }
 
             // B(r)
