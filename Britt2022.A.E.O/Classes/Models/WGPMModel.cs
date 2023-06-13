@@ -236,13 +236,16 @@
             // n(i, ω) calculated externally
             if (this.Context != null && this.Context.SurgeonScenarioMaximumNumberPatients != null)
             {
+                ISurgeonScenarioMaximumNumberPatientsOuterVisitor<Organization, RedBlackTree<INullableValue<int>, INullableValue<int>>> surgeonScenarioMaximumNumberPatientsOuterVisitor = new Britt2022.A.E.O.Visitors.Contexts.SurgeonScenarioMaximumNumberPatientsOuterVisitor<Organization, RedBlackTree<INullableValue<int>, INullableValue<int>>>(
+                    parameterElementsAbstractFactory.CreatenParameterElementFactory(),
+                    this.i,
+                    this.ω);
+
+                this.Context.SurgeonScenarioMaximumNumberPatients.AcceptVisitor(
+                    surgeonScenarioMaximumNumberPatientsOuterVisitor);
+
                 this.n = parametersAbstractFactory.CreatenFactory().Create(
-                    this.Context.SurgeonScenarioMaximumNumberPatients
-                    .Select(x => parameterElementsAbstractFactory.CreatenParameterElementFactory().Create(
-                        this.i.GetElementAt(x.Item1),
-                        this.ω.GetElementAt(x.Item2),
-                        x.Item3))
-                    .ToImmutableList());
+                    surgeonScenarioMaximumNumberPatientsOuterVisitor.RedBlackTree);
             }
 
             // p(i, l, ω)
