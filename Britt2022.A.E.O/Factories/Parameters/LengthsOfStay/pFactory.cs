@@ -1,11 +1,13 @@
 ﻿namespace Britt2022.A.E.O.Factories.Parameters.LengthsOfStay
 {
     using System;
-    using System.Collections.Immutable;
   
     using log4net;
 
+    using NGenerics.DataStructures.Trees;
+
     using Britt2022.A.E.O.Classes.Parameters.LengthsOfStay;
+    using Britt2022.A.E.O.Interfaces.IndexElements;
     using Britt2022.A.E.O.Interfaces.Parameters.LengthsOfStay;
     using Britt2022.A.E.O.Interfaces.ParameterElements.LengthsOfStay;
     using Britt2022.A.E.O.InterfacesFactories.Parameters.LengthsOfStay;
@@ -19,7 +21,7 @@
         }
 
         public Ip Create(
-            ImmutableList<IpParameterElement> value)
+            RedBlackTree<IiIndexElement, RedBlackTree<IlIndexElement, RedBlackTree<IωIndexElement, IpParameterElement>>> value)
         {
             Ip parameter = null;
 

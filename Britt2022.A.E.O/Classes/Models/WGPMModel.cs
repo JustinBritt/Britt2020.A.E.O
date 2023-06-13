@@ -28,6 +28,7 @@
     using Britt2022.A.E.O.Interfaces.Variables;
     using Britt2022.A.E.O.InterfacesVisitors.Contexts;
     using NGenerics.DataStructures.Trees;
+    using Britt2022.A.E.O.Visitors.Contexts;
 
     internal sealed class WGPMModel : IWGPMModel
     {
@@ -249,14 +250,17 @@
             }
 
             // p(i, l, ω)
+            ISurgeonDayScenarioLengthOfStayProbabilitiesOuterVisitor<Organization, RedBlackTree<INullableValue<int>, RedBlackTree<INullableValue<int>, INullableValue<decimal>>>> surgeonDayScenarioLengthOfStayProbabilitiesOuterVisitor = new Britt2022.A.E.O.Visitors.Contexts.SurgeonDayScenarioLengthOfStayProbabilitiesOuterVisitor<Organization, RedBlackTree<INullableValue<int>, RedBlackTree<INullableValue<int>, INullableValue<decimal>>>>(
+                parameterElementsAbstractFactory.CreatepParameterElementFactory(),
+                this.i,
+                this.l,
+                this.ω);
+
+            this.Context.SurgeonDayScenarioLengthOfStayProbabilities.AcceptVisitor(
+                surgeonDayScenarioLengthOfStayProbabilitiesOuterVisitor);
+
             this.p = parametersAbstractFactory.CreatepFactory().Create(
-                this.Context.SurgeonDayScenarioLengthOfStayProbabilities
-                .Select(x => parameterElementsAbstractFactory.CreatepParameterElementFactory().Create(
-                    this.i.GetElementAt(x.Item1),
-                    this.l.GetElementAt(x.Item2),
-                    this.ω.GetElementAt(x.Item3),
-                    x.Item4))
-                .ToImmutableList());
+                surgeonDayScenarioLengthOfStayProbabilitiesOuterVisitor.RedBlackTree);
 
             // S(r)
             ISurgicalSpecialtiesVisitor<Organization, ImmutableSortedSet<Organization>> surgicalSpecialtiesVisitor = new Britt2022.A.E.O.Visitors.Contexts.SurgicalSpecialtiesVisitor<Organization, ImmutableSortedSet<Organization>>(
