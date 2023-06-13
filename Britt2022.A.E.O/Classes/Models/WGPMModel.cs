@@ -319,14 +319,17 @@
                 scenarioProbabilitiesVisitor.RedBlackTree);
 
             // Φ(i, l, ω)
+            ISurgeonDayScenarioCumulativeNumberPatientsOuterVisitor<Organization, RedBlackTree<INullableValue<int>, RedBlackTree<INullableValue<int>, INullableValue<decimal>>>> surgeonDayScenarioCumulativeNumberPatientsOuterVisitor = new Britt2022.A.E.O.Visitors.Contexts.SurgeonDayScenarioCumulativeNumberPatientsOuterVisitor<Organization, RedBlackTree<INullableValue<int>, RedBlackTree<INullableValue<int>, INullableValue<decimal>>>>(
+                parameterElementsAbstractFactory.CreateΦParameterElementFactory(),
+                this.i,
+                this.l,
+                this.ω);
+
+            this.Context.SurgeonDayScenarioCumulativeNumberPatients.AcceptVisitor(
+                surgeonDayScenarioCumulativeNumberPatientsOuterVisitor);
+
             this.Φ = parametersAbstractFactory.CreateΦFactory().Create(
-                this.Context.SurgeonDayScenarioCumulativeNumberPatients
-                .Select(x => parameterElementsAbstractFactory.CreateΦParameterElementFactory().Create(
-                    this.i.GetElementAt(x.Item1),
-                    this.l.GetElementAt(x.Item2),
-                    this.ω.GetElementAt(x.Item3),
-                    x.Item4))
-                .ToImmutableList());
+                surgeonDayScenarioCumulativeNumberPatientsOuterVisitor.RedBlackTree);
 
             // Ω(i, k)
             ISurgeonDayAvailabilitiesOuterVisitor<Organization, RedBlackTree<FhirDateTime, INullableValue<bool>>> surgeonDayAvailabilitiesOuterVisitor = new Britt2022.A.E.O.Visitors.Contexts.SurgeonDayAvailabilitiesOuterVisitor<Organization, RedBlackTree<FhirDateTime, INullableValue<bool>>>(
@@ -519,7 +522,8 @@
                         this.k,
                         this.l,
                         this.ilj,
-                        parametersAbstractFactory.CreateΦFactory().Create(this.Φ.Value.Where(y => y.ωIndexElement == w.ωIndexElement).ToImmutableList()),
+                        this.Φ,
+                        // parametersAbstractFactory.CreateΦFactory().Create(this.Φ.Value.Where(y => y.ωIndexElement == w.ωIndexElement).ToImmutableList()),
                         this.I,
                         this.x)
                     .Value));
