@@ -32,11 +32,9 @@
             IiIndexElement iIndexElement,
             IrIndexElement rIndexElement)
         {
-            return this.Value
-                .Where(x => x.rIndexElement == rIndexElement)
-                .Select(x => x.Value)
-                .SingleOrDefault()
-                .Contains(iIndexElement);
+            return this.RedBlackTree[rIndexElement]
+                .Contains(
+                iIndexElement);
         }
     }
 }
