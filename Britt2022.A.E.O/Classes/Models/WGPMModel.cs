@@ -195,12 +195,15 @@
             }
 
             // B(r)
+            ISurgicalSpecialtyStrategicTargetNumberTimeBlocksVisitor<Organization, INullableValue<int>> surgicalSpecialtyStrategicTargetNumberTimeBlocksVisitor = new Britt2022.A.E.O.Visitors.Contexts.SurgicalSpecialtyStrategicTargetNumberTimeBlocksVisitor<Organization, INullableValue<int>>(
+                parameterElementsAbstractFactory.CreateBParameterElementFactory(),
+                this.r);
+
+            this.Context.SurgicalSpecialtyStrategicTargetNumberTimeBlocks.AcceptVisitor(
+                surgicalSpecialtyStrategicTargetNumberTimeBlocksVisitor);
+
             this.B = parametersAbstractFactory.CreateBFactory().Create(
-                this.Context.SurgicalSpecialtyStrategicTargetNumberTimeBlocks
-                .Select(x => parameterElementsAbstractFactory.CreateBParameterElementFactory().Create(
-                    this.r.GetElementAt(x.Key),
-                    x.Value))
-                .ToImmutableList());
+                surgicalSpecialtyStrategicTargetNumberTimeBlocksVisitor.RedBlackTree);
 
             // H(i)
             this.H = parametersAbstractFactory.CreateHFactory().Create(
