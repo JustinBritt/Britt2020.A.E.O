@@ -211,12 +211,15 @@
                 .ToImmutableList());
 
             // h(i)
+            ISurgeonMaximumLengthsOfStayVisitor<Organization, INullableValue<int>> surgeonMaximumLengthsOfStayVisitor = new Britt2022.A.E.O.Visitors.Contexts.SurgeonMaximumLengthsOfStayVisitor<Organization, INullableValue<int>>(
+                parameterElementsAbstractFactory.CreatehParameterElementFactory(),
+                this.i);
+
+            this.Context.SurgeonMaximumLengthsOfStay.AcceptVisitor(
+                surgeonMaximumLengthsOfStayVisitor);
+
             this.h = parametersAbstractFactory.CreatehFactory().Create(
-                this.Context.SurgeonMaximumLengthsOfStay
-                .Select(x => parameterElementsAbstractFactory.CreatehParameterElementFactory().Create(
-                    this.i.GetElementAt(x.Key),
-                    x.Value))
-                .ToImmutableList());
+                surgeonMaximumLengthsOfStayVisitor.RedBlackTree);
 
             // L(i)
             this.L = parametersAbstractFactory.CreateLFactory().Create(
