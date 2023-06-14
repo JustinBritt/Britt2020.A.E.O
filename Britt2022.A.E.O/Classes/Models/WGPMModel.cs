@@ -228,12 +228,15 @@
                 surgeonMaximumLengthsOfStayVisitor.RedBlackTree);
 
             // L(i)
+            ISurgeonMinimumNumberTimeBlocksVisitor<Organization, INullableValue<int>> surgeonMinimumNumberTimeBlocksVisitor = new Britt2022.A.E.O.Visitors.Contexts.SurgeonMinimumNumberTimeBlocksVisitor<Organization, INullableValue<int>>(
+                parameterElementsAbstractFactory.CreateLParameterElementFactory(),
+                this.i);
+
+            this.Context.SurgeonMinimumNumberTimeBlocks.AcceptVisitor(
+                surgeonMinimumNumberTimeBlocksVisitor);
+
             this.L = parametersAbstractFactory.CreateLFactory().Create(
-                this.Context.SurgeonMinimumNumberTimeBlocks
-                .Select(x => parameterElementsAbstractFactory.CreateLParameterElementFactory().Create(
-                    this.i.GetElementAt(x.Key),
-                    x.Value))
-                .ToImmutableList());
+                surgeonMinimumNumberTimeBlocksVisitor.RedBlackTree);
 
             // N(i)
             this.N = parametersAbstractFactory.CreateNFactory().Create(
