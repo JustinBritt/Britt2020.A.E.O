@@ -19,11 +19,11 @@
         public IObjectiveValue Create(
             decimal value)
         {
-            IObjectiveValue result = null;
+            IObjectiveValue instance = null;
 
             try
             {
-                result = new ObjectiveValue(
+                instance = new ObjectiveValue(
                     value);
             }
             catch (Exception exception)
@@ -33,7 +33,7 @@
                     exception);
             }
 
-            return result;
+            return instance;
         }
     }
 }

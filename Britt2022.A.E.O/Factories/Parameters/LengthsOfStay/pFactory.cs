@@ -23,11 +23,11 @@
         public Ip Create(
             RedBlackTree<IiIndexElement, RedBlackTree<IlIndexElement, RedBlackTree<IωIndexElement, IpParameterElement>>> value)
         {
-            Ip parameter = null;
+            Ip instance = null;
 
             try
             {
-                parameter = new p(
+                instance = new p(
                     value);
             }
             catch (Exception exception)
@@ -37,7 +37,7 @@
                     exception);
             }
 
-            return parameter;
+            return instance;
         }
     }
 }

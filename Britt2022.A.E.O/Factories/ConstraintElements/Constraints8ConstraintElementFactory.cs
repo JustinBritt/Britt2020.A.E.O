@@ -31,11 +31,11 @@
             II I,
             Ix x)
         {
-            IConstraints8ConstraintElement constraintElement = null;
+            IConstraints8ConstraintElement instance = null;
 
             try
             {
-                constraintElement = new Constraints8ConstraintElement(
+                instance = new Constraints8ConstraintElement(
                     kIndexElement,
                     ωIndexElement,
                     k,
@@ -52,7 +52,7 @@
                     exception);
             }
 
-            return constraintElement;
+            return instance;
         }
     }
 }

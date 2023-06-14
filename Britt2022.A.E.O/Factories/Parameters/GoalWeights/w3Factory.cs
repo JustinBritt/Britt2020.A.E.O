@@ -21,11 +21,11 @@
         public Iw3 Create(
             INullableValue<decimal> value)
         {
-            Iw3 parameter = null;
+            Iw3 instance = null;
 
             try
             {
-                parameter = new w3(
+                instance = new w3(
                     value);
             }
             catch (Exception exception)
@@ -35,7 +35,7 @@
                     exception);
             }
 
-            return parameter;
+            return instance;
         }
     }
 }

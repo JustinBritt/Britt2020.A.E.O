@@ -26,11 +26,11 @@
             IΩ Ω,
             Ix x)
         {
-            IConstraints2ConstraintElement constraintElement = null;
+            IConstraints2ConstraintElement instance = null;
 
             try
             {
-                constraintElement = new Constraints2ConstraintElement(
+                instance = new Constraints2ConstraintElement(
                     jIndexElement,
                     ik,
                     Ω,
@@ -43,7 +43,7 @@
                     exception);
             }
 
-            return constraintElement;
+            return instance;
         }
     }
 }

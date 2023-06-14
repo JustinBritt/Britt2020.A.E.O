@@ -21,11 +21,11 @@
         public IIMax Create(
             ImmutableList<IIMaxResultElement> value)
         {
-            IIMax result = null;
+            IIMax instance = null;
 
             try
             {
-                result = new IMax(
+                instance = new IMax(
                     value);
             }
             catch (Exception exception)
@@ -35,7 +35,7 @@
                     exception);
             }
 
-            return result;
+            return instance;
         }
     }
 }

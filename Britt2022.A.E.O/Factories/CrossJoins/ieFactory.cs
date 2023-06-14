@@ -21,11 +21,11 @@
         public Iie Create(
             ImmutableList<IieCrossJoinElement> value)
         {
-            Iie crossJoin = null;
+            Iie instance = null;
 
             try
             {
-                crossJoin = new ie(
+                instance = new ie(
                     value);
             }
             catch (Exception exception)
@@ -35,7 +35,7 @@
                     exception);
             }
 
-            return crossJoin;
+            return instance;
         }
     }
 }

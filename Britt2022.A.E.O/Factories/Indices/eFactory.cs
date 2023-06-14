@@ -27,11 +27,11 @@
             INullableValueintComparer nullableValueintComparer,
             ImmutableList<IeIndexElement> value)
         {
-            Ie index = null;
+            Ie instance = null;
 
             try
             {
-                index = new e(
+                instance = new e(
                     this.CreateRedBlackTree(
                         nullableValueintComparer,
                         value));
@@ -43,7 +43,7 @@
                     exception);
             }
 
-            return index;
+            return instance;
         }
 
         private RedBlackTree<INullableValue<int>, IeIndexElement> CreateRedBlackTree(

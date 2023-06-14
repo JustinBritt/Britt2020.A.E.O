@@ -21,11 +21,11 @@
         public IjIndexElement Create(
             Location value)
         {
-            IjIndexElement indexElement = null;
+            IjIndexElement instance = null;
 
             try
             {
-                indexElement = new jIndexElement(
+                instance = new jIndexElement(
                     value);
             }
             catch (Exception exception)
@@ -35,7 +35,7 @@
                     exception);
             }
 
-            return indexElement;
+            return instance;
         }
     }
 }

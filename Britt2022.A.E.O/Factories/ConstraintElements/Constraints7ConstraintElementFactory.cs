@@ -30,11 +30,11 @@
             Id2Minus d2Minus,
             Ix x)
         {
-            IConstraints7ConstraintElement constraintElement = null;
+            IConstraints7ConstraintElement instance = null;
 
             try
             {
-                constraintElement = new Constraints7ConstraintElement(
+                instance = new Constraints7ConstraintElement(
                     iIndexElement,
                     jIndexElement,
                     kIndexElement,
@@ -52,7 +52,7 @@
                     exception);
             }
 
-            return constraintElement;
+            return instance;
         }
     }
 }

@@ -22,11 +22,11 @@
         public IIMax Create(
             VariableCollection<IωIndexElement> value)
         {
-            IIMax variable = null;
+            IIMax instance = null;
 
             try
             {
-                variable = new IMax(
+                instance = new IMax(
                     value);
             }
             catch (Exception exception)
@@ -36,7 +36,7 @@
                     exception);
             }
 
-            return variable;
+            return instance;
         }
     }
 }

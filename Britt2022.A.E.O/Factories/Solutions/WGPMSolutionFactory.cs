@@ -18,11 +18,11 @@
 
         public IWGPMSolution Create()
         {
-            IWGPMSolution solution = null;
+            IWGPMSolution instance = null;
 
             try
             {
-                solution = new WGPMSolution();
+                instance = new WGPMSolution();
             }
             catch (Exception exception)
             {
@@ -31,7 +31,7 @@
                     exception);
             }
 
-            return solution;
+            return instance;
         }
     }
 }

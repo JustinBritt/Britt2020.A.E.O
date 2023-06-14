@@ -21,11 +21,11 @@
             IiIndexElement iIndexElement,
             IkIndexElement kIndexElement)
         {
-            IikCrossJoinElement crossJoinElement = null;
+            IikCrossJoinElement instance = null;
 
             try
             {
-                crossJoinElement = new ikCrossJoinElement(
+                instance = new ikCrossJoinElement(
                     iIndexElement,
                     kIndexElement);
             }
@@ -36,7 +36,7 @@
                     exception);
             }
 
-            return crossJoinElement;
+            return instance;
         }
     }
 }

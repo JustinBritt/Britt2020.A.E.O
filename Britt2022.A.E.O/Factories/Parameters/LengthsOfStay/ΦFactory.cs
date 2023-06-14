@@ -23,11 +23,11 @@
         public IΦ Create(
             RedBlackTree<IiIndexElement, RedBlackTree<IlIndexElement, RedBlackTree<IωIndexElement, IΦParameterElement>>> value)
         {
-            IΦ parameter = null;
+            IΦ instance = null;
 
             try
             {
-                parameter = new Φ(
+                instance = new Φ(
                     value);
             }
             catch (Exception exception)
@@ -37,7 +37,7 @@
                     exception);
             }
 
-            return parameter;
+            return instance;
         }
     }
 }

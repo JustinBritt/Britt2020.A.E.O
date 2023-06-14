@@ -26,11 +26,11 @@
             IΠ Π,
             Ix x)
         {
-            IConstraints1ConstraintElement constraintElement = null;
+            IConstraints1ConstraintElement instance = null;
 
             try
             {
-                constraintElement = new Constraints1ConstraintElement(
+                instance = new Constraints1ConstraintElement(
                     kIndexElement,
                     ij,
                     Π,
@@ -43,7 +43,7 @@
                     exception);
             }
 
-            return constraintElement;
+            return instance;
         }
     }
 }

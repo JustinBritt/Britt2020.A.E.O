@@ -25,11 +25,11 @@
             IωIndexElement ωIndexElement,
             INullableValue<decimal> value)
         {
-            IΦParameterElement parameterElement = null;
+            IΦParameterElement instance = null;
 
             try
             {
-                parameterElement = new ΦParameterElement(
+                instance = new ΦParameterElement(
                     iIndexElement,
                     lIndexElement,
                     ωIndexElement,
@@ -42,7 +42,7 @@
                     exception);
             }
 
-            return parameterElement;
+            return instance;
         }
     }
 }

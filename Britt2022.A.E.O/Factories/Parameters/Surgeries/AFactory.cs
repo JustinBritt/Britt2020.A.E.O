@@ -23,11 +23,11 @@
         public IA Create(
             RedBlackTree<IiIndexElement, RedBlackTree<IωIndexElement, IAParameterElement>> value)
         {
-            IA parameter = null;
+            IA instance = null;
 
             try
             {
-                parameter = new A(
+                instance = new A(
                     value);
             }
             catch (Exception exception)
@@ -37,7 +37,7 @@
                     exception);
             }
 
-            return parameter;
+            return instance;
         }
     }
 }

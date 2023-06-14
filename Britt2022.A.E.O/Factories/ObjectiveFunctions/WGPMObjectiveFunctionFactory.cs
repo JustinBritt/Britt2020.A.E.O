@@ -24,11 +24,11 @@
             IGoal3 goal3,
             IGoal4 goal4)
         {
-            IWGPMObjectiveFunction objectiveFunction = null;
+            IWGPMObjectiveFunction instance = null;
             
             try
             {
-                objectiveFunction = new WGPMObjectiveFunction(
+                instance = new WGPMObjectiveFunction(
                     objectiveFactory,
                     goal1,
                     goal2,
@@ -42,7 +42,7 @@
                     exception);
             }
 
-            return objectiveFunction;
+            return instance;
         }
     }
 }

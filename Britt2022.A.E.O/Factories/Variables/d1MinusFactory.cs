@@ -22,11 +22,11 @@
         public Id1Minus Create(
             VariableCollection<IiIndexElement, IωIndexElement> value)
         {
-            Id1Minus variable = null;
+            Id1Minus instance = null;
 
             try
             {
-                variable = new d1Minus(
+                instance = new d1Minus(
                     value);
             }
             catch (Exception exception)
@@ -36,7 +36,7 @@
                     exception);
             }
 
-            return variable;
+            return instance;
         }
     }
 }

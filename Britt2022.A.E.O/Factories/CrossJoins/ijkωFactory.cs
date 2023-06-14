@@ -21,11 +21,11 @@
         public Iijkω Create(
             ImmutableList<IijkωCrossJoinElement> value)
         {
-            ijkω crossJoin = null;
+            Iijkω instance = null;
 
             try
             {
-                crossJoin = new ijkω(
+                instance = new ijkω(
                     value);
             }
             catch (Exception exception)
@@ -35,7 +35,7 @@
                     exception);
             }
 
-            return crossJoin;
+            return instance;
         }
     }
 }

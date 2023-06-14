@@ -23,11 +23,11 @@
             IiIndexElement iIndexElement,
             INullableValue<int> value)
         {
-            IhParameterElement parameterElement = null;
+            IhParameterElement instance = null;
 
             try
             {
-                parameterElement = new hParameterElement(
+                instance = new hParameterElement(
                     iIndexElement,
                     value);
             }
@@ -38,7 +38,7 @@
                     exception);
             }
 
-            return parameterElement;
+            return instance;
         }
     }
 }

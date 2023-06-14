@@ -21,11 +21,11 @@
         public ID Create(
             ImmutableList<IDParameterElement> value)
         {
-            ID parameter = null;
+            ID instance = null;
 
             try
             {
-                parameter = new D(
+                instance = new D(
                     value);
             }
             catch (Exception exception)
@@ -35,7 +35,7 @@
                     exception);
             }
 
-            return parameter;
+            return instance;
         }
     }
 }

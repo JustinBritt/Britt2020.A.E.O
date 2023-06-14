@@ -21,11 +21,11 @@
             IωIndexElement ωIndexElement,
             decimal value)
         {
-            IIMinResultElement resultElement = null;
+            IIMinResultElement instance = null;
 
             try
             {
-                resultElement = new IMinResultElement(
+                instance = new IMinResultElement(
                     ωIndexElement,
                     value);
             }
@@ -36,7 +36,7 @@
                     exception);
             }
 
-            return resultElement;
+            return instance;
         }
     }
 }

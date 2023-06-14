@@ -21,11 +21,11 @@
         public IConstraints8 Create(
             ImmutableList<IConstraints8ConstraintElement> value)
         {
-            IConstraints8 constraint = null;
+            IConstraints8 instance = null;
 
             try
             {
-                constraint = new Constraints8(
+                instance = new Constraints8(
                     value);
             }
             catch (Exception exception)
@@ -35,7 +35,7 @@
                     exception);
             }
 
-            return constraint;
+            return instance;
         }
     }
 }

@@ -21,11 +21,11 @@
         public Id1Minus Create(
             ImmutableList<Id1MinusResultElement> value)
         {
-            Id1Minus result = null;
+            Id1Minus instance = null;
 
             try
             {
-                result = new d1Minus(
+                instance = new d1Minus(
                     value);
             }
             catch (Exception exception)
@@ -35,7 +35,7 @@
                     exception);
             }
 
-            return result;
+            return instance;
         }
     }
 }

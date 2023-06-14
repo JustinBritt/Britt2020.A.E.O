@@ -21,11 +21,11 @@
         public IrIndexElement Create(
             Organization value)
         {
-            IrIndexElement indexElement = null;
+            IrIndexElement instance = null;
 
             try
             {
-                indexElement = new rIndexElement(
+                instance = new rIndexElement(
                     value);
             }
             catch (Exception exception)
@@ -35,7 +35,7 @@
                     exception);
             }
 
-            return indexElement;
+            return instance;
         }
     }
 }

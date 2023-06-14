@@ -22,11 +22,11 @@
         public Ix Create(
             VariableCollection<IiIndexElement, IjIndexElement, IkIndexElement> value)
         {
-            Ix variable = null;
+            Ix instance = null;
 
             try
             {
-                variable = new x(
+                instance = new x(
                     value);
             }
             catch (Exception exception)
@@ -36,7 +36,7 @@
                     exception);
             }
 
-            return variable;
+            return instance;
         }
     }
 }

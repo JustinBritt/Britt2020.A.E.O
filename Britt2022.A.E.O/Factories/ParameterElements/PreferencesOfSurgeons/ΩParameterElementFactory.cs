@@ -24,11 +24,11 @@
             IkIndexElement kIndexElement,
             INullableValue<bool> value)
         {
-            IΩParameterElement parameterElement = null;
+            IΩParameterElement instance = null;
 
             try
             {
-                parameterElement = new ΩParameterElement(
+                instance = new ΩParameterElement(
                     iIndexElement,
                     kIndexElement,
                     value);
@@ -40,7 +40,7 @@
                     exception);
             }
 
-            return parameterElement;
+            return instance;
         }
     }
 }

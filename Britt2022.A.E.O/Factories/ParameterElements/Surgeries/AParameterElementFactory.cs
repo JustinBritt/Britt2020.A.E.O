@@ -24,11 +24,11 @@
             IωIndexElement ωIndexElement,
             Duration value)
         {
-            IAParameterElement parameterElement = null;
+            IAParameterElement instance = null;
 
             try
             {
-                parameterElement = new AParameterElement(
+                instance = new AParameterElement(
                     iIndexElement,
                     ωIndexElement,
                     value);
@@ -40,7 +40,7 @@
                     exception);
             }
 
-            return parameterElement;
+            return instance;
         }
     }
 }

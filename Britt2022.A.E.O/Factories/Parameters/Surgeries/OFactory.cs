@@ -21,11 +21,11 @@
         public IO Create(
             ImmutableList<IOParameterElement> value)
         {
-            IO parameter = null;
+            IO instance = null;
 
             try
             {
-                parameter = new O(
+                instance = new O(
                     value);
             }
             catch (Exception exception)
@@ -35,7 +35,7 @@
                     exception);
             }
 
-            return parameter;
+            return instance;
         }
     }
 }

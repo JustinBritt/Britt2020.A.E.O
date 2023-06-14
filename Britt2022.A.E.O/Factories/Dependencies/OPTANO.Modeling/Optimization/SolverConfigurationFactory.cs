@@ -20,11 +20,11 @@
         public SolverConfiguration Create<T>()
             where T : global::OPTANO.Modeling.Optimization.SolverConfiguration
         {
-            global::OPTANO.Modeling.Optimization.SolverConfiguration solverConfiguration = null;
+            global::OPTANO.Modeling.Optimization.SolverConfiguration instance = null;
 
             try
             {
-                solverConfiguration = (SolverConfiguration)Activator.CreateInstance(
+                instance = (SolverConfiguration)Activator.CreateInstance(
                     this.GetSolverConfigurationType<T>());
             }
             catch (Exception exception)
@@ -34,7 +34,7 @@
                     exception);
             }
 
-            return solverConfiguration;
+            return instance;
         }
 
         private Type GetSolverConfigurationType<T>()

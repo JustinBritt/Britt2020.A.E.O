@@ -24,11 +24,11 @@
             IjIndexElement jIndexElement,
             INullableValue<bool> value)
         {
-            IΠParameterElement parameterElement = null;
+            IΠParameterElement instance = null;
 
             try
             {
-                parameterElement = new ΠParameterElement(
+                instance = new ΠParameterElement(
                     iIndexElement,
                     jIndexElement,
                     value);
@@ -40,7 +40,7 @@
                     exception);
             }
 
-            return parameterElement;
+            return instance;
         }
     }
 }

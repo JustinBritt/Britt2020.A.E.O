@@ -21,11 +21,11 @@
         public Ix Create(
             ImmutableList<IxResultElement> value)
         {
-            Ix result = null;
+            Ix instance = null;
 
             try
             {
-                result = new x(
+                instance = new x(
                     value);
             }
             catch (Exception exception)
@@ -35,7 +35,7 @@
                     exception);
             }
 
-            return result;
+            return instance;
         }
     }
 }

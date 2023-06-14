@@ -22,11 +22,11 @@
             IωIndexElement ωIndexElement,
             int value)
         {
-            Id1PlusResultElement resultElement = null;
+            Id1PlusResultElement instance = null;
 
             try
             {
-                resultElement = new d1PlusResultElement(
+                instance = new d1PlusResultElement(
                     iIndexElement,
                     ωIndexElement,
                     value);
@@ -38,7 +38,7 @@
                     exception);
             }
 
-            return resultElement;
+            return instance;
         }
     }
 }

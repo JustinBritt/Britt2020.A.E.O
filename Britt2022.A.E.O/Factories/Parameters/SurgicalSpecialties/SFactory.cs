@@ -25,11 +25,11 @@
             RedBlackTree<IrIndexElement, ImmutableList<IiIndexElement>> redBlackTree,
             ImmutableList<ISParameterElement> value)
         {
-            IS parameter = null;
+            IS instance = null;
 
             try
             {
-                parameter = new S(
+                instance = new S(
                     redBlackTree,
                     value);
             }
@@ -40,7 +40,7 @@
                     exception);
             }
 
-            return parameter;
+            return instance;
         }
     }
 }

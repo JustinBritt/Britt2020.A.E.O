@@ -25,11 +25,11 @@
             Ij j,
             Ix x)
         {
-            IConstraints4ConstraintElement constraintElement = null;
+            IConstraints4ConstraintElement instance = null;
 
             try
             {
-                constraintElement = new Constraints4ConstraintElement(
+                instance = new Constraints4ConstraintElement(
                     iIndexElement,
                     kIndexElement,
                     j,
@@ -42,7 +42,7 @@
                     exception);
             }
 
-            return constraintElement;
+            return instance;
         }
     }
 }

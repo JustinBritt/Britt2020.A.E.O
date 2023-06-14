@@ -25,11 +25,11 @@
             IωIndexElement ωIndexElement,
             INullableValue<decimal> value)
         {
-            IpParameterElement parameterElement = null;
+            IpParameterElement instance = null;
 
             try
             {
-                parameterElement = new pParameterElement(
+                instance = new pParameterElement(
                     iIndexElement,
                     lIndexElement,
                     ωIndexElement,
@@ -42,7 +42,7 @@
                     exception);
             }
 
-            return parameterElement;
+            return instance;
         }
     }
 }

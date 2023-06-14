@@ -28,11 +28,11 @@
             IΡ Ρ,
             Id2Minus d2Minus)
         {
-            IGoal2 objectiveFunction = null;
+            IGoal2 instance = null;
 
             try
             {
-                objectiveFunction = new Goal2(
+                instance = new Goal2(
                     objectiveFactory,
                     ijkω,
                     w2,
@@ -46,7 +46,7 @@
                     exception);
             }
 
-            return objectiveFunction;
+            return instance;
         }
     }
 }

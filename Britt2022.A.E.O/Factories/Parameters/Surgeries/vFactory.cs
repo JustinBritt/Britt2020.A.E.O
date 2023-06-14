@@ -21,11 +21,11 @@
         public Iv Create(
             Duration value)
         {
-            Iv parameter = null;
+            Iv instance = null;
 
             try
             {
-                parameter = new v(
+                instance = new v(
                     value);
             }
             catch (Exception exception)
@@ -35,7 +35,7 @@
                     exception);
             }
 
-            return parameter;
+            return instance;
         }
     }
 }

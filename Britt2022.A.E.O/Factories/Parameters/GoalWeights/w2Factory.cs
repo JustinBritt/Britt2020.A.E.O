@@ -21,11 +21,11 @@
         public Iw2 Create(
             INullableValue<decimal> value)
         {
-            Iw2 parameter = null;
+            Iw2 instance = null;
 
             try
             {
-                parameter = new w2(
+                instance = new w2(
                     value);
             }
             catch (Exception exception)
@@ -35,7 +35,7 @@
                     exception);
             }
 
-            return parameter;
+            return instance;
         }
     }
 }

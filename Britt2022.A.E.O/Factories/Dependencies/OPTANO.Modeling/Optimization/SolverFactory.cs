@@ -21,11 +21,11 @@
         public ISolver Create(
             ISolverConfiguration solverConfiguration)
         {
-            ISolver solver = null;
+            ISolver instance = null;
 
             try
             {
-                solver = (ISolver)Activator.CreateInstance(
+                instance = (ISolver)Activator.CreateInstance(
                     this.GetSolverType(
                         solverConfiguration),
                     solverConfiguration.Value);
@@ -37,7 +37,7 @@
                     exception);
             }
 
-            return solver;
+            return instance;
         }
 
         private Type GetSolverType(

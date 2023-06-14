@@ -22,11 +22,11 @@
         public IIMin Create(
             VariableCollection<IωIndexElement> value)
         {
-            IIMin variable = null;
+            IIMin instance = null;
 
             try
             {
-                variable = new IMin(
+                instance = new IMin(
                     value);
             }
             catch (Exception exception)
@@ -36,7 +36,7 @@
                     exception);
             }
 
-            return variable;
+            return instance;
         }
     }
 }

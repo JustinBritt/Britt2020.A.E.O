@@ -21,11 +21,11 @@
         public IIMin Create(
             ImmutableList<IIMinResultElement> value)
         {
-            IIMin result = null;
+            IIMin instance = null;
 
             try
             {
-                result = new IMin(
+                instance = new IMin(
                     value);
             }
             catch (Exception exception)
@@ -35,7 +35,7 @@
                     exception);
             }
 
-            return result;
+            return instance;
         }
     }
 }

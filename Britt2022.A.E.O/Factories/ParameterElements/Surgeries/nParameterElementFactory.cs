@@ -24,11 +24,11 @@
             IωIndexElement ωIndexElement,
             INullableValue<int> value)
         {
-            InParameterElement parameterElement = null;
+            InParameterElement instance = null;
 
             try
             {
-                parameterElement = new nParameterElement(
+                instance = new nParameterElement(
                     iIndexElement,
                     ωIndexElement,
                     value);
@@ -40,7 +40,7 @@
                     exception);
             }
 
-            return parameterElement;
+            return instance;
         }
     }
 }

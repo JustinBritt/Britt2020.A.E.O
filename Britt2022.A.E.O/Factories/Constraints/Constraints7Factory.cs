@@ -21,11 +21,11 @@
         public IConstraints7 Create(
             ImmutableList<IConstraints7ConstraintElement> value)
         {
-            IConstraints7 constraint = null;
+            IConstraints7 instance = null;
 
             try
             {
-                constraint = new Constraints7(
+                instance = new Constraints7(
                     value);
             }
             catch (Exception exception)
@@ -35,7 +35,7 @@
                     exception);
             }
 
-            return constraint;
+            return instance;
         }
     }
 }

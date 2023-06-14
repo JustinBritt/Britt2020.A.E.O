@@ -21,11 +21,11 @@
         public IlIndexElement Create(
             INullableValue<int> value)
         {
-            IlIndexElement indexElement = null;
+            IlIndexElement instance = null;
 
             try
             {
-                indexElement = new lIndexElement(
+                instance = new lIndexElement(
                     value);
             }
             catch (Exception exception)
@@ -35,7 +35,7 @@
                     exception);
             }
 
-            return indexElement;
+            return instance;
         }
     }
 }

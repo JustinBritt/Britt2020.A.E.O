@@ -28,11 +28,11 @@
             IS S,
             Ix x)
         {
-            IConstraints9ConstraintElement constraintElement = null;
+            IConstraints9ConstraintElement instance = null;
 
             try
             {
-                constraintElement = new Constraints9ConstraintElement(
+                instance = new Constraints9ConstraintElement(
                     rIndexElement,
                     ijk,
                     B,
@@ -46,7 +46,7 @@
                     exception);
             }
 
-            return constraintElement;
+            return instance;
         }
     }
 }

@@ -23,11 +23,11 @@
         public IB Create(
             RedBlackTree<IrIndexElement, IBParameterElement> value)
         {
-            IB parameter = null;
+            IB instance = null;
 
             try
             {
-                parameter = new B(
+                instance = new B(
                     value);
             }
             catch (Exception exception)
@@ -37,7 +37,7 @@
                     exception);
             }
 
-            return parameter;
+            return instance;
         }
     }
 }

@@ -29,11 +29,11 @@
             IΡ Ρ,
             IIMax IMax)
         {
-            IGoal3 objectiveFunction = null;
+            IGoal3 instance = null;
 
             try
             {
-                objectiveFunction = new Goal3(
+                instance = new Goal3(
                     objectiveFactory,
                     k,
                     ω,
@@ -48,7 +48,7 @@
                     exception);
             }
 
-            return objectiveFunction;
+            return instance;
         }
     }
 }

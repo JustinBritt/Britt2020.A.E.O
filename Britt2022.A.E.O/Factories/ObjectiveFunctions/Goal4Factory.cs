@@ -30,11 +30,11 @@
             IIMax IMax,
             IIMin IMin)
         {
-            IGoal4 objectiveFunction = null;
+            IGoal4 instance = null;
 
             try
             {
-                objectiveFunction = new Goal4(
+                instance = new Goal4(
                     objectiveFactory,
                     k,
                     ω,
@@ -50,7 +50,7 @@
                     exception);
             }
 
-            return objectiveFunction;
+            return instance;
         }
     }
 }

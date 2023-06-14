@@ -22,11 +22,11 @@
             int key,
             FhirDateTime value)
         {
-            IkIndexElement indexElement = null;
+            IkIndexElement instance = null;
 
             try
             {
-                indexElement = new kIndexElement(
+                instance = new kIndexElement(
                     key,
                     value);
             }
@@ -37,7 +37,7 @@
                     exception);
             }
 
-            return indexElement;
+            return instance;
         }
     }
 }

@@ -26,11 +26,11 @@
             IH H,
             Ix x)
         {
-            IConstraints5UConstraintElement constraintElement = null;
+            IConstraints5UConstraintElement instance = null;
 
             try
             {
-                constraintElement = new Constraints5UConstraintElement(
+                instance = new Constraints5UConstraintElement(
                     iIndexElement,
                     jk,
                     H,
@@ -43,7 +43,7 @@
                     exception);
             }
 
-            return constraintElement;
+            return instance;
         }
     }
 }

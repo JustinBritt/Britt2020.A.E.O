@@ -23,11 +23,11 @@
         public IL Create(
             RedBlackTree<IiIndexElement, ILParameterElement> value)
         {
-            IL parameter = null;
+            IL instance = null;
 
             try
             {
-                parameter = new L(
+                instance = new L(
                     value);
             }
             catch (Exception exception)
@@ -37,7 +37,7 @@
                     exception);
             }
 
-            return parameter;
+            return instance;
         }
     }
 }

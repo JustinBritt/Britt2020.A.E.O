@@ -22,11 +22,11 @@
         public Id1Plus Create(
             VariableCollection<IiIndexElement, IωIndexElement> value)
         {
-            Id1Plus variable = null;
+            Id1Plus instance = null;
 
             try
             {
-                variable = new d1Plus(
+                instance = new d1Plus(
                     value);
             }
             catch (Exception exception)
@@ -36,7 +36,7 @@
                     exception);
             }
 
-            return variable;
+            return instance;
         }
     }
 }

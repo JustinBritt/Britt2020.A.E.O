@@ -25,11 +25,11 @@
             Func<T1, double> upperBoundGenerator,
             Func<T1, VariableType> variableTypeGenerator)
         {
-            VariableCollection<T1> variableCollection = null;
+            VariableCollection<T1> instance = null;
 
             try
             {
-                variableCollection = new VariableCollection<T1>(
+                instance = new VariableCollection<T1>(
                     model: model,
                     indexSet1: indexSet1,
                     lowerBoundGenerator: lowerBoundGenerator,
@@ -43,7 +43,7 @@
                     exception);
             }
 
-            return variableCollection;
+            return instance;
         }
 
         public VariableCollection<T1, T2> Create<T1, T2>(
@@ -54,11 +54,11 @@
             Func<T1, T2, double> upperBoundGenerator,
             Func<T1, T2, VariableType> variableTypeGenerator)
         {
-            VariableCollection<T1, T2> variableCollection = null;
+            VariableCollection<T1, T2> instance = null;
 
             try
             {
-                variableCollection = new VariableCollection<T1, T2>(
+                instance = new VariableCollection<T1, T2>(
                     model: model,
                     indexSet1: indexSet1,
                     indexSet2: indexSet2,
@@ -73,7 +73,7 @@
                     exception);
             }
 
-            return variableCollection;
+            return instance;
         }
 
         public VariableCollection<T1, T2, T3> Create<T1, T2, T3>(
@@ -85,11 +85,11 @@
             Func<T1, T2, T3, double> upperBoundGenerator,
             Func<T1, T2, T3, VariableType> variableTypeGenerator)
         {
-            VariableCollection<T1, T2, T3> variableCollection = null;
+            VariableCollection<T1, T2, T3> instance = null;
 
             try
             {
-                variableCollection = new VariableCollection<T1, T2, T3>(
+                instance = new VariableCollection<T1, T2, T3>(
                     model: model,
                     indexSet1: indexSet1,
                     indexSet2: indexSet2,
@@ -105,7 +105,7 @@
                     exception);
             }
 
-            return variableCollection;
+            return instance;
         }
 
         public VariableCollection<T1, T2, T3, T4> Create<T1, T2, T3, T4>(
@@ -118,11 +118,11 @@
             Func<T1, T2, T3, T4, double> upperBoundGenerator,
             Func<T1, T2, T3, T4, VariableType> variableTypeGenerator)
         {
-            VariableCollection<T1, T2, T3, T4> variableCollection = null;
+            VariableCollection<T1, T2, T3, T4> instance = null;
 
             try
             {
-                variableCollection = new VariableCollection<T1, T2, T3, T4>(
+                instance = new VariableCollection<T1, T2, T3, T4>(
                     model: model,
                     indexSet1: indexSet1,
                     indexSet2: indexSet2,
@@ -139,7 +139,7 @@
                     exception);
             }
 
-            return variableCollection;
+            return instance;
         }
 
         public VariableCollection<T1, T2, T3, T4, T5> Create<T1, T2, T3, T4, T5>(
@@ -153,11 +153,11 @@
             Func<T1, T2, T3, T4, T5, double> upperBoundGenerator,
             Func<T1, T2, T3, T4, T5, VariableType> variableTypeGenerator)
         {
-            VariableCollection<T1, T2, T3, T4, T5> variableCollection = null;
+            VariableCollection<T1, T2, T3, T4, T5> instance = null;
 
             try
             {
-                variableCollection = new VariableCollection<T1, T2, T3, T4, T5>(
+                instance = new VariableCollection<T1, T2, T3, T4, T5>(
                     model: model,
                     indexSet1: indexSet1,
                     indexSet2: indexSet2,
@@ -175,7 +175,7 @@
                     exception);
             }
 
-            return variableCollection;
+            return instance;
         }
 
         public VariableCollection<T1, T2, T3> CreateBinary<T1, T2, T3>(
@@ -184,11 +184,11 @@
             IEnumerable<T3> indexSet3,
             Model model)
         {
-            VariableCollection<T1, T2, T3> variableCollection = null;
+            VariableCollection<T1, T2, T3> instance = null;
 
             try
             {
-                variableCollection = new VariableCollection<T1, T2, T3>(
+                instance = new VariableCollection<T1, T2, T3>(
                     model: model,
                     indexSet1: indexSet1,
                     indexSet2: indexSet2,
@@ -204,7 +204,7 @@
                     exception);
             }
 
-            return variableCollection;
+            return instance;
         }
     }
 }

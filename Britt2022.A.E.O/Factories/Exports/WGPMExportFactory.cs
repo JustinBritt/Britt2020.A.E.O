@@ -18,11 +18,11 @@
 
         public IWGPMExport Create()
         {
-            IWGPMExport export = null;
+            IWGPMExport instance = null;
 
             try
             {
-                export = new WGPMExport();
+                instance = new WGPMExport();
             }
             catch (Exception exception)
             {
@@ -31,7 +31,7 @@
                     exception);
             }
 
-            return export;
+            return instance;
         }
     }
 }

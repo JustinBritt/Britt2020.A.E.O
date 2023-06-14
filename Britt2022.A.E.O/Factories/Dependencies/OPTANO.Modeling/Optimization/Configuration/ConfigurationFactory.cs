@@ -18,11 +18,11 @@
 
         public Configuration Create()
         {
-            Configuration configuration = null;
+            Configuration instance = null;
 
             try
             {
-                configuration = new Configuration();
+                instance = new Configuration();
             }
             catch (Exception exception)
             {
@@ -31,7 +31,7 @@
                     exception);
             }
 
-            return configuration;
+            return instance;
         }
     }
 }

@@ -27,11 +27,11 @@
             IWGPMModel WGPMModel,
             Solution solution)
         {
-            IWGPMOutputContext context = null;
+            IWGPMOutputContext instance = null;
 
             try
             {
-                context = new WGPMOutputContext(
+                instance = new WGPMOutputContext(
                     dependenciesAbstractFactory,
                     resultElementsAbstractFactory,
                     resultsAbstractFactory,
@@ -45,7 +45,7 @@
                     exception);
             }
 
-            return context;
+            return instance;
         }
     }
 }

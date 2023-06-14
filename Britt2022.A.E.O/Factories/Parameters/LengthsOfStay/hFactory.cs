@@ -23,11 +23,11 @@
         public Ih Create(
             RedBlackTree<IiIndexElement, IhParameterElement> value)
         {
-            Ih parameter = null;
+            Ih instance = null;
 
             try
             {
-                parameter = new h(
+                instance = new h(
                     value);
             }
             catch (Exception exception)
@@ -37,7 +37,7 @@
                     exception);
             }
 
-            return parameter;
+            return instance;
         }
     }
 }

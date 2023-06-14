@@ -21,11 +21,11 @@
             Expression expression,
             ObjectiveSense objectiveSense)
         {
-            Objective objective = null;
+            Objective instance = null;
 
             try
             {
-                objective = new Objective(
+                instance = new Objective(
                     expression: expression,
                     sense: objectiveSense);
             }
@@ -36,7 +36,7 @@
                     exception);
             }
 
-            return objective;
+            return instance;
         }
     }
 }

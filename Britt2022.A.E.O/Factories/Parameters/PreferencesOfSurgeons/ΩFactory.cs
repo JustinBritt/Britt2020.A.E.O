@@ -23,11 +23,11 @@
         public IΩ Create(
             RedBlackTree<IiIndexElement, RedBlackTree<IkIndexElement, IΩParameterElement>> value)
         {
-            IΩ parameter = null;
+            IΩ instance = null;
 
             try
             {
-                parameter = new Ω(
+                instance = new Ω(
                     value);
             }
             catch (Exception exception)
@@ -37,7 +37,7 @@
                     exception);
             }
 
-            return parameter;
+            return instance;
         }
     }
 }

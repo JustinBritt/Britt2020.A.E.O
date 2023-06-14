@@ -19,11 +19,11 @@
         public INumberOfExploredNodes Create(
             long value)
         {
-            INumberOfExploredNodes result = null;
+            INumberOfExploredNodes instance = null;
 
             try
             {
-                result = new NumberOfExploredNodes(
+                instance = new NumberOfExploredNodes(
                     value);
             }
             catch (Exception exception)
@@ -33,7 +33,7 @@
                     exception);
             }
 
-            return result;
+            return instance;
         }
     }
 }

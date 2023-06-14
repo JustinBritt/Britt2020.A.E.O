@@ -24,11 +24,11 @@
             IωIndexElement ωIndexElement,
             decimal value)
         {
-            Id2MinusResultElement resultElement = null;
+            Id2MinusResultElement instance = null;
 
             try
             {
-                resultElement = new d2MinusResultElement(
+                instance = new d2MinusResultElement(
                     iIndexElement,
                     jIndexElement,
                     kIndexElement,
@@ -42,7 +42,7 @@
                     exception);
             }
 
-            return resultElement;
+            return instance;
         }
     }
 }

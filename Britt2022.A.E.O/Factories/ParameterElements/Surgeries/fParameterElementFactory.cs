@@ -24,11 +24,11 @@
             IeIndexElement eIndexElement,
             INullableValue<decimal> value)
         {
-            IfParameterElement parameterElement = null;
+            IfParameterElement instance = null;
 
             try
             {
-                parameterElement = new fParameterElement(
+                instance = new fParameterElement(
                     iIndexElement,
                     eIndexElement,
                     value);
@@ -40,7 +40,7 @@
                     exception);
             }
 
-            return parameterElement;
+            return instance;
         }
     }
 }

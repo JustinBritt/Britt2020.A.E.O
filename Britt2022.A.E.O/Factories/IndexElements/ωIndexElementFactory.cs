@@ -21,11 +21,11 @@
         public IωIndexElement Create(
             INullableValue<int> value)
         {
-            IωIndexElement indexElement = null;
+            IωIndexElement instance = null;
 
             try
             {
-                indexElement = new ωIndexElement(
+                instance = new ωIndexElement(
                     value);
             }
             catch (Exception exception)
@@ -35,7 +35,7 @@
                     exception);
             }
 
-            return indexElement;
+            return instance;
         }
     }
 }

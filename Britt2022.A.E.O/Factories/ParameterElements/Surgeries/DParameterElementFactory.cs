@@ -25,11 +25,11 @@
             IωIndexElement ωIndexElement,
             Duration value)
         {
-            IDParameterElement parameterElement = null;
+            IDParameterElement instance = null;
 
             try
             {
-                parameterElement = new DParameterElement(
+                instance = new DParameterElement(
                     iIndexElement,
                     eIndexElement,
                     ωIndexElement,
@@ -42,7 +42,7 @@
                     exception);
             }
 
-            return parameterElement;
+            return instance;
         }
     }
 }

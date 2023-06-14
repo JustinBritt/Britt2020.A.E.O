@@ -19,11 +19,11 @@
         public IOverallWallTime Create(
             TimeSpan value)
         {
-            IOverallWallTime result = null;
+            IOverallWallTime instance = null;
 
             try
             {
-                result = new OverallWallTime(
+                instance = new OverallWallTime(
                     value);
             }
             catch (Exception exception)
@@ -33,7 +33,7 @@
                     exception);
             }
 
-            return result;
+            return instance;
         }
     }
 }

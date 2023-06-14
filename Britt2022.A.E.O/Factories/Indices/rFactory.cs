@@ -27,11 +27,11 @@
             IOrganizationComparer organizationComparer,
             ImmutableList<IrIndexElement> value)
         {
-            Ir index = null;
+            Ir instance = null;
 
             try
             {
-                index = new r(
+                instance = new r(
                     this.CreateRedBlackTree(
                         organizationComparer,
                         value));
@@ -43,7 +43,7 @@
                     exception);
             }
 
-            return index;
+            return instance;
         }
 
         private RedBlackTree<Organization, IrIndexElement> CreateRedBlackTree(

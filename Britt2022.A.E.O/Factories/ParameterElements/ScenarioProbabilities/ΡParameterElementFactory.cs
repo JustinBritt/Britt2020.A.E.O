@@ -23,11 +23,11 @@
             IωIndexElement ωIndexElement,
             INullableValue<decimal> value)
         {
-            IΡParameterElement parameterElement = null;
+            IΡParameterElement instance = null;
 
             try
             {
-                parameterElement = new ΡParameterElement(
+                instance = new ΡParameterElement(
                     ωIndexElement,
                     value);
             }
@@ -38,7 +38,7 @@
                     exception);
             }
 
-            return parameterElement;
+            return instance;
         }
     }
 }

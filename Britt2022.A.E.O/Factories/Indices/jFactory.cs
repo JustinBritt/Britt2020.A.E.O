@@ -27,11 +27,11 @@
             ILocationComparer locationComparer,
             ImmutableList<IjIndexElement> value)
         {
-            Ij index = null;
+            Ij instance = null;
 
             try
             {
-                index = new j(
+                instance = new j(
                     this.CreateRedBlackTree(
                         locationComparer,
                         value));
@@ -43,7 +43,7 @@
                     exception);
             }
 
-            return index;
+            return instance;
         }
 
         private RedBlackTree<Location, IjIndexElement> CreateRedBlackTree(

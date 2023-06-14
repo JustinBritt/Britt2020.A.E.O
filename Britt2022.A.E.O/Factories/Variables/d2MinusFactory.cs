@@ -22,11 +22,11 @@
         public Id2Minus Create(
             VariableCollection<IiIndexElement, IjIndexElement, IkIndexElement, IωIndexElement> value)
         {
-            Id2Minus variable = null;
+            Id2Minus instance = null;
 
             try
             {
-                variable = new d2Minus(
+                instance = new d2Minus(
                     value);
             }
             catch (Exception exception)
@@ -36,7 +36,7 @@
                     exception);
             }
 
-            return variable;
+            return instance;
         }
     }
 }

@@ -23,11 +23,11 @@
         public In Create(
             RedBlackTree<IiIndexElement, RedBlackTree<IωIndexElement, InParameterElement>> value)
         {
-            In parameter = null;
+            In instance = null;
 
             try
             {
-                parameter = new n(
+                instance = new n(
                     value);
             }
             catch (Exception exception)
@@ -37,7 +37,7 @@
                     exception);
             }
 
-            return parameter;
+            return instance;
         }
     }
 }

@@ -23,11 +23,11 @@
             IkIndexElement kIndexElement,
             bool value)
         {
-            IxResultElement resultElement = null;
+            IxResultElement instance = null;
 
             try
             {
-                resultElement = new xResultElement(
+                instance = new xResultElement(
                     iIndexElement,
                     jIndexElement,
                     kIndexElement,
@@ -40,7 +40,7 @@
                     exception);
             }
 
-            return resultElement;
+            return instance;
         }
     }
 }

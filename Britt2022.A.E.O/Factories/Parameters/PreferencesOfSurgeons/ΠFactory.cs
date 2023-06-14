@@ -23,11 +23,11 @@
         public IΠ Create(
             RedBlackTree<IiIndexElement, RedBlackTree<IjIndexElement, IΠParameterElement>> value)
         {
-            IΠ parameter = null;
+            IΠ instance = null;
 
             try
             {
-                parameter = new Π(
+                instance = new Π(
                     value);
             }
             catch (Exception exception)
@@ -37,7 +37,7 @@
                     exception);
             }
 
-            return parameter;
+            return instance;
         }
     }
 }

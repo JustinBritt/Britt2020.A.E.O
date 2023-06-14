@@ -21,11 +21,11 @@
             IωIndexElement ωIndexElement,
             decimal value)
         {
-            IIMaxResultElement resultElement = null;
+            IIMaxResultElement instance = null;
 
             try
             {
-                resultElement = new IMaxResultElement(
+                instance = new IMaxResultElement(
                     ωIndexElement,
                     value);
             }
@@ -36,7 +36,7 @@
                     exception);
             }
 
-            return resultElement;
+            return instance;
         }
     }
 }

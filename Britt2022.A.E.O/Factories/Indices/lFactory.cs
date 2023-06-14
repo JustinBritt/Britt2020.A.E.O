@@ -21,11 +21,11 @@
         public Il Create(
             ImmutableList<IlIndexElement> value)
         {
-            Il index = null;
+            Il instance = null;
 
             try
             {
-                index = new l(
+                instance = new l(
                     value);
             }
             catch (Exception exception)
@@ -35,7 +35,7 @@
                     exception);
             }
 
-            return index;
+            return instance;
         }
     }
 }

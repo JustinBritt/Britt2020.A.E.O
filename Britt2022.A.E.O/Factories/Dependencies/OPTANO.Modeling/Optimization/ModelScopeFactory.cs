@@ -18,11 +18,11 @@
 
         public ModelScope Create()
         {
-            ModelScope modelScope = null;
+            ModelScope instance = null;
 
             try
             {
-                modelScope = new ModelScope();
+                instance = new ModelScope();
             }
             catch (Exception exception)
             {
@@ -31,17 +31,17 @@
                     exception);
             }
 
-            return modelScope;
+            return instance;
         }
 
         public ModelScope Create(
             global::OPTANO.Modeling.Optimization.Configuration.Configuration configuration)
         {
-            ModelScope modelScope = null;
+            ModelScope instance = null;
 
             try
             {
-                modelScope = new ModelScope(
+                instance = new ModelScope(
                     configuration);
             }
             catch (Exception exception)
@@ -51,7 +51,7 @@
                     exception);
             }
 
-            return modelScope;
+            return instance;
         }
     }
 }

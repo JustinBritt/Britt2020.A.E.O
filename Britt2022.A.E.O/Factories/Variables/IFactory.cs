@@ -22,11 +22,11 @@
         public II Create(
             VariableCollection<IkIndexElement, IωIndexElement> value)
         {
-            II variable = null;
+            II instance = null;
 
             try
             {
-                variable = new I(
+                instance = new I(
                     value);
             }
             catch (Exception exception)
@@ -36,7 +36,7 @@
                     exception);
             }
 
-            return variable;
+            return instance;
         }
     }
 }

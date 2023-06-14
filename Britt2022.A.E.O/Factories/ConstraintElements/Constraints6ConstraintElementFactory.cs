@@ -31,11 +31,11 @@
             Id1Plus d1Plus,
             Ix x)
         {
-            IConstraints6ConstraintElement constraintElement = null;
+            IConstraints6ConstraintElement instance = null;
 
             try
             {
-                constraintElement = new Constraints6ConstraintElement(
+                instance = new Constraints6ConstraintElement(
                     iIndexElement,
                     ωIndexElement,
                     jk,
@@ -52,7 +52,7 @@
                     exception);
             }
 
-            return constraintElement;
+            return instance;
         }
     }
 }

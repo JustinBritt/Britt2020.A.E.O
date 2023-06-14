@@ -48,11 +48,11 @@
             RedBlackTree<Organization, RedBlackTree<INullableValue<int>, RedBlackTree<INullableValue<int>, INullableValue<decimal>>>> surgeonDayScenarioCumulativeNumberPatients,
             RedBlackTree<Organization, RedBlackTree<FhirDateTime, INullableValue<bool>>> surgeonDayAvailabilities)
         {
-            IWGPMInputContext context = null;
+            IWGPMInputContext instance = null;
 
             try
             {
-                context = new WGPMInputContext(
+                instance = new WGPMInputContext(
                     clusters,
                     surgeons,
                     operatingRooms,
@@ -85,7 +85,7 @@
                     exception);
             }
 
-            return context;
+            return instance;
         }
     }
 }

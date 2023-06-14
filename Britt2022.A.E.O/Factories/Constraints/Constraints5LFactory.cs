@@ -21,11 +21,11 @@
         public IConstraints5L Create(
             ImmutableList<IConstraints5LConstraintElement> value)
         {
-            IConstraints5L constraint = null;
+            IConstraints5L instance = null;
 
             try
             {
-                constraint = new Constraints5L(
+                instance = new Constraints5L(
                     value);
             }
             catch (Exception exception)
@@ -35,7 +35,7 @@
                     exception);
             }
 
-            return constraint;
+            return instance;
         }
     }
 }

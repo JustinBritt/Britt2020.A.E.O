@@ -21,11 +21,11 @@
         public Ik Create(
             ImmutableList<IkIndexElement> value)
         {
-            Ik index = null;
+            Ik instance = null;
 
             try
             {
-                index = new k(
+                instance = new k(
                     value);
             }
             catch (Exception exception)
@@ -35,7 +35,7 @@
                     exception);
             }
 
-            return index;
+            return instance;
         }
     }
 }

@@ -18,11 +18,11 @@
 
         public Model Create()
         {
-            Model model = null;
+            Model instance = null;
 
             try
             {
-                model = new Model();
+                instance = new Model();
             }
             catch (Exception exception)
             {
@@ -31,7 +31,7 @@
                     exception);
             }
 
-            return model;
+            return instance;
         }
     }
 }

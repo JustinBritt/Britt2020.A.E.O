@@ -21,11 +21,11 @@
         public If Create(
             ImmutableList<IfParameterElement> value)
         {
-            If parameter = null;
+            If instance = null;
 
             try
             {
-                parameter = new f(
+                instance = new f(
                     value);
             }
             catch (Exception exception)
@@ -35,7 +35,7 @@
                     exception);
             }
 
-            return parameter;
+            return instance;
         }
     }
 }

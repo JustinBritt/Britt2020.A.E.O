@@ -22,11 +22,11 @@
             IrIndexElement rIndexElement,
             ImmutableList<IiIndexElement> value)
         {
-            ISParameterElement parameterElement = null;
+            ISParameterElement instance = null;
 
             try
             {
-                parameterElement = new SParameterElement(
+                instance = new SParameterElement(
                     rIndexElement,
                     value);
             }
@@ -37,7 +37,7 @@
                     exception);
             }
 
-            return parameterElement;
+            return instance;
         }
     }
 }

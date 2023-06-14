@@ -23,11 +23,11 @@
         public IΡ Create(
             RedBlackTree<IωIndexElement, IΡParameterElement> value)
         {
-            IΡ parameter = null;
+            IΡ instance = null;
 
             try
             {
-                parameter = new Ρ(
+                instance = new Ρ(
                     value);
             }
             catch (Exception exception)
@@ -37,7 +37,7 @@
                     exception);
             }
 
-            return parameter;
+            return instance;
         }
     }
 }

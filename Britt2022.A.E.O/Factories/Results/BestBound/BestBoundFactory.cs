@@ -19,11 +19,11 @@
         public IBestBound Create(
             decimal value)
         {
-            IBestBound result = null;
+            IBestBound instance = null;
 
             try
             {
-                result = new BestBound(
+                instance = new BestBound(
                     value);
             }
             catch (Exception exception)
@@ -33,7 +33,7 @@
                     exception);
             }
 
-            return result;
+            return instance;
         }
     }
 }

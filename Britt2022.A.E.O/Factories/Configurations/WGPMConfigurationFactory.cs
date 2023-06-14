@@ -21,11 +21,11 @@
         public IWGPMConfiguration Create(
             Configuration configuration)
         {
-            IWGPMConfiguration WGPMConfiguration = null;
+            IWGPMConfiguration instance = null;
 
             try
             {
-                WGPMConfiguration = new WGPMConfiguration(
+                instance = new WGPMConfiguration(
                     configuration);
             }
             catch (Exception exception)
@@ -35,7 +35,7 @@
                     exception);
             }
 
-            return WGPMConfiguration;
+            return instance;
         }
     }
 }

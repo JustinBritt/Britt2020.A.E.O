@@ -33,11 +33,11 @@
             IVariablesAbstractFactory variablesAbstractFactory,
             IWGPMInputContext context)
         {
-            IWGPMModel model = null;
+            IWGPMModel instance = null;
 
             try
             {
-                model = new WGPMModel(
+                instance = new WGPMModel(
                     comparersAbstractFactory,
                     constraintElementsAbstractFactory,
                     constraintsAbstractFactory,
@@ -59,7 +59,7 @@
                     exception);
             }
 
-            return model;
+            return instance;
         }
     }
 }

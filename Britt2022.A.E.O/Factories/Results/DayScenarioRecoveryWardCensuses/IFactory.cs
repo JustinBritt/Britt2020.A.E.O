@@ -21,11 +21,11 @@
         public II Create(
             ImmutableList<IIResultElement> value)
         {
-            II result = null;
+            II instance = null;
 
             try
             {
-                result = new I(
+                instance = new I(
                     value);
             }
             catch (Exception exception)
@@ -35,7 +35,7 @@
                     exception);
             }
 
-            return result;
+            return instance;
         }
     }
 }

@@ -19,11 +19,11 @@
 
         public Variable Create()
         {
-            Variable variable = null;
+            Variable instance = null;
 
             try
             {
-                variable = new Variable();
+                instance = new Variable();
             }
             catch (Exception exception)
             {
@@ -32,7 +32,7 @@
                     exception);
             }
 
-            return variable;
+            return instance;
         }
 
         public Variable Create(
@@ -40,11 +40,11 @@
             VariableType type,
             double upperbound)
         {
-            Variable variable = null;
+            Variable instance = null;
 
             try
             {
-                variable = new Variable(
+                instance = new Variable(
                     lowerbound: lowerbound,
                     upperbound: upperbound,
                     type: type);
@@ -56,7 +56,7 @@
                     exception);
             }
 
-            return variable;
+            return instance;
         }
 
         public Variable Create(
@@ -65,11 +65,11 @@
             VariableType type,
             double upperbound)
         {
-            Variable variable = null;
+            Variable instance = null;
 
             try
             {
-                variable = new Variable(
+                instance = new Variable(
                     name: name,
                     lowerbound: lowerbound,
                     upperbound: upperbound,
@@ -82,7 +82,7 @@
                     exception);
             }
 
-            return variable;
+            return instance;
         }
     }
 }

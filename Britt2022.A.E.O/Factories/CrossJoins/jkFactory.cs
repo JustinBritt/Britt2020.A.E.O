@@ -21,11 +21,11 @@
         public Ijk Create(
             ImmutableList<IjkCrossJoinElement> value)
         {
-            Ijk crossJoin = null;
+            Ijk instance = null;
 
             try
             {
-                crossJoin = new jk(
+                instance = new jk(
                     value);
             }
             catch (Exception exception)
@@ -35,7 +35,7 @@
                     exception);
             }
 
-            return crossJoin;
+            return instance;
         }
     }
 }

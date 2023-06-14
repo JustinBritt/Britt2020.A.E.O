@@ -19,11 +19,11 @@
         public IGap Create(
             decimal value)
         {
-            IGap result = null;
+            IGap instance = null;
 
             try
             {
-                result = new Gap(
+                instance = new Gap(
                     value);
             }
             catch (Exception exception)
@@ -33,7 +33,7 @@
                     exception);
             }
 
-            return result;
+            return instance;
         }
     }
 }
