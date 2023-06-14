@@ -206,12 +206,15 @@
                 surgicalSpecialtyStrategicTargetNumberTimeBlocksVisitor.RedBlackTree);
 
             // H(i)
+            ISurgeonMaximumNumberTimeBlocksVisitor<Organization, INullableValue<int>> surgeonMaximumNumberTimeBlocksVisitor = new Britt2022.A.E.O.Visitors.Contexts.SurgeonMaximumNumberTimeBlocksVisitor<Organization, INullableValue<int>>(
+                parameterElementsAbstractFactory.CreateHParameterElementFactory(),
+                this.i);
+
+            this.Context.SurgeonMaximumNumberTimeBlocks.AcceptVisitor(
+                surgeonMaximumNumberTimeBlocksVisitor);
+
             this.H = parametersAbstractFactory.CreateHFactory().Create(
-                this.Context.SurgeonMaximumNumberTimeBlocks
-                .Select(x => parameterElementsAbstractFactory.CreateHParameterElementFactory().Create(
-                    this.i.GetElementAt(x.Key),
-                    x.Value))
-                .ToImmutableList());
+                surgeonMaximumNumberTimeBlocksVisitor.RedBlackTree);
 
             // h(i)
             ISurgeonMaximumLengthsOfStayVisitor<Organization, INullableValue<int>> surgeonMaximumLengthsOfStayVisitor = new Britt2022.A.E.O.Visitors.Contexts.SurgeonMaximumLengthsOfStayVisitor<Organization, INullableValue<int>>(

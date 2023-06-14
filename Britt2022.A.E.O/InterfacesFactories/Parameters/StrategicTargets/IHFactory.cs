@@ -1,13 +1,14 @@
 ﻿namespace Britt2022.A.E.O.InterfacesFactories.Parameters.StrategicTargets
 {
-    using System.Collections.Immutable;
+    using NGenerics.DataStructures.Trees;
 
+    using Britt2022.A.E.O.Interfaces.IndexElements;
     using Britt2022.A.E.O.Interfaces.ParameterElements.StrategicTargets;
     using Britt2022.A.E.O.Interfaces.Parameters.StrategicTargets;
 
     public interface IHFactory
     {
         IH Create(
-            ImmutableList<IHParameterElement> value);
+            RedBlackTree<IiIndexElement, IHParameterElement> value);
     }
 }
