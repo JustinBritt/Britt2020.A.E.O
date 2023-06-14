@@ -1,9 +1,8 @@
 ﻿namespace Britt2022.A.E.O.Classes.Parameters.StrategicTargets
 {
-    using System.Collections.Immutable;
-    using System.Linq;
-
     using log4net;
+
+    using NGenerics.DataStructures.Trees;
 
     using Britt2022.A.E.O.Interfaces.IndexElements;
     using Britt2022.A.E.O.Interfaces.ParameterElements.StrategicTargets;
@@ -14,22 +13,17 @@
         private ILog Log => LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         public N(
-            ImmutableList<INParameterElement> value)
+            RedBlackTree<IiIndexElement, INParameterElement> value)
         {
             this.Value = value;
         }
 
-        public ImmutableList<INParameterElement> Value { get; }
+        public RedBlackTree<IiIndexElement, INParameterElement> Value { get; }
 
         public int GetElementAtAsint(
             IiIndexElement iIndexElement)
         {
-            int value = this.Value
-                .Where(x => x.iIndexElement == iIndexElement)
-                .Select(x => x.Value.Value.Value)
-                .SingleOrDefault();
-
-            return value;
+            return this.Value[iIndexElement].Value.Value.Value;
         }
     }
 }

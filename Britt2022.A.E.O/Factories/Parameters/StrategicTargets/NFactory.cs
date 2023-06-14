@@ -1,11 +1,13 @@
 ﻿namespace Britt2022.A.E.O.Factories.Parameters.StrategicTargets
 {
     using System;
-    using System.Collections.Immutable;
 
     using log4net;
 
+    using NGenerics.DataStructures.Trees;
+
     using Britt2022.A.E.O.Classes.Parameters.StrategicTargets;
+    using Britt2022.A.E.O.Interfaces.IndexElements;
     using Britt2022.A.E.O.Interfaces.Parameters.StrategicTargets;
     using Britt2022.A.E.O.Interfaces.ParameterElements.StrategicTargets;
     using Britt2022.A.E.O.InterfacesFactories.Parameters.StrategicTargets;
@@ -19,7 +21,7 @@
         }
 
         public IN Create(
-            ImmutableList<INParameterElement> value)
+            RedBlackTree<IiIndexElement, INParameterElement> value)
         {
             IN parameter = null;
 

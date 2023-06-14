@@ -239,12 +239,15 @@
                 surgeonMinimumNumberTimeBlocksVisitor.RedBlackTree);
 
             // N(i)
+            ISurgeonStrategicTargetNumberPatientsVisitor<Organization, INullableValue<int>> surgeonStrategicTargetNumberPatientsVisitor = new Britt2022.A.E.O.Visitors.Contexts.SurgeonStrategicTargetNumberPatientsVisitor<Organization, INullableValue<int>>(
+                parameterElementsAbstractFactory.CreateNParameterElementFactory(),
+                this.i);
+
+            this.Context.SurgeonStrategicTargetNumberPatients.AcceptVisitor(
+                surgeonStrategicTargetNumberPatientsVisitor);
+
             this.N = parametersAbstractFactory.CreateNFactory().Create(
-                this.Context.SurgeonStrategicTargetNumberPatients
-                .Select(x => parameterElementsAbstractFactory.CreateNParameterElementFactory().Create(
-                    this.i.GetElementAt(x.Key),
-                    x.Value))
-                .ToImmutableList());
+                surgeonStrategicTargetNumberPatientsVisitor.RedBlackTree);
 
             // n(i, ω) calculated externally
             if (this.Context != null && this.Context.SurgeonScenarioMaximumNumberPatients != null)
