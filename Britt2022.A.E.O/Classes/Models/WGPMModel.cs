@@ -584,14 +584,12 @@
                         this.d2Minus),
                     objectiveFunctionsAbstractFactory.CreateGoal3Factory().Create(
                         dependenciesAbstractFactory.CreateObjectiveFactory(),
-                        this.k,
                         this.ω,
                         this.w3,
                         this.Ρ,
                         this.IMax),
                     objectiveFunctionsAbstractFactory.CreateGoal4Factory().Create(
                         dependenciesAbstractFactory.CreateObjectiveFactory(),
-                        this.k,
                         this.ω,
                         this.w4,
                         this.Ρ,

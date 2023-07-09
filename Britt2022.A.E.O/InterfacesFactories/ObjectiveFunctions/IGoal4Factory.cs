@@ -11,7 +11,6 @@
     {
         IGoal4 Create(
             IObjectiveFactory objectiveFactory,
-            Ik k,
             Iω ω,
             Iw4 w4,
             IΡ Ρ,

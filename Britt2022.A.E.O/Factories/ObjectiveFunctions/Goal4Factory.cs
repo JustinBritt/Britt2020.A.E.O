@@ -23,7 +23,6 @@
 
         public IGoal4 Create(
             IObjectiveFactory objectiveFactory,
-            Ik k,
             Iω ω,
             Iw4 w4,
             IΡ Ρ,
@@ -36,7 +35,6 @@
             {
                 instance = new Goal4(
                     objectiveFactory,
-                    k,
                     ω,
                     w4,
                     Ρ,

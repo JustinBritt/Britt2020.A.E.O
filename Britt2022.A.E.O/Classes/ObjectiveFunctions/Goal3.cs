@@ -20,7 +20,6 @@
 
         public Goal3(
             IObjectiveFactory objectiveFactory,
-            Ik k,
             Iω ω,
             Iw3 w3,
             IΡ Ρ,
