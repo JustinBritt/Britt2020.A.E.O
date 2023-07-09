@@ -2,11 +2,13 @@
 {
     using System.Collections.Immutable;
     using System.Linq;
+    using System.Threading.Tasks;
 
     using log4net;
 
     using Hl7.Fhir.Model;
 
+    using NGenerics.DataStructures.Trees;
     using NGenerics.Patterns.Visitor;
 
     using OPTANO.Modeling.Optimization;
@@ -14,6 +16,7 @@
 
     using Britt2022.A.E.O.InterfacesAbstractFactories;
     using Britt2022.A.E.O.Interfaces.Contexts;
+    using Britt2022.A.E.O.Interfaces.CrossJoinElements;
     using Britt2022.A.E.O.Interfaces.CrossJoins;
     using Britt2022.A.E.O.Interfaces.IndexElements;
     using Britt2022.A.E.O.Interfaces.Indices;
@@ -27,9 +30,7 @@
     using Britt2022.A.E.O.Interfaces.Models;
     using Britt2022.A.E.O.Interfaces.Variables;
     using Britt2022.A.E.O.InterfacesVisitors.Contexts;
-    using NGenerics.DataStructures.Trees;
-    using Britt2022.A.E.O.Visitors.Contexts;
-
+    
     internal sealed class WGPMModel : IWGPMModel
     {
         private ILog Log => LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
@@ -528,20 +529,20 @@
                     .Value));
 
             // Constraints 8
-            this.Model.AddConstraints(
-                this.kω.Value
-                .Select(
-                    w => constraintElementsAbstractFactory.CreateConstraints8ConstraintElementFactory().Create(
-                        w.kIndexElement,
-                        w.ωIndexElement,
+            Parallel.ForEach<IkωCrossJoinElement>(this.kω.Value, (kωCrossJoinElement, state) => 
+            {
+                this.Model.AddConstraint(
+                    constraintElementsAbstractFactory.CreateConstraints8ConstraintElementFactory().Create(
+                        kωCrossJoinElement.kIndexElement,
+                        kωCrossJoinElement.ωIndexElement,
                         this.k,
                         this.l,
                         this.ilj,
                         this.Φ,
-                        // parametersAbstractFactory.CreateΦFactory().Create(this.Φ.Value.Where(y => y.ωIndexElement == w.ωIndexElement).ToImmutableList()),
                         this.I,
                         this.x)
-                    .Value));
+                    .Value);
+            });
 
             // Constraints 9
             this.Model.AddConstraints(
