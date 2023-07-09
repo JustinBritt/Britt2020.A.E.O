@@ -26,7 +26,7 @@
             IΡ Ρ,
             IIMax IMax)
         {
-            OPTANO.Modeling.Optimization.Expression expression = OPTANO.Modeling.Optimization.Expression.Sum(
+            Expression expression = Expression.Sum(
                 ω.Value.Values
                 .Select(
                     x =>

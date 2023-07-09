@@ -25,7 +25,7 @@
             IΡ Ρ,
             Id1Minus d1Minus)
         {
-            OPTANO.Modeling.Optimization.Expression expression = OPTANO.Modeling.Optimization.Expression.Sum(
+            Expression expression = Expression.Sum(
                 iω.Value
                 .Select(
                     x => 
