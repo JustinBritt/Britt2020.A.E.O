@@ -170,6 +170,24 @@
             return abstractFactory;
         }
 
+        public IExportsAbstractFactory CreateExportsAbstractFactory()
+        {
+            IExportsAbstractFactory abstractFactory = null;
+
+            try
+            {
+                abstractFactory = new ExportsAbstractFactory();
+            }
+            catch (Exception exception)
+            {
+                this.Log.Error(
+                    exception.Message,
+                    exception);
+            }
+
+            return abstractFactory;
+        }
+
         public IIndexElementsAbstractFactory CreateIndexElementsAbstractFactory()
         {
             IIndexElementsAbstractFactory abstractFactory = null;

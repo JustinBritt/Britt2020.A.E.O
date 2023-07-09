@@ -18,6 +18,8 @@
 
         IDependenciesAbstractFactory CreateDependenciesAbstractFactory();
 
+        IExportsAbstractFactory CreateExportsAbstractFactory();
+
         IIndexElementsAbstractFactory CreateIndexElementsAbstractFactory();
 
         IIndicesAbstractFactory CreateIndicesAbstractFactory();
