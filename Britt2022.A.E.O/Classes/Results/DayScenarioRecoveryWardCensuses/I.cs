@@ -31,7 +31,7 @@
                 .Select(
                 w => Tuple.Create(
                     w.kIndexElement.Value,
-                    (INullableValue<int>)w.ωIndexElement.Value,
+                    w.ωIndexElement.Value,
                     nullableValueFactory.Create<decimal>(
                         w.Value)))
                 .ToImmutableList();

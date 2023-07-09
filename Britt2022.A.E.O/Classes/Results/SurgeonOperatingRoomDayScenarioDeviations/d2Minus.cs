@@ -33,7 +33,7 @@
                     w.iIndexElement.Value,
                     w.jIndexElement.Value,
                     w.kIndexElement.Value,
-                    (INullableValue<int>)w.ωIndexElement.Value,
+                    w.ωIndexElement.Value,
                     nullableValueFactory.Create<decimal>(
                         w.Value)))
                 .ToImmutableList();
