@@ -8,12 +8,13 @@
 
     using Hl7.Fhir.Model;
 
+    using NGenerics.DataStructures.Trees;
+
     using OPTANO.Modeling.Optimization;
 
     using Britt2022.A.E.O.InterfacesAbstractFactories;
     using Britt2022.A.E.O.Interfaces.Contexts;
     using Britt2022.A.E.O.Interfaces.Models;
-    using NGenerics.DataStructures.Trees;
 
     internal sealed class WGPMOutputContext : IWGPMOutputContext
     {
@@ -44,9 +45,11 @@
 
             // d1Plus(i, ω)
             this.SurgeonScenarioPlusDeviations = WGPMModel.d1Plus.GetElementsAt(
+                dependenciesAbstractFactory.CreateRedBlackTreeFactory(),
                 resultElementsAbstractFactory.Created1PlusResultElementFactory(),
                 resultsAbstractFactory.Created1PlusFactory(),
-                WGPMModel.iω)
+                WGPMModel.i,
+                WGPMModel.ω)
                 .GetValueForOutputContext(
                 dependenciesAbstractFactory.CreateNullableValueFactory());
 
@@ -119,7 +122,7 @@
 
         public RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<int>>> SurgeonScenarioMinusDeviations { get; }
 
-        public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>>> SurgeonScenarioPlusDeviations { get; }
+        public RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<int>>> SurgeonScenarioPlusDeviations { get; }
 
         public ImmutableList<Tuple<Organization, Location, FhirDateTime, INullableValue<int>, INullableValue<decimal>>> SurgeonOperatingRoomDayScenarioDeviations { get; }
 

@@ -1,11 +1,13 @@
 ﻿namespace Britt2022.A.E.O.Factories.Results.SurgeonScenarioDeviations
 {
     using System;
-    using System.Collections.Immutable;
 
     using log4net;
 
+    using NGenerics.DataStructures.Trees;
+
     using Britt2022.A.E.O.Classes.Results.SurgeonScenarioDeviations;
+    using Britt2022.A.E.O.Interfaces.IndexElements;
     using Britt2022.A.E.O.Interfaces.ResultElements.SurgeonScenarioDeviations;
     using Britt2022.A.E.O.Interfaces.Results.SurgeonScenarioDeviations;
     using Britt2022.A.E.O.InterfacesFactories.Results.SurgeonScenarioDeviations;
@@ -19,7 +21,7 @@
         }
 
         public Id1Plus Create(
-            ImmutableList<Id1PlusResultElement> value)
+            RedBlackTree<IiIndexElement, RedBlackTree<IωIndexElement, Id1PlusResultElement>> value)
         {
             Id1Plus instance = null;
 
