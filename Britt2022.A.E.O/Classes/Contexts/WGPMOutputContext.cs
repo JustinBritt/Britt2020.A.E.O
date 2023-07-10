@@ -88,6 +88,7 @@
 
             // IMin(ω)
             this.ScenarioRecoveryWardCensusMinimums = WGPMModel.IMin.GetElementsAt(
+                dependenciesAbstractFactory.CreateRedBlackTreeFactory(),
                 resultElementsAbstractFactory.CreateIMinResultElementFactory(),
                 resultsAbstractFactory.CreateIMinFactory(),
                 WGPMModel.ω)
@@ -133,7 +134,7 @@
 
         public RedBlackTree<INullableValue<int>, INullableValue<decimal>> ScenarioRecoveryWardCensusMaximums { get; }
 
-        public ImmutableList<Tuple<INullableValue<int>, INullableValue<decimal>>> ScenarioRecoveryWardCensusMinimums { get; }
+        public RedBlackTree<INullableValue<int>, INullableValue<decimal>> ScenarioRecoveryWardCensusMinimums { get; }
 
         public long NumberOfExploredNodes { get; }
 
