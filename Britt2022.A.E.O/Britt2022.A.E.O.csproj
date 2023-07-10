@@ -27,9 +27,4 @@
     <PackageReference Include="NGenerics" Version="1.5.3" />
     <PackageReference Include="OPTANO.Modeling" Version="3.7.0.522" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="InterfacesVisitors\Results\SurgeonScenarioDeviations\" />
-    <Folder Include="Visitors\Results\SurgeonScenarioDeviations\" />
-  </ItemGroup>
 </Project>
