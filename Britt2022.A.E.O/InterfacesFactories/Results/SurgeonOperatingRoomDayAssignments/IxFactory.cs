@@ -1,13 +1,14 @@
 ﻿namespace Britt2022.A.E.O.InterfacesFactories.Results.SurgeonOperatingRoomDayAssignments
 {
-    using System.Collections.Immutable;
+    using NGenerics.DataStructures.Trees;
 
+    using Britt2022.A.E.O.Interfaces.IndexElements;
     using Britt2022.A.E.O.Interfaces.ResultElements.SurgeonOperatingRoomDayAssignments;
     using Britt2022.A.E.O.Interfaces.Results.SurgeonOperatingRoomDayAssignments;
 
     public interface IxFactory
     {
         Ix Create(
-            ImmutableList<IxResultElement> value);
+            RedBlackTree<IiIndexElement, RedBlackTree<IjIndexElement, RedBlackTree<IkIndexElement, IxResultElement>>> value);
     }
 }

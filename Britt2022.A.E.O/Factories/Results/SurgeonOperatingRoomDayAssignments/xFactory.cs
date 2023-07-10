@@ -1,11 +1,13 @@
 ﻿namespace Britt2022.A.E.O.Factories.Results.SurgeonOperatingRoomDayAssignments
 {
     using System;
-    using System.Collections.Immutable;
 
     using log4net;
 
+    using NGenerics.DataStructures.Trees;
+
     using Britt2022.A.E.O.Classes.Results.SurgeonOperatingRoomDayAssignments;
+    using Britt2022.A.E.O.Interfaces.IndexElements;
     using Britt2022.A.E.O.Interfaces.ResultElements.SurgeonOperatingRoomDayAssignments;
     using Britt2022.A.E.O.Interfaces.Results.SurgeonOperatingRoomDayAssignments;
     using Britt2022.A.E.O.InterfacesFactories.Results.SurgeonOperatingRoomDayAssignments;
@@ -19,7 +21,7 @@
         }
 
         public Ix Create(
-            ImmutableList<IxResultElement> value)
+            RedBlackTree<IiIndexElement, RedBlackTree<IjIndexElement, RedBlackTree<IkIndexElement, IxResultElement>>> value)
         {
             Ix instance = null;
 

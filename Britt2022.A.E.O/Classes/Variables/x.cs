@@ -1,18 +1,18 @@
 ﻿namespace Britt2022.A.E.O.Classes.Variables
 {
-    using System.Collections.Immutable;
-    using System.Linq;
-
     using log4net;
+
+    using NGenerics.DataStructures.Trees;
 
     using OPTANO.Modeling.Optimization;
 
-    using Britt2022.A.E.O.Interfaces.CrossJoins;
     using Britt2022.A.E.O.Interfaces.IndexElements;
+    using Britt2022.A.E.O.Interfaces.Indices;
+    using Britt2022.A.E.O.Interfaces.ResultElements.SurgeonOperatingRoomDayAssignments;
     using Britt2022.A.E.O.Interfaces.Variables;
     using Britt2022.A.E.O.InterfacesFactories.ResultElements.SurgeonOperatingRoomDayAssignments;
     using Britt2022.A.E.O.InterfacesFactories.Results.SurgeonOperatingRoomDayAssignments;
-
+    
     internal sealed class x : Ix
     {
         private ILog Log => LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
@@ -43,20 +43,46 @@
         public Interfaces.Results.SurgeonOperatingRoomDayAssignments.Ix GetElementsAt(
             IxResultElementFactory xResultElementFactory,
             IxFactory xFactory,
-            Iijk ijk)
+            Ii i,
+            Ij j,
+            Ik k)
         {
+            RedBlackTree<IiIndexElement, RedBlackTree<IjIndexElement, RedBlackTree<IkIndexElement, IxResultElement>>> outerRedBlackTree = new RedBlackTree<IiIndexElement, RedBlackTree<IjIndexElement, RedBlackTree<IkIndexElement, IxResultElement>>>();
+
+            foreach (IiIndexElement iIndexElement in i.Value.Values)
+            {
+                RedBlackTree<IjIndexElement, RedBlackTree<IkIndexElement, IxResultElement>> firstInnerRedBlackTree = new RedBlackTree<IjIndexElement, RedBlackTree<IkIndexElement, IxResultElement>>();
+
+                foreach (IjIndexElement jIndexElement in j.Value.Values)
+                {
+                    RedBlackTree<IkIndexElement, IxResultElement> secondInnerRedBlackTree = new RedBlackTree<IkIndexElement, IxResultElement>();
+
+                    foreach (IkIndexElement kIndexElement in k.Value)
+                    {
+                        secondInnerRedBlackTree.Add(
+                            kIndexElement,
+                            xResultElementFactory.Create(
+                                iIndexElement,
+                                jIndexElement,
+                                kIndexElement,
+                                this.GetElementAt(
+                                    iIndexElement,
+                                    jIndexElement,
+                                    kIndexElement)));
+                    }
+
+                    firstInnerRedBlackTree.Add(
+                        jIndexElement,
+                        secondInnerRedBlackTree);
+                }
+
+                outerRedBlackTree.Add(
+                    iIndexElement,
+                    firstInnerRedBlackTree);
+            }
+
             return xFactory.Create(
-                ijk.Value
-                .Select(
-                    w => xResultElementFactory.Create(
-                        w.iIndexElement,
-                        w.jIndexElement,
-                        w.kIndexElement,
-                        this.GetElementAt(
-                            w.iIndexElement,
-                            w.jIndexElement,
-                            w.kIndexElement)))
-                .ToImmutableList());
+                outerRedBlackTree);
         }
     }
 }

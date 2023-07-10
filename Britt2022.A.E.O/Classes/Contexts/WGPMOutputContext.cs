@@ -115,7 +115,9 @@
             this.SurgeonOperatingRoomDayAssignments = WGPMModel.x.GetElementsAt(
                 resultElementsAbstractFactory.CreatexResultElementFactory(),
                 resultsAbstractFactory.CreatexFactory(),
-                WGPMModel.ijk)
+                WGPMModel.i,
+                WGPMModel.j,
+                WGPMModel.k)
                 .GetValueForOutputContext(
                 dependenciesAbstractFactory.CreateNullableValueFactory());
         }
@@ -142,6 +144,6 @@
 
         public TimeSpan OverallWallTime { get; }
 
-        public ImmutableList<Tuple<Organization, Location, FhirDateTime, INullableValue<bool>>> SurgeonOperatingRoomDayAssignments { get; }
+        public RedBlackTree<Organization, RedBlackTree<Location, RedBlackTree<FhirDateTime, INullableValue<bool>>>> SurgeonOperatingRoomDayAssignments { get; }
     }
 }

@@ -2,8 +2,8 @@
 {
     using OPTANO.Modeling.Optimization;
 
-    using Britt2022.A.E.O.Interfaces.CrossJoins;
     using Britt2022.A.E.O.Interfaces.IndexElements;
+    using Britt2022.A.E.O.Interfaces.Indices;
     using Britt2022.A.E.O.InterfacesFactories.ResultElements.SurgeonOperatingRoomDayAssignments;
     using Britt2022.A.E.O.InterfacesFactories.Results.SurgeonOperatingRoomDayAssignments;
 
@@ -19,6 +19,8 @@
         Interfaces.Results.SurgeonOperatingRoomDayAssignments.Ix GetElementsAt(
             IxResultElementFactory xResultElementFactory,
             IxFactory xFactory,
-            Iijk ijk);
+            Ii i,
+            Ij j,
+            Ik k);
     }
 }
