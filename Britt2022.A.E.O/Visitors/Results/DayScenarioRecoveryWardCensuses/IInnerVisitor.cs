@@ -10,8 +10,8 @@
 
     using Britt2022.A.E.O.Interfaces.Comparers;
     using Britt2022.A.E.O.Interfaces.IndexElements;
-    using Britt2022.A.E.O.InterfacesFactories.Dependencies.NGenerics.DataStructures.Trees;
     using Britt2022.A.E.O.Interfaces.ResultElements.DayScenarioRecoveryWardCensuses;
+    using Britt2022.A.E.O.InterfacesFactories.Dependencies.NGenerics.DataStructures.Trees;
     using Britt2022.A.E.O.InterfacesFactories.Dependencies.Hl7.Fhir.R4.Model;
     using Britt2022.A.E.O.InterfacesVisitors.Results.DayScenarioRecoveryWardCensuses;
 
