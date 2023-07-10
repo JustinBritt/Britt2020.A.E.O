@@ -1,19 +1,21 @@
 ﻿namespace Britt2022.A.E.O.Classes.Variables
 {
     using System;
-    using System.Collections.Immutable;
-    using System.Linq;
- 
+
     using log4net;
+
+    using NGenerics.DataStructures.Trees;
 
     using OPTANO.Modeling.Optimization;
 
-    using Britt2022.A.E.O.Interfaces.CrossJoins;
     using Britt2022.A.E.O.Interfaces.IndexElements;
+    using Britt2022.A.E.O.Interfaces.Indices;
+    using Britt2022.A.E.O.Interfaces.ResultElements.SurgeonScenarioDeviations;
     using Britt2022.A.E.O.Interfaces.Variables;
+    using Britt2022.A.E.O.InterfacesFactories.Dependencies.NGenerics.DataStructures.Trees;
     using Britt2022.A.E.O.InterfacesFactories.ResultElements.SurgeonScenarioDeviations;
     using Britt2022.A.E.O.InterfacesFactories.Results.SurgeonScenarioDeviations;
-
+    
     internal sealed class d1Minus : Id1Minus
     {
         private ILog Log => LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
@@ -46,20 +48,37 @@
         }
 
         public Interfaces.Results.SurgeonScenarioDeviations.Id1Minus GetElementsAt(
+            IRedBlackTreeFactory redBlackTreeFactory,
             Id1MinusResultElementFactory d1MinusResultElementFactory,
             Id1MinusFactory d1MinusFactory,
-            Iiω iω)
+            Ii i,
+            Iω ω)
         {
+            RedBlackTree<IiIndexElement, RedBlackTree<IωIndexElement, Id1MinusResultElement>> outerRedBlackTree = redBlackTreeFactory.Create<IiIndexElement, RedBlackTree<IωIndexElement, Id1MinusResultElement>>();
+
+            foreach (IiIndexElement iIndexElement in i.Value.Values)
+            {
+                RedBlackTree<IωIndexElement, Id1MinusResultElement> innerRedBlackTree = redBlackTreeFactory.Create<IωIndexElement, Id1MinusResultElement>();
+
+                foreach (IωIndexElement ωIndexElement in ω.Value.Values)
+                {
+                    innerRedBlackTree.Add(
+                        ωIndexElement,
+                        d1MinusResultElementFactory.Create(
+                            iIndexElement,
+                            ωIndexElement,
+                            this.GetElementAt(
+                                iIndexElement,
+                                ωIndexElement)));
+                }
+
+                outerRedBlackTree.Add(
+                    iIndexElement,
+                    innerRedBlackTree);
+            }
+
             return d1MinusFactory.Create(
-                iω.Value
-                .Select(
-                    w => d1MinusResultElementFactory.Create(
-                        w.iIndexElement,
-                        w.ωIndexElement,
-                        this.GetElementAt(
-                            w.iIndexElement,
-                            w.ωIndexElement)))
-                .ToImmutableList());
+                outerRedBlackTree);
         }
     }
 }

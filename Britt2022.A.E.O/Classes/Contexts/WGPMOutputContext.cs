@@ -34,9 +34,11 @@
 
             // d1Minus(i, ω)
             this.SurgeonScenarioMinusDeviations = WGPMModel.d1Minus.GetElementsAt(
+                dependenciesAbstractFactory.CreateRedBlackTreeFactory(),
                 resultElementsAbstractFactory.Created1MinusResultElementFactory(),
                 resultsAbstractFactory.Created1MinusFactory(),
-                WGPMModel.iω)
+                WGPMModel.i,
+                WGPMModel.ω)
                 .GetValueForOutputContext(
                 dependenciesAbstractFactory.CreateNullableValueFactory());
 
@@ -115,7 +117,7 @@
 
         public INullableValue<decimal> BestBound { get; }
 
-        public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>>> SurgeonScenarioMinusDeviations { get; }
+        public RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<int>>> SurgeonScenarioMinusDeviations { get; }
 
         public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>>> SurgeonScenarioPlusDeviations { get; }
 

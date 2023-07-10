@@ -1,15 +1,17 @@
 ﻿namespace Britt2022.A.E.O.Factories.Results.SurgeonScenarioDeviations
 {
     using System;
-    using System.Collections.Immutable;
 
     using log4net;
 
+    using NGenerics.DataStructures.Trees;
+
     using Britt2022.A.E.O.Classes.Results.SurgeonScenarioDeviations;
+    using Britt2022.A.E.O.Interfaces.IndexElements;
     using Britt2022.A.E.O.Interfaces.ResultElements.SurgeonScenarioDeviations;
     using Britt2022.A.E.O.Interfaces.Results.SurgeonScenarioDeviations;
     using Britt2022.A.E.O.InterfacesFactories.Results.SurgeonScenarioDeviations;
-
+    
     internal sealed class d1MinusFactory : Id1MinusFactory
     {
         private ILog Log => LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
@@ -19,7 +21,7 @@
         }
 
         public Id1Minus Create(
-            ImmutableList<Id1MinusResultElement> value)
+            RedBlackTree<IiIndexElement, RedBlackTree<IωIndexElement, Id1MinusResultElement>> value)
         {
             Id1Minus instance = null;
 
