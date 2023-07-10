@@ -1,40 +1,43 @@
 ﻿namespace Britt2022.A.E.O.Classes.Results.DayScenarioRecoveryWardCensuses
 {
-    using System;
-    using System.Collections.Immutable;
-    using System.Linq;
-
     using log4net;
 
     using Hl7.Fhir.Model;
 
+    using NGenerics.DataStructures.Trees;
+    using NGenerics.Patterns.Visitor;
+
     using Britt2022.A.E.O.Interfaces.ResultElements.DayScenarioRecoveryWardCensuses;
     using Britt2022.A.E.O.Interfaces.Results.DayScenarioRecoveryWardCensuses;
     using Britt2022.A.E.O.InterfacesFactories.Dependencies.Hl7.Fhir.R4.Model;
+    using Britt2022.A.E.O.InterfacesVisitors.Results.DayScenarioRecoveryWardCensuses;
+    using Britt2022.A.E.O.Interfaces.IndexElements;
 
     internal sealed class I : II
     {
         private ILog Log => LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         public I(
-            ImmutableList<IIResultElement> value)
+            RedBlackTree<IkIndexElement, RedBlackTree<IωIndexElement, IIResultElement>> value)
         {
             this.Value = value;
         }
 
-        public ImmutableList<IIResultElement> Value { get; }
+        public RedBlackTree<IkIndexElement, RedBlackTree<IωIndexElement, IIResultElement>> Value { get; }
 
-        public ImmutableList<Tuple<FhirDateTime, INullableValue<int>, INullableValue<decimal>>> GetValueForOutputContext(
+        public RedBlackTree<FhirDateTime, RedBlackTree<INullableValue<int>, INullableValue<decimal>>> GetValueForOutputContext(
             INullableValueFactory nullableValueFactory)
         {
-            return this.Value
-                .Select(
-                w => Tuple.Create(
-                    w.kIndexElement.Value,
-                    w.ωIndexElement.Value,
-                    nullableValueFactory.Create<decimal>(
-                        w.Value)))
-                .ToImmutableList();
+            IIOuterVisitor<IkIndexElement, RedBlackTree<IωIndexElement, IIResultElement>> IOuterVisitor = new Britt2022.A.E.O.Visitors.Results.DayScenarioRecoveryWardCensuses.IOuterVisitor<IkIndexElement, RedBlackTree<IωIndexElement, IIResultElement>>(
+                nullableValueFactory,
+                new Britt2022.A.E.O.Factories.Dependencies.NGenerics.DataStructures.Trees.RedBlackTreeFactory(),
+                new Britt2022.A.E.O.Classes.Comparers.FhirDateTimeComparer(),
+                new Britt2022.A.E.O.Classes.Comparers.NullableValueintComparer());
+
+            this.Value.AcceptVisitor(
+                IOuterVisitor);
+
+            return IOuterVisitor.RedBlackTree;
         }
     }
 }

@@ -13,6 +13,7 @@
     using Britt2022.A.E.O.InterfacesAbstractFactories;
     using Britt2022.A.E.O.Interfaces.Contexts;
     using Britt2022.A.E.O.Interfaces.Models;
+    using NGenerics.DataStructures.Trees;
 
     internal sealed class WGPMOutputContext : IWGPMOutputContext
     {
@@ -63,9 +64,11 @@
 
             // I(k, ω)
             this.DayScenarioRecoveryWardCensuses = WGPMModel.I.GetElementsAt(
+                dependenciesAbstractFactory.CreateRedBlackTreeFactory(),
                 resultElementsAbstractFactory.CreateIResultElementFactory(),
                 resultsAbstractFactory.CreateIFactory(),
-                WGPMModel.kω)
+                WGPMModel.k,
+                WGPMModel.ω)
                 .GetValueForOutputContext(
                 dependenciesAbstractFactory.CreateNullableValueFactory());
 
@@ -120,7 +123,7 @@
 
         public INullableValue<decimal> Gap { get; }
 
-        public ImmutableList<Tuple<FhirDateTime, INullableValue<int>, INullableValue<decimal>>> DayScenarioRecoveryWardCensuses { get; }
+        public RedBlackTree<FhirDateTime, RedBlackTree<INullableValue<int>, INullableValue<decimal>>> DayScenarioRecoveryWardCensuses { get; }
 
         public ImmutableList<Tuple<INullableValue<int>, INullableValue<decimal>>> ScenarioRecoveryWardCensusMaximums { get; }
 

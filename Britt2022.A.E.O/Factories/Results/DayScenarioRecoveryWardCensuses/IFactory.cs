@@ -1,11 +1,13 @@
 ﻿namespace Britt2022.A.E.O.Factories.Results.DayScenarioRecoveryWardCensuses
 {
     using System;
-    using System.Collections.Immutable;
 
     using log4net;
 
+    using NGenerics.DataStructures.Trees;
+
     using Britt2022.A.E.O.Classes.Results.DayScenarioRecoveryWardCensuses;
+    using Britt2022.A.E.O.Interfaces.IndexElements;
     using Britt2022.A.E.O.Interfaces.ResultElements.DayScenarioRecoveryWardCensuses;
     using Britt2022.A.E.O.Interfaces.Results.DayScenarioRecoveryWardCensuses;
     using Britt2022.A.E.O.InterfacesFactories.Results.DayScenarioRecoveryWardCensuses;
@@ -19,7 +21,7 @@
         }
 
         public II Create(
-            ImmutableList<IIResultElement> value)
+            RedBlackTree<IkIndexElement, RedBlackTree<IωIndexElement, IIResultElement>> value)
         {
             II instance = null;
 
