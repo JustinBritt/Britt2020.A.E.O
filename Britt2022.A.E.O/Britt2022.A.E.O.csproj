@@ -27,9 +27,4 @@
     <PackageReference Include="NGenerics" Version="1.5.3" />
     <PackageReference Include="OPTANO.Modeling" Version="3.7.0.522" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="InterfacesVisitors\Results\ScenarioRecoveryWardCensuses\" />
-    <Folder Include="Visitors\Results\ScenarioRecoveryWardCensuses\" />
-  </ItemGroup>
 </Project>
