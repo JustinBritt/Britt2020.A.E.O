@@ -15,6 +15,8 @@
 
         Ii i { get; }
 
+        Ij j { get; }
+
         Ik k { get; }
 
         Iω ω { get; }
