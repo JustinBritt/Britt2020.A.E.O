@@ -13,6 +13,8 @@
         /// </summary>
         Model Model { get; }
 
+        Ii i { get; }
+
         Ik k { get; }
 
         Iω ω { get; }
