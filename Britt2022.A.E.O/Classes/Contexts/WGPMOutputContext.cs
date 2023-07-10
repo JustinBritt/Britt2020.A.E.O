@@ -79,6 +79,7 @@
 
             // IMax(ω)
             this.ScenarioRecoveryWardCensusMaximums = WGPMModel.IMax.GetElementsAt(
+                dependenciesAbstractFactory.CreateRedBlackTreeFactory(),
                 resultElementsAbstractFactory.CreateIMaxResultElementFactory(),
                 resultsAbstractFactory.CreateIMaxFactory(),
                 WGPMModel.ω)
@@ -130,7 +131,7 @@
 
         public RedBlackTree<FhirDateTime, RedBlackTree<INullableValue<int>, INullableValue<decimal>>> DayScenarioRecoveryWardCensuses { get; }
 
-        public ImmutableList<Tuple<INullableValue<int>, INullableValue<decimal>>> ScenarioRecoveryWardCensusMaximums { get; }
+        public RedBlackTree<INullableValue<int>, INullableValue<decimal>> ScenarioRecoveryWardCensusMaximums { get; }
 
         public ImmutableList<Tuple<INullableValue<int>, INullableValue<decimal>>> ScenarioRecoveryWardCensusMinimums { get; }
 

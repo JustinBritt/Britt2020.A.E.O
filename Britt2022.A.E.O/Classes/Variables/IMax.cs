@@ -1,15 +1,16 @@
 ﻿namespace Britt2022.A.E.O.Classes.Variables
 {
-    using System.Collections.Immutable;
-    using System.Linq;
-
     using log4net;
+
+    using NGenerics.DataStructures.Trees;
 
     using OPTANO.Modeling.Optimization;
 
     using Britt2022.A.E.O.Interfaces.IndexElements;
     using Britt2022.A.E.O.Interfaces.Indices;
+    using Britt2022.A.E.O.Interfaces.ResultElements.ScenarioRecoveryWardCensuses;
     using Britt2022.A.E.O.Interfaces.Variables;
+    using Britt2022.A.E.O.InterfacesFactories.Dependencies.NGenerics.DataStructures.Trees;
     using Britt2022.A.E.O.InterfacesFactories.ResultElements.ScenarioRecoveryWardCensuses;
     using Britt2022.A.E.O.InterfacesFactories.Results.ScenarioRecoveryWardCensuses;
 
@@ -32,18 +33,25 @@
         }
 
         public Interfaces.Results.ScenarioRecoveryWardCensuses.IIMax GetElementsAt(
+            IRedBlackTreeFactory redBlackTreeFactory,
             IIMaxResultElementFactory IMaxResultElementFactory,
             IIMaxFactory IMaxFactory,
             Iω ω)
         {
-            return IMaxFactory.Create(
-                ω.Value.Values
-                .Select(
-                    w => IMaxResultElementFactory.Create(
-                        w,
+            RedBlackTree<IωIndexElement, IIMaxResultElement> redBlackTree = redBlackTreeFactory.Create<IωIndexElement, IIMaxResultElement>();
+
+            foreach (IωIndexElement ωIndexElement in ω.Value.Values)
+            {
+                redBlackTree.Add(
+                    ωIndexElement,
+                    IMaxResultElementFactory.Create(
+                        ωIndexElement,
                         this.GetElementAt(
-                            w)))
-                .ToImmutableList());
+                            ωIndexElement)));
+            }
+
+            return IMaxFactory.Create(
+                redBlackTree);
         }
     }
 }
