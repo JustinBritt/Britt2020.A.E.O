@@ -15,7 +15,7 @@
 
         RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<int>>> SurgeonScenarioPlusDeviations { get; }
 
-        ImmutableList<Tuple<Organization, Location, FhirDateTime, INullableValue<int>, INullableValue<decimal>>> SurgeonOperatingRoomDayScenarioDeviations { get; }
+        RedBlackTree<Organization, RedBlackTree<Location, RedBlackTree<FhirDateTime, RedBlackTree<INullableValue<int>, INullableValue<decimal>>>>> SurgeonOperatingRoomDayScenarioDeviations { get; }
 
         INullableValue<decimal> Gap { get; }
 

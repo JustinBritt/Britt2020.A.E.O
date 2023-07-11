@@ -57,7 +57,10 @@
             this.SurgeonOperatingRoomDayScenarioDeviations = WGPMModel.d2Minus.GetElementsAt(
                 resultElementsAbstractFactory.Created2MinusResultElementFactory(),
                 resultsAbstractFactory.Created2MinusFactory(),
-                WGPMModel.ijkω)
+                WGPMModel.i,
+                WGPMModel.j,
+                WGPMModel.k,
+                WGPMModel.ω)
                 .GetValueForOutputContext(
                 dependenciesAbstractFactory.CreateNullableValueFactory());
 
@@ -128,7 +131,7 @@
 
         public RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<int>>> SurgeonScenarioPlusDeviations { get; }
 
-        public ImmutableList<Tuple<Organization, Location, FhirDateTime, INullableValue<int>, INullableValue<decimal>>> SurgeonOperatingRoomDayScenarioDeviations { get; }
+        public RedBlackTree<Organization, RedBlackTree<Location, RedBlackTree<FhirDateTime, RedBlackTree<INullableValue<int>, INullableValue<decimal>>>>> SurgeonOperatingRoomDayScenarioDeviations { get; }
 
         public INullableValue<decimal> Gap { get; }
 

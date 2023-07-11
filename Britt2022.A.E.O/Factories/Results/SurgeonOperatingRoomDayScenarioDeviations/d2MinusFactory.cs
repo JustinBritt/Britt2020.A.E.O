@@ -1,11 +1,13 @@
 ﻿namespace Britt2022.A.E.O.Factories.Results.SurgeonOperatingRoomDayScenarioDeviations
 {
     using System;
-    using System.Collections.Immutable;
 
     using log4net;
 
+    using NGenerics.DataStructures.Trees;
+
     using Britt2022.A.E.O.Classes.Results.SurgeonOperatingRoomDayScenarioDeviations;
+    using Britt2022.A.E.O.Interfaces.IndexElements;
     using Britt2022.A.E.O.Interfaces.ResultElements.SurgeonOperatingRoomDayScenarioDeviations;
     using Britt2022.A.E.O.Interfaces.Results.SurgeonOperatingRoomDayScenarioDeviations;
     using Britt2022.A.E.O.InterfacesFactories.Results.SurgeonOperatingRoomDayScenarioDeviations;
@@ -19,7 +21,7 @@
         }
 
         public Id2Minus Create(
-            ImmutableList<Id2MinusResultElement> value)
+            RedBlackTree<IiIndexElement, RedBlackTree<IjIndexElement, RedBlackTree<IkIndexElement, RedBlackTree<IωIndexElement, Id2MinusResultElement>>>> value)
         {
             Id2Minus instance = null;
 

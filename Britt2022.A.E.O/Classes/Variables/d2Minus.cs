@@ -1,14 +1,14 @@
 ﻿namespace Britt2022.A.E.O.Classes.Variables
 {
-    using System.Collections.Immutable;
-    using System.Linq;
-
     using log4net;
+
+    using NGenerics.DataStructures.Trees;
 
     using OPTANO.Modeling.Optimization;
 
-    using Britt2022.A.E.O.Interfaces.CrossJoins;
     using Britt2022.A.E.O.Interfaces.IndexElements;
+    using Britt2022.A.E.O.Interfaces.Indices;
+    using Britt2022.A.E.O.Interfaces.ResultElements.SurgeonOperatingRoomDayScenarioDeviations;
     using Britt2022.A.E.O.Interfaces.Variables;
     using Britt2022.A.E.O.InterfacesFactories.ResultElements.SurgeonOperatingRoomDayScenarioDeviations;
     using Britt2022.A.E.O.InterfacesFactories.Results.SurgeonOperatingRoomDayScenarioDeviations;
@@ -37,22 +37,59 @@
         public Interfaces.Results.SurgeonOperatingRoomDayScenarioDeviations.Id2Minus GetElementsAt(
             Id2MinusResultElementFactory d2MinusResultElementFactory,
             Id2MinusFactory d2MinusFactory,
-            Iijkω ijkω)
+            Ii i,
+            Ij j,
+            Ik k,
+            Iω ω)
         {
+            RedBlackTree<IiIndexElement, RedBlackTree<IjIndexElement, RedBlackTree<IkIndexElement, RedBlackTree<IωIndexElement, Id2MinusResultElement>>>> outerRedBlackTree = new RedBlackTree<IiIndexElement, RedBlackTree<IjIndexElement, RedBlackTree<IkIndexElement, RedBlackTree<IωIndexElement, Id2MinusResultElement>>>>();
+
+            foreach (IiIndexElement iIndexElement in i.Value.Values)
+            {
+                RedBlackTree<IjIndexElement, RedBlackTree<IkIndexElement, RedBlackTree<IωIndexElement, Id2MinusResultElement>>> firstInnerRedBlackTree = new RedBlackTree<IjIndexElement, RedBlackTree<IkIndexElement, RedBlackTree<IωIndexElement, Id2MinusResultElement>>>();
+
+                foreach (IjIndexElement jIndexElement in j.Value.Values)
+                {
+                    RedBlackTree<IkIndexElement, RedBlackTree<IωIndexElement, Id2MinusResultElement>> secondInnerRedBlackTree = new RedBlackTree<IkIndexElement, RedBlackTree<IωIndexElement, Id2MinusResultElement>>();
+
+                    foreach (IkIndexElement kIndexElement in k.Value)
+                    {
+                        RedBlackTree<IωIndexElement, Id2MinusResultElement> thirdInnerRedBlackTree = new RedBlackTree<IωIndexElement, Id2MinusResultElement>();
+
+                        foreach (IωIndexElement ωIndexElement in ω.Value.Values)
+                        {
+                            thirdInnerRedBlackTree.Add(
+                                ωIndexElement,
+                                d2MinusResultElementFactory.Create(
+                                    iIndexElement,
+                                    jIndexElement,
+                                    kIndexElement,
+                                    ωIndexElement,
+                                    this.GetElementAt(
+                                        iIndexElement,
+                                        jIndexElement,
+                                        kIndexElement,
+                                        ωIndexElement)));
+                        }
+
+                        secondInnerRedBlackTree.Add(
+                            kIndexElement,
+                            thirdInnerRedBlackTree);
+
+                    }
+
+                    firstInnerRedBlackTree.Add(
+                        jIndexElement,
+                        secondInnerRedBlackTree);
+                }
+
+                outerRedBlackTree.Add(
+                    iIndexElement,
+                    firstInnerRedBlackTree);
+            }
+
             return d2MinusFactory.Create(
-                ijkω.Value
-                .Select(
-                    w => d2MinusResultElementFactory.Create(
-                        w.iIndexElement,
-                        w.jIndexElement,
-                        w.kIndexElement,
-                        w.ωIndexElement,
-                        this.GetElementAt(
-                            w.iIndexElement,
-                            w.jIndexElement,
-                            w.kIndexElement,
-                            w.ωIndexElement)))
-                .ToImmutableList());
+                outerRedBlackTree);
         }
     }
 }
