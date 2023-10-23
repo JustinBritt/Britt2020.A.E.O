@@ -27,4 +27,13 @@
     <PackageReference Include="NGenerics" Version="1.5.3" />
     <PackageReference Include="OPTANO.Modeling" Version="3.7.0.522" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="$(AssemblyName).config" Pack="true" PackagePath="contentFiles/">
+      <PackageCopyToOutput>true</PackageCopyToOutput>
+    </Content>
+    <Content Include="$(AssemblyName).targets" Pack="true" PackagePath="build/$(AssemblyName).targets">
+      <PackageCopyToOutput>true</PackageCopyToOutput>
+    </Content>
+  </ItemGroup>
 </Project>
