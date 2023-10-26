@@ -134,6 +134,24 @@
             return factory;
         }
 
+        public IScenarioTotalTimesResultElementFactory CreateScenarioTotalTimesResultElementFactory()
+        {
+            IScenarioTotalTimesResultElementFactory factory = null;
+
+            try
+            {
+                factory = new ScenarioTotalTimesResultElementFactory();
+            }
+            catch (Exception exception)
+            {
+                this.Log.Error(
+                    exception.Message,
+                    exception);
+            }
+
+            return factory;
+        }
+
         public IxResultElementFactory CreatexResultElementFactory()
         {
             IxResultElementFactory factory = null;

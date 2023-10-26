@@ -21,6 +21,8 @@
 
         IIMinResultElementFactory CreateIMinResultElementFactory();
 
+        IScenarioTotalTimesResultElementFactory CreateScenarioTotalTimesResultElementFactory();
+
         IxResultElementFactory CreatexResultElementFactory();
     }
 }
