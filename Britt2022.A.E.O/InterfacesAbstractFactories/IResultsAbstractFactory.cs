@@ -36,6 +36,8 @@
 
         IOverallWallTimeFactory CreateOverallWallTimeFactory();
 
+        IScenarioTotalTimesFactory CreateScenarioTotalTimesFactory();
+
         IxFactory CreatexFactory();
     }
 }
