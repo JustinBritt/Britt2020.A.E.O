@@ -39,6 +39,8 @@
 
   <ItemGroup>
     <Folder Include="Classes\Calculations\ScenarioNumberPatients\" />
+    <Folder Include="Factories\ResultElements\SurgeonScenarioNumberPatients\" />
+    <Folder Include="InterfacesFactories\ResultElements\SurgeonScenarioNumberPatients\" />
     <Folder Include="Interfaces\Calculations\ScenarioNumberPatients\" />
   </ItemGroup>
 </Project>
