@@ -36,4 +36,9 @@
       <PackageCopyToOutput>true</PackageCopyToOutput>
     </Content>
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Classes\Results\ScenarioTotalTimes\" />
+    <Folder Include="Interfaces\Results\ScenarioTotalTimes\" />
+  </ItemGroup>
 </Project>
