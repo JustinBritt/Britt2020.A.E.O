@@ -1,5 +1,6 @@
 ﻿namespace Britt2022.A.E.O.InterfacesAbstractFactories
 {
+    using Britt2022.A.E.O.InterfacesFactories.Calculations.ScenarioNumberPatients;
     using Britt2022.A.E.O.InterfacesFactories.Calculations.ScenarioTotalTimes;
     using Britt2022.A.E.O.InterfacesFactories.Calculations.ScenarioUnderutilizations;
     using Britt2022.A.E.O.InterfacesFactories.Calculations.ScenarioUnutilizedTimes;
