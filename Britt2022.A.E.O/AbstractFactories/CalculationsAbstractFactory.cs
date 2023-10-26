@@ -167,5 +167,41 @@
 
             return factory;
         }
+
+        public ISurgeonScenarioNumberPatientsCalculationFactory CreateSurgeonScenarioNumberPatientsCalculationFactory()
+        {
+            ISurgeonScenarioNumberPatientsCalculationFactory factory = null;
+
+            try
+            {
+                factory = new SurgeonScenarioNumberPatientsCalculationFactory();
+            }
+            catch (Exception exception)
+            {
+                this.Log.Error(
+                    exception.Message,
+                    exception);
+            }
+
+            return factory;
+        }
+
+        public ISurgeonScenarioNumberPatientsResultElementCalculationFactory CreateSurgeonScenarioNumberPatientsResultElementCalculationFactory()
+        {
+            ISurgeonScenarioNumberPatientsResultElementCalculationFactory factory = null;
+
+            try
+            {
+                factory = new SurgeonScenarioNumberPatientsResultElementCalculationFactory();
+            }
+            catch (Exception exception)
+            {
+                this.Log.Error(
+                    exception.Message,
+                    exception);
+            }
+
+            return factory;
+        }
     }
 }

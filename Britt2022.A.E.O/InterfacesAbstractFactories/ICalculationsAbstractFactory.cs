@@ -23,5 +23,9 @@
         IScenarioUtilizedTimesCalculationFactory CreateScenarioUtilizedTimesCalculationFactory();
 
         IScenarioUtilizedTimesResultElementCalculationFactory CreateScenarioUtilizedTimesResultElementCalculationFactory();
+
+        ISurgeonScenarioNumberPatientsCalculationFactory CreateSurgeonScenarioNumberPatientsCalculationFactory();
+
+        ISurgeonScenarioNumberPatientsResultElementCalculationFactory CreateSurgeonScenarioNumberPatientsResultElementCalculationFactory();
     }
 }
