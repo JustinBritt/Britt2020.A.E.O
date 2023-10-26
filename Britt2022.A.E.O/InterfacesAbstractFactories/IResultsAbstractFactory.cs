@@ -6,6 +6,7 @@
     using Britt2022.A.E.O.InterfacesFactories.Results.NumberOfExploredNodes;
     using Britt2022.A.E.O.InterfacesFactories.Results.ObjectiveValue;
     using Britt2022.A.E.O.InterfacesFactories.Results.OverallWallTime;
+    using Britt2022.A.E.O.InterfacesFactories.Results.ScenarioNumberPatients;
     using Britt2022.A.E.O.InterfacesFactories.Results.ScenarioRecoveryWardCensuses;
     using Britt2022.A.E.O.InterfacesFactories.Results.ScenarioTotalTimes;
     using Britt2022.A.E.O.InterfacesFactories.Results.ScenarioUnderutilizations;

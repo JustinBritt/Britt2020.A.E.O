@@ -10,6 +10,7 @@
     using Britt2022.A.E.O.Factories.Results.NumberOfExploredNodes;
     using Britt2022.A.E.O.Factories.Results.ObjectiveValue;
     using Britt2022.A.E.O.Factories.Results.OverallWallTime;
+    using Britt2022.A.E.O.Factories.Results.ScenarioNumberPatients;
     using Britt2022.A.E.O.Factories.Results.ScenarioRecoveryWardCensuses;
     using Britt2022.A.E.O.Factories.Results.ScenarioTotalTimes;
     using Britt2022.A.E.O.Factories.Results.ScenarioUnderutilizations;
@@ -25,6 +26,7 @@
     using Britt2022.A.E.O.InterfacesFactories.Results.NumberOfExploredNodes;
     using Britt2022.A.E.O.InterfacesFactories.Results.ObjectiveValue;
     using Britt2022.A.E.O.InterfacesFactories.Results.OverallWallTime;
+    using Britt2022.A.E.O.InterfacesFactories.Results.ScenarioNumberPatients;
     using Britt2022.A.E.O.InterfacesFactories.Results.ScenarioRecoveryWardCensuses;
     using Britt2022.A.E.O.InterfacesFactories.Results.ScenarioTotalTimes;
     using Britt2022.A.E.O.InterfacesFactories.Results.ScenarioUnderutilizations;
