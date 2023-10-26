@@ -2,6 +2,7 @@
 {
     using Britt2022.A.E.O.InterfacesFactories.ResultElements.DayScenarioRecoveryWardCensuses;
     using Britt2022.A.E.O.InterfacesFactories.ResultElements.ScenarioRecoveryWardCensuses;
+    using Britt2022.A.E.O.InterfacesFactories.ResultElements.ScenarioTotalTimes;
     using Britt2022.A.E.O.InterfacesFactories.ResultElements.SurgeonOperatingRoomDayAssignments;
     using Britt2022.A.E.O.InterfacesFactories.ResultElements.SurgeonOperatingRoomDayScenarioDeviations;
     using Britt2022.A.E.O.InterfacesFactories.ResultElements.SurgeonScenarioDeviations;
