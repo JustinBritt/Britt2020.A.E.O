@@ -254,6 +254,24 @@
             return factory;
         }
 
+        public IScenarioUtilizedTimesFactory CreateScenarioUtilizedTimesFactory()
+        {
+            IScenarioUtilizedTimesFactory factory = null;
+
+            try
+            {
+                factory = new ScenarioUtilizedTimesFactory();
+            }
+            catch (Exception exception)
+            {
+                this.Log.Error(
+                    exception.Message,
+                    exception);
+            }
+
+            return factory;
+        }
+
         public IxFactory CreatexFactory()
         {
             IxFactory factory = null;

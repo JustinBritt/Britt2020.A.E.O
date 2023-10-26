@@ -39,6 +39,8 @@
 
         IScenarioTotalTimesFactory CreateScenarioTotalTimesFactory();
 
+        IScenarioUtilizedTimesFactory CreateScenarioUtilizedTimesFactory();
+
         IxFactory CreatexFactory();
     }
 }
