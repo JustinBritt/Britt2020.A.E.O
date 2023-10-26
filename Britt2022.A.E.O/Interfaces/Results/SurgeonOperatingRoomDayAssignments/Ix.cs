@@ -1,8 +1,5 @@
 ﻿namespace Britt2022.A.E.O.Interfaces.Results.SurgeonOperatingRoomDayAssignments
 {
-    using System;
-    using System.Collections.Immutable;
-
     using Hl7.Fhir.Model;
 
     using NGenerics.DataStructures.Trees;
@@ -14,6 +11,11 @@
     public interface Ix
     {
         RedBlackTree<IiIndexElement, RedBlackTree<IjIndexElement, RedBlackTree<IkIndexElement, IxResultElement>>> Value { get; }
+
+        int GetElementAtAsint(
+            IiIndexElement iIndexElement,
+            IjIndexElement jIndexElement,
+            IkIndexElement kIndexElement);
 
         RedBlackTree<Organization, RedBlackTree<Location, RedBlackTree<FhirDateTime, INullableValue<bool>>>> GetValueForOutputContext(
             INullableValueFactory nullableValueFactory);

@@ -25,6 +25,14 @@
 
         public RedBlackTree<IiIndexElement, RedBlackTree<IjIndexElement, RedBlackTree<IkIndexElement, IxResultElement>>> Value { get; }
 
+        public int GetElementAtAsint(
+            IiIndexElement iIndexElement,
+            IjIndexElement jIndexElement,
+            IkIndexElement kIndexElement)
+        {
+            return this.Value[iIndexElement][jIndexElement][kIndexElement].Value ? 1 : 0;
+        }
+
         public RedBlackTree<Organization, RedBlackTree<Location, RedBlackTree<FhirDateTime, INullableValue<bool>>>> GetValueForOutputContext(
             INullableValueFactory nullableValueFactory)
         {
