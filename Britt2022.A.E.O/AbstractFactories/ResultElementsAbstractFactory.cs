@@ -158,6 +158,24 @@
             return factory;
         }
 
+        public IScenarioUnderutilizationsResultElementFactory CreateScenarioUnderutilizationsResultElementFactory()
+        {
+            IScenarioUnderutilizationsResultElementFactory factory = null;
+
+            try
+            {
+                factory = new ScenarioUnderutilizationsResultElementFactory();
+            }
+            catch (Exception exception)
+            {
+                this.Log.Error(
+                    exception.Message,
+                    exception);
+            }
+
+            return factory;
+        }
+
         public IScenarioUnutilizedTimesResultElementFactory CreateScenarioUnutilizedTimesResultElementFactory()
         {
             IScenarioUnutilizedTimesResultElementFactory factory = null;

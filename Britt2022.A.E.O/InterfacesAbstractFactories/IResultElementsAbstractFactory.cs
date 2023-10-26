@@ -26,6 +26,8 @@
 
         IScenarioTotalTimesResultElementFactory CreateScenarioTotalTimesResultElementFactory();
 
+        IScenarioUnderutilizationsResultElementFactory CreateScenarioUnderutilizationsResultElementFactory();
+
         IScenarioUnutilizedTimesResultElementFactory CreateScenarioUnutilizedTimesResultElementFactory();
 
         IScenarioUtilizedTimesResultElementFactory CreateScenarioUtilizedTimesResultElementFactory();
