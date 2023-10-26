@@ -334,6 +334,24 @@
             return factory;
         }
 
+        public ISurgeonScenarioNumberPatientsFactory CreateSurgeonScenarioNumberPatientsFactory()
+        {
+            ISurgeonScenarioNumberPatientsFactory factory = null;
+
+            try
+            {
+                factory = new SurgeonScenarioNumberPatientsFactory();
+            }
+            catch (Exception exception)
+            {
+                this.Log.Error(
+                    exception.Message,
+                    exception);
+            }
+
+            return factory;
+        }
+
         public IxFactory CreatexFactory()
         {
             IxFactory factory = null;

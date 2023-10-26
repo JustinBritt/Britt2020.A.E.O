@@ -51,6 +51,8 @@
 
         IScenarioUtilizedTimesFactory CreateScenarioUtilizedTimesFactory();
 
+        ISurgeonScenarioNumberPatientsFactory CreateSurgeonScenarioNumberPatientsFactory();
+
         IxFactory CreatexFactory();
     }
 }
