@@ -258,6 +258,42 @@
             return factory;
         }
 
+        public IScenarioUnderutilizationsFactory CreateScenarioUnderutilizationsFactory()
+        {
+            IScenarioUnderutilizationsFactory factory = null;
+
+            try
+            {
+                factory = new ScenarioUnderutilizationsFactory();
+            }
+            catch (Exception exception)
+            {
+                this.Log.Error(
+                    exception.Message,
+                    exception);
+            }
+
+            return factory;
+        }
+
+        public IScenarioUnutilizedTimesFactory CreateScenarioUnutilizedTimesFactory()
+        {
+            IScenarioUnutilizedTimesFactory factory = null;
+
+            try
+            {
+                factory = new ScenarioUnutilizedTimesFactory();
+            }
+            catch (Exception exception)
+            {
+                this.Log.Error(
+                    exception.Message,
+                    exception);
+            }
+
+            return factory;
+        }
+
         public IScenarioUtilizedTimesFactory CreateScenarioUtilizedTimesFactory()
         {
             IScenarioUtilizedTimesFactory factory = null;

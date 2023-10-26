@@ -41,6 +41,10 @@
 
         IScenarioTotalTimesFactory CreateScenarioTotalTimesFactory();
 
+        IScenarioUnderutilizationsFactory CreateScenarioUnderutilizationsFactory();
+
+        IScenarioUnutilizedTimesFactory CreateScenarioUnutilizedTimesFactory();
+
         IScenarioUtilizedTimesFactory CreateScenarioUtilizedTimesFactory();
 
         IxFactory CreatexFactory();
