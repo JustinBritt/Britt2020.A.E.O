@@ -234,6 +234,24 @@
             return factory;
         }
 
+        public ISurgeonScenarioNumberPatientsResultElementFactory CreateSurgeonScenarioNumberPatientsResultElementFactory()
+        {
+            ISurgeonScenarioNumberPatientsResultElementFactory factory = null;
+
+            try
+            {
+                factory = new SurgeonScenarioNumberPatientsResultElementFactory();
+            }
+            catch (Exception exception)
+            {
+                this.Log.Error(
+                    exception.Message,
+                    exception);
+            }
+
+            return factory;
+        }
+
         public IxResultElementFactory CreatexResultElementFactory()
         {
             IxResultElementFactory factory = null;
