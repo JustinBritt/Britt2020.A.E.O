@@ -8,6 +8,7 @@
     using Britt2022.A.E.O.InterfacesFactories.Results.OverallWallTime;
     using Britt2022.A.E.O.InterfacesFactories.Results.ScenarioRecoveryWardCensuses;
     using Britt2022.A.E.O.InterfacesFactories.Results.ScenarioTotalTimes;
+    using Britt2022.A.E.O.InterfacesFactories.Results.ScenarioUnutilizedTimes;
     using Britt2022.A.E.O.InterfacesFactories.Results.ScenarioUtilizedTimes;
     using Britt2022.A.E.O.InterfacesFactories.Results.SurgeonOperatingRoomDayAssignments;
     using Britt2022.A.E.O.InterfacesFactories.Results.SurgeonOperatingRoomDayScenarioDeviations;

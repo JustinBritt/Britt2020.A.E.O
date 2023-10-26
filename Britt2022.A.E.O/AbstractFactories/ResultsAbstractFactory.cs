@@ -12,6 +12,7 @@
     using Britt2022.A.E.O.Factories.Results.OverallWallTime;
     using Britt2022.A.E.O.Factories.Results.ScenarioRecoveryWardCensuses;
     using Britt2022.A.E.O.Factories.Results.ScenarioTotalTimes;
+    using Britt2022.A.E.O.Factories.Results.ScenarioUnutilizedTimes;
     using Britt2022.A.E.O.Factories.Results.ScenarioUtilizedTimes;
     using Britt2022.A.E.O.Factories.Results.SurgeonOperatingRoomDayAssignments;
     using Britt2022.A.E.O.Factories.Results.SurgeonOperatingRoomDayScenarioDeviations;
@@ -25,6 +26,7 @@
     using Britt2022.A.E.O.InterfacesFactories.Results.OverallWallTime;
     using Britt2022.A.E.O.InterfacesFactories.Results.ScenarioRecoveryWardCensuses;
     using Britt2022.A.E.O.InterfacesFactories.Results.ScenarioTotalTimes;
+    using Britt2022.A.E.O.InterfacesFactories.Results.ScenarioUnutilizedTimes;
     using Britt2022.A.E.O.InterfacesFactories.Results.ScenarioUtilizedTimes;
     using Britt2022.A.E.O.InterfacesFactories.Results.SurgeonOperatingRoomDayAssignments;
     using Britt2022.A.E.O.InterfacesFactories.Results.SurgeonOperatingRoomDayScenarioDeviations;
