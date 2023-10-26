@@ -10,6 +10,7 @@
     using Britt2022.A.E.O.InterfacesFactories.ResultElements.SurgeonOperatingRoomDayAssignments;
     using Britt2022.A.E.O.InterfacesFactories.ResultElements.SurgeonOperatingRoomDayScenarioDeviations;
     using Britt2022.A.E.O.InterfacesFactories.ResultElements.SurgeonScenarioDeviations;
+    using Britt2022.A.E.O.InterfacesFactories.ResultElements.SurgeonScenarioNumberPatients;
 
     public interface IResultElementsAbstractFactory
     {

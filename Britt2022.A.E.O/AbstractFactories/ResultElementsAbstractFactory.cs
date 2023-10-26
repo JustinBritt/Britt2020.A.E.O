@@ -14,6 +14,7 @@
     using Britt2022.A.E.O.Factories.ResultElements.SurgeonOperatingRoomDayAssignments;
     using Britt2022.A.E.O.Factories.ResultElements.SurgeonOperatingRoomDayScenarioDeviations;
     using Britt2022.A.E.O.Factories.ResultElements.SurgeonScenarioDeviations;
+    using Britt2022.A.E.O.Factories.ResultElements.SurgeonScenarioNumberPatients;
     using Britt2022.A.E.O.InterfacesAbstractFactories;
     using Britt2022.A.E.O.InterfacesFactories.ResultElements.DayScenarioRecoveryWardCensuses;
     using Britt2022.A.E.O.InterfacesFactories.ResultElements.ScenarioNumberPatients;
@@ -25,6 +26,7 @@
     using Britt2022.A.E.O.InterfacesFactories.ResultElements.SurgeonOperatingRoomDayAssignments;
     using Britt2022.A.E.O.InterfacesFactories.ResultElements.SurgeonOperatingRoomDayScenarioDeviations;
     using Britt2022.A.E.O.InterfacesFactories.ResultElements.SurgeonScenarioDeviations;
+    using Britt2022.A.E.O.InterfacesFactories.ResultElements.SurgeonScenarioNumberPatients;
 
     internal sealed class ResultElementsAbstractFactory : IResultElementsAbstractFactory
     {
