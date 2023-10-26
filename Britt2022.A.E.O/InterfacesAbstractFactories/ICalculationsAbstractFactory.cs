@@ -4,6 +4,7 @@
     using Britt2022.A.E.O.InterfacesFactories.Calculations.ScenarioUnderutilizations;
     using Britt2022.A.E.O.InterfacesFactories.Calculations.ScenarioUnutilizedTimes;
     using Britt2022.A.E.O.InterfacesFactories.Calculations.ScenarioUtilizedTimes;
+    using Britt2022.A.E.O.InterfacesFactories.Calculations.SurgeonScenarioNumberPatients;
 
     public interface ICalculationsAbstractFactory
     {
