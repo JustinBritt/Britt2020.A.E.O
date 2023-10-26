@@ -26,6 +26,24 @@
             return new AbstractFactory();
         }
 
+        public ICalculationsAbstractFactory CreateCalculationsAbstractFactory()
+        {
+            ICalculationsAbstractFactory abstractFactory = null;
+
+            try
+            {
+                abstractFactory = new CalculationsAbstractFactory();
+            }
+            catch (Exception exception)
+            {
+                this.Log.Error(
+                    exception.Message,
+                    exception);
+            }
+
+            return abstractFactory;
+        }
+
         public IComparersAbstractFactory CreateComparersAbstractFactory()
         {
             IComparersAbstractFactory abstractFactory = null;

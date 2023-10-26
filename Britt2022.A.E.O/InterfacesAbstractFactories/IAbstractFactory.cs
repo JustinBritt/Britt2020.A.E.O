@@ -2,6 +2,8 @@
 {
     public interface IAbstractFactory
     {
+        ICalculationsAbstractFactory CreateCalculationsAbstractFactory();
+
         IComparersAbstractFactory CreateComparersAbstractFactory();
 
         IConfigurationsAbstractFactory CreateConfigurationsAbstractFactory();
