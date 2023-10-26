@@ -143,7 +143,7 @@
                 WGPMModel.i,
                 WGPMModel.ω);
 
-            // ScenarioNumberPatients(Λ)
+            // ScenarioNumberPatients(ω)
             this.ScenarioNumberPatients = calculationsAbstractFactory.CreateScenarioNumberPatientsCalculationFactory().Create()
                 .Calculate(
                 resultElementsAbstractFactory.CreateScenarioNumberPatientsResultElementFactory(),
