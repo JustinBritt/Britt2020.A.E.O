@@ -24,6 +24,7 @@
         }
 
         public Task<IWGPMOutputContext> Solve(
+            ICalculationsAbstractFactory calculationsAbstractFactory,
             IComparersAbstractFactory comparersAbstractFactory,
             IConstraintElementsAbstractFactory constraintElementsAbstractFactory,
             IConstraintsAbstractFactory constraintsAbstractFactory,
@@ -75,6 +76,7 @@
                             model.Model.VariableCollections.ForEach(vc => vc.SetVariableValues(solution.VariableValues));
 
                             WGPMOutputContext = contextsAbstractFactory.CreateWGPMOutputContextFactory().Create(
+                                calculationsAbstractFactory,
                                 dependenciesAbstractFactory,
                                 resultElementsAbstractFactory,
                                 resultsAbstractFactory,

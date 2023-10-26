@@ -9,6 +9,7 @@
     public interface IWGPMOutputContextFactory
     {
         IWGPMOutputContext Create(
+            ICalculationsAbstractFactory calculationsAbstractFactory,
             IDependenciesAbstractFactory dependenciesAbstractFactory,
             IResultElementsAbstractFactory resultElementsAbstractFactory,
             IResultsAbstractFactory resultsAbstractFactory,

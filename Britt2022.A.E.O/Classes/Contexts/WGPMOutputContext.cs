@@ -21,6 +21,7 @@
         private ILog Log => LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         public WGPMOutputContext(
+            ICalculationsAbstractFactory calculationsAbstractFactory,
             IDependenciesAbstractFactory dependenciesAbstractFactory,
             IResultElementsAbstractFactory resultElementsAbstractFactory,
             IResultsAbstractFactory resultsAbstractFactory,

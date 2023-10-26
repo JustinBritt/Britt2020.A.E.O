@@ -21,6 +21,7 @@
         }
 
         public IWGPMOutputContext Create(
+            ICalculationsAbstractFactory calculationsAbstractFactory,
             IDependenciesAbstractFactory dependenciesAbstractFactory,
             IResultElementsAbstractFactory resultElementsAbstractFactory,
             IResultsAbstractFactory resultsAbstractFactory,
@@ -32,6 +33,7 @@
             try
             {
                 instance = new WGPMOutputContext(
+                    calculationsAbstractFactory,
                     dependenciesAbstractFactory,
                     resultElementsAbstractFactory,
                     resultsAbstractFactory,
