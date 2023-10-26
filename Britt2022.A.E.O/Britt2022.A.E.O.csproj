@@ -36,9 +36,4 @@
       <PackageCopyToOutput>true</PackageCopyToOutput>
     </Content>
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Classes\ResultElements\ScenarioUnderutilizations\" />
-    <Folder Include="Interfaces\ResultElements\ScenarioUnderutilizations\" />
-  </ItemGroup>
 </Project>
