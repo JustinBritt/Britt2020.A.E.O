@@ -1,7 +1,6 @@
 ﻿namespace Britt2022.A.E.O.Interfaces.Contexts
 {
     using System;
-    using System.Collections.Immutable;
 
     using Hl7.Fhir.Model;
 
@@ -30,6 +29,10 @@
         INullableValue<decimal> ObjectiveValue { get; }
 
         TimeSpan OverallWallTime { get; }
+
+        RedBlackTree<INullableValue<int>, INullableValue<int>> ScenarioNumberPatients { get; }
+
+        RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<int>>> SurgeonScenarioNumberPatients { get; }
 
         RedBlackTree<Organization, RedBlackTree<Location, RedBlackTree<FhirDateTime, INullableValue<bool>>>> SurgeonOperatingRoomDayAssignments { get; }
     }

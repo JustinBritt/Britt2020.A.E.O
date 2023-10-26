@@ -15,6 +15,7 @@
     using Britt2022.A.E.O.Interfaces.Contexts;
     using Britt2022.A.E.O.Interfaces.Models;
     using Britt2022.A.E.O.Interfaces.Results.SurgeonOperatingRoomDayAssignments;
+    using Britt2022.A.E.O.Interfaces.Results.SurgeonScenarioNumberPatients;
 
     internal sealed class WGPMOutputContext : IWGPMOutputContext
     {
@@ -126,6 +127,32 @@
             this.SurgeonOperatingRoomDayAssignments = x
                 .GetValueForOutputContext(
                 dependenciesAbstractFactory.CreateNullableValueFactory());
+
+            // SurgeonScenarioNumberPatients
+            ISurgeonScenarioNumberPatients surgeonScenarioNumberPatients = calculationsAbstractFactory.CreateSurgeonScenarioNumberPatientsCalculationFactory().Create().Calculate(
+                resultElementsAbstractFactory.CreateSurgeonScenarioNumberPatientsResultElementFactory(),
+                resultsAbstractFactory.CreateSurgeonScenarioNumberPatientsFactory(),
+                calculationsAbstractFactory.CreateSurgeonScenarioNumberPatientsResultElementCalculationFactory().Create(),
+                WGPMModel.jk,
+                WGPMModel.iω,
+                WGPMModel.n,
+                x);
+
+            this.SurgeonScenarioNumberPatients = surgeonScenarioNumberPatients.GetValueForOutputContext(
+                dependenciesAbstractFactory.CreateNullableValueFactory(),
+                WGPMModel.i,
+                WGPMModel.ω);
+
+            // ScenarioNumberPatients(Λ)
+            this.ScenarioNumberPatients = calculationsAbstractFactory.CreateScenarioNumberPatientsCalculationFactory().Create()
+                .Calculate(
+                resultElementsAbstractFactory.CreateScenarioNumberPatientsResultElementFactory(),
+                resultsAbstractFactory.CreateScenarioNumberPatientsFactory(),
+                calculationsAbstractFactory.CreateScenarioNumberPatientsResultElementCalculationFactory().Create(),
+                WGPMModel.ω,
+                surgeonScenarioNumberPatients)
+                .GetValueForOutputContext(
+                dependenciesAbstractFactory.CreateNullableValueFactory());
         }
 
         public INullableValue<decimal> BestBound { get; }
@@ -149,6 +176,10 @@
         public INullableValue<decimal> ObjectiveValue { get; }
 
         public TimeSpan OverallWallTime { get; }
+
+        public RedBlackTree<INullableValue<int>, INullableValue<int>> ScenarioNumberPatients { get; }
+
+        public RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<int>>> SurgeonScenarioNumberPatients { get; }
 
         public RedBlackTree<Organization, RedBlackTree<Location, RedBlackTree<FhirDateTime, INullableValue<bool>>>> SurgeonOperatingRoomDayAssignments { get; }
     }
