@@ -1,7 +1,6 @@
 ﻿namespace Britt2022.A.E.O.Classes.Contexts
 {
     using System;
-    using System.Collections.Immutable;
     using System.Linq;
 
     using log4net;
@@ -15,6 +14,7 @@
     using Britt2022.A.E.O.InterfacesAbstractFactories;
     using Britt2022.A.E.O.Interfaces.Contexts;
     using Britt2022.A.E.O.Interfaces.Models;
+    using Britt2022.A.E.O.Interfaces.Results.SurgeonOperatingRoomDayAssignments;
 
     internal sealed class WGPMOutputContext : IWGPMOutputContext
     {
@@ -116,12 +116,14 @@
                 .GetValueForOutputContext();
 
             // x(i, j, k)
-            this.SurgeonOperatingRoomDayAssignments = WGPMModel.x.GetElementsAt(
+            Ix x = WGPMModel.x.GetElementsAt(
                 resultElementsAbstractFactory.CreatexResultElementFactory(),
                 resultsAbstractFactory.CreatexFactory(),
                 WGPMModel.i,
                 WGPMModel.j,
-                WGPMModel.k)
+                WGPMModel.k);
+
+            this.SurgeonOperatingRoomDayAssignments = x
                 .GetValueForOutputContext(
                 dependenciesAbstractFactory.CreateNullableValueFactory());
         }
