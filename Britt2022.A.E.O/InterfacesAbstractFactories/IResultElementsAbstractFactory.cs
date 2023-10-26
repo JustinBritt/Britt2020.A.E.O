@@ -1,6 +1,7 @@
 ﻿namespace Britt2022.A.E.O.InterfacesAbstractFactories
 {
     using Britt2022.A.E.O.InterfacesFactories.ResultElements.DayScenarioRecoveryWardCensuses;
+    using Britt2022.A.E.O.InterfacesFactories.ResultElements.ScenarioNumberPatients;
     using Britt2022.A.E.O.InterfacesFactories.ResultElements.ScenarioRecoveryWardCensuses;
     using Britt2022.A.E.O.InterfacesFactories.ResultElements.ScenarioTotalTimes;
     using Britt2022.A.E.O.InterfacesFactories.ResultElements.ScenarioUnderutilizations;
@@ -23,6 +24,8 @@
         IIMaxResultElementFactory CreateIMaxResultElementFactory();
 
         IIMinResultElementFactory CreateIMinResultElementFactory();
+
+        IScenarioNumberPatientsResultElementFactory CreateScenarioNumberPatientsResultElementFactory();
 
         IScenarioTotalTimesResultElementFactory CreateScenarioTotalTimesResultElementFactory();
 

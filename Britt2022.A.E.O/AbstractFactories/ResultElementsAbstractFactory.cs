@@ -5,6 +5,7 @@
     using log4net;
 
     using Britt2022.A.E.O.Factories.ResultElements.DayScenarioRecoveryWardCensuses;
+    using Britt2022.A.E.O.Factories.ResultElements.ScenarioNumberPatients;
     using Britt2022.A.E.O.Factories.ResultElements.ScenarioRecoveryWardCensuses;
     using Britt2022.A.E.O.Factories.ResultElements.ScenarioTotalTimes;
     using Britt2022.A.E.O.Factories.ResultElements.ScenarioUnderutilizations;
@@ -15,6 +16,7 @@
     using Britt2022.A.E.O.Factories.ResultElements.SurgeonScenarioDeviations;
     using Britt2022.A.E.O.InterfacesAbstractFactories;
     using Britt2022.A.E.O.InterfacesFactories.ResultElements.DayScenarioRecoveryWardCensuses;
+    using Britt2022.A.E.O.InterfacesFactories.ResultElements.ScenarioNumberPatients;
     using Britt2022.A.E.O.InterfacesFactories.ResultElements.ScenarioRecoveryWardCensuses;
     using Britt2022.A.E.O.InterfacesFactories.ResultElements.ScenarioTotalTimes;
     using Britt2022.A.E.O.InterfacesFactories.ResultElements.ScenarioUnderutilizations;
@@ -129,6 +131,24 @@
             try
             {
                 factory = new IMinResultElementFactory();
+            }
+            catch (Exception exception)
+            {
+                this.Log.Error(
+                    exception.Message,
+                    exception);
+            }
+
+            return factory;
+        }
+
+        public IScenarioNumberPatientsResultElementFactory CreateScenarioNumberPatientsResultElementFactory()
+        {
+            IScenarioNumberPatientsResultElementFactory factory = null;
+
+            try
+            {
+                factory = new ScenarioNumberPatientsResultElementFactory();
             }
             catch (Exception exception)
             {
