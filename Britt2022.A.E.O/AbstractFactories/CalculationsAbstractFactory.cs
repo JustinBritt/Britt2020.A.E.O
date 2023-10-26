@@ -26,6 +26,42 @@
         {
         }
 
+        public IScenarioNumberPatientsCalculationFactory CreateScenarioNumberPatientsCalculationFactory()
+        {
+            IScenarioNumberPatientsCalculationFactory factory = null;
+
+            try
+            {
+                factory = new ScenarioNumberPatientsCalculationFactory();
+            }
+            catch (Exception exception)
+            {
+                this.Log.Error(
+                    exception.Message,
+                    exception);
+            }
+
+            return factory;
+        }
+
+        public IScenarioNumberPatientsResultElementCalculationFactory CreateScenarioNumberPatientsResultElementCalculationFactory()
+        {
+            IScenarioNumberPatientsResultElementCalculationFactory factory = null;
+
+            try
+            {
+                factory = new ScenarioNumberPatientsResultElementCalculationFactory();
+            }
+            catch (Exception exception)
+            {
+                this.Log.Error(
+                    exception.Message,
+                    exception);
+            }
+
+            return factory;
+        }
+
         public IScenarioTotalTimesCalculationFactory CreateScenarioTotalTimesCalculationFactory()
         {
             IScenarioTotalTimesCalculationFactory factory = null;

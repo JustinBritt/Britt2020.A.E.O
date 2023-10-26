@@ -9,6 +9,10 @@
 
     public interface ICalculationsAbstractFactory
     {
+        IScenarioNumberPatientsCalculationFactory CreateScenarioNumberPatientsCalculationFactory();
+
+        IScenarioNumberPatientsResultElementCalculationFactory CreateScenarioNumberPatientsResultElementCalculationFactory();
+
         IScenarioTotalTimesCalculationFactory CreateScenarioTotalTimesCalculationFactory();
 
         IScenarioTotalTimesResultElementCalculationFactory CreateScenarioTotalTimesResultElementCalculationFactory();
