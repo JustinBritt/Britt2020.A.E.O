@@ -242,6 +242,24 @@
             return factory;
         }
 
+        public IScenarioNumberPatientsFactory CreateScenarioNumberPatientsFactory()
+        {
+            IScenarioNumberPatientsFactory factory = null;
+
+            try
+            {
+                factory = new ScenarioNumberPatientsFactory();
+            }
+            catch (Exception exception)
+            {
+                this.Log.Error(
+                    exception.Message,
+                    exception);
+            }
+
+            return factory;
+        }
+
         public IScenarioTotalTimesFactory CreateScenarioTotalTimesFactory()
         {
             IScenarioTotalTimesFactory factory = null;
