@@ -36,9 +36,4 @@
       <PackageCopyToOutput>true</PackageCopyToOutput>
     </Content>
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Classes\Calculations\ScenarioUnutilizedTimes\" />
-    <Folder Include="Interfaces\Calculations\ScenarioUnutilizedTimes\" />
-  </ItemGroup>
 </Project>
