@@ -25,6 +25,8 @@
 
         IScenarioTotalTimesResultElementFactory CreateScenarioTotalTimesResultElementFactory();
 
+        IScenarioUnutilizedTimesResultElementFactory CreateScenarioUnutilizedTimesResultElementFactory();
+
         IxResultElementFactory CreatexResultElementFactory();
     }
 }
