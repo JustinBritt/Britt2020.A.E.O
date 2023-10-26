@@ -36,4 +36,9 @@
       <PackageCopyToOutput>true</PackageCopyToOutput>
     </Content>
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Classes\Results\ScenarioNumberPatients\" />
+    <Folder Include="Interfaces\Results\ScenarioNumberPatients\" />
+  </ItemGroup>
 </Project>
