@@ -14,9 +14,12 @@
     using Britt2022.A.E.O.InterfacesAbstractFactories;
     using Britt2022.A.E.O.Interfaces.Contexts;
     using Britt2022.A.E.O.Interfaces.Models;
+    using Britt2022.A.E.O.Interfaces.Results.ScenarioTotalTimes;
+    using Britt2022.A.E.O.Interfaces.Results.ScenarioUnutilizedTimes;
+    using Britt2022.A.E.O.Interfaces.Results.ScenarioUtilizedTimes;
     using Britt2022.A.E.O.Interfaces.Results.SurgeonOperatingRoomDayAssignments;
     using Britt2022.A.E.O.Interfaces.Results.SurgeonScenarioNumberPatients;
-
+    
     internal sealed class WGPMOutputContext : IWGPMOutputContext
     {
         private ILog Log => LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
@@ -153,6 +156,60 @@
                 surgeonScenarioNumberPatients)
                 .GetValueForOutputContext(
                 dependenciesAbstractFactory.CreateNullableValueFactory());
+
+            // ScenarioTotalTimes(ω)
+            IScenarioTotalTimes scenarioTotalTimes = calculationsAbstractFactory.CreateScenarioTotalTimesCalculationFactory().Create()
+                .Calculate(
+                resultElementsAbstractFactory.CreateScenarioTotalTimesResultElementFactory(),
+                resultsAbstractFactory.CreateScenarioTotalTimesFactory(),
+                calculationsAbstractFactory.CreateScenarioTotalTimesResultElementCalculationFactory().Create(),
+                WGPMModel.ω,
+                WGPMModel.ijk,
+                WGPMModel.v,
+                x);
+
+            this.ScenarioTotalTimes = scenarioTotalTimes.GetValueForOutputContext(
+                dependenciesAbstractFactory.CreateNullableValueFactory());
+
+            // ScenarioUtilizedTimes(ω)
+            IScenarioUtilizedTimes scenarioUtilizedTimes = calculationsAbstractFactory.CreateScenarioUtilizedTimesCalculationFactory().Create()
+                .Calculate(
+                resultElementsAbstractFactory.CreateScenarioUtilizedTimesResultElementFactory(),
+                resultsAbstractFactory.CreateScenarioUtilizedTimesFactory(),
+                calculationsAbstractFactory.CreateScenarioUtilizedTimesResultElementCalculationFactory().Create(),
+                WGPMModel.ω,
+                WGPMModel.ijk,
+                WGPMModel.A,
+                WGPMModel.n,
+                x);
+
+            this.ScenarioUtilizedTimes = scenarioUtilizedTimes.GetValueForOutputContext(
+                dependenciesAbstractFactory.CreateNullableValueFactory());
+
+            // ScenarioUnutilizedTimes(ω)
+            IScenarioUnutilizedTimes scenarioUnutilizedTimes = calculationsAbstractFactory.CreateScenarioUnutilizedTimesCalculationFactory().Create()
+                .Calculate(
+                resultElementsAbstractFactory.CreateScenarioUnutilizedTimesResultElementFactory(),
+                resultsAbstractFactory.CreateScenarioUnutilizedTimesFactory(),
+                calculationsAbstractFactory.CreateScenarioUnutilizedTimesResultElementCalculationFactory().Create(),
+                WGPMModel.ω,
+                scenarioTotalTimes,
+                scenarioUtilizedTimes);
+
+            this.ScenarioUnutilizedTimes = scenarioUnutilizedTimes.GetValueForOutputContext(
+                dependenciesAbstractFactory.CreateNullableValueFactory());
+
+            // ScenarioUnderutilizations(ω)
+            this.ScenarioUnderutilizations = calculationsAbstractFactory.CreateScenarioUnderutilizationsCalculationFactory().Create()
+                .Calculate(
+                resultElementsAbstractFactory.CreateScenarioUnderutilizationsResultElementFactory(),
+                resultsAbstractFactory.CreateScenarioUnderutilizationsFactory(),
+                calculationsAbstractFactory.CreateScenarioUnderutilizationsResultElementCalculationFactory().Create(),
+                WGPMModel.ω,
+                scenarioTotalTimes,
+                scenarioUnutilizedTimes)
+                .GetValueForOutputContext(
+                dependenciesAbstractFactory.CreateNullableValueFactory());
         }
 
         public INullableValue<decimal> BestBound { get; }
@@ -178,6 +235,14 @@
         public TimeSpan OverallWallTime { get; }
 
         public RedBlackTree<INullableValue<int>, INullableValue<int>> ScenarioNumberPatients { get; }
+
+        public RedBlackTree<INullableValue<int>, INullableValue<decimal>> ScenarioTotalTimes { get; }
+
+        public RedBlackTree<INullableValue<int>, INullableValue<decimal>> ScenarioUnderutilizations { get; }
+
+        public RedBlackTree<INullableValue<int>, INullableValue<decimal>> ScenarioUnutilizedTimes { get; }
+
+        public RedBlackTree<INullableValue<int>, INullableValue<decimal>> ScenarioUtilizedTimes { get; }
 
         public RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<int>>> SurgeonScenarioNumberPatients { get; }
 
