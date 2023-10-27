@@ -32,7 +32,11 @@
 
         Ikω kω { get; }
 
+        IA A { get; }
+
         In n { get; }
+
+        Iv v { get; }
 
         Id1Minus d1Minus { get; }
 
